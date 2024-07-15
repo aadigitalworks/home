@@ -76,15 +76,15 @@
            <div class="row">
               <div class="col-md-9 mx-auto">
                  <div class="contact-form">
-                    <form action="">
+                   <form id="form">
                        <div>
-                          <input type="text" placeholder="Full Name " required>
+                          <input type="text" name="Full name" id="Full-name" placeholder="Full Name " required>
                        </div>
                        <div>
-                          <input type="text" placeholder="Phone Number" required>
+                          <input type="tel" name="Phone Number" Id="Phone-Number" placeholder="Phone Number" required>
                        </div>
                        <div>
-                        <select name="item"  required>
+                        <select name="item" id="item" required>
                           <option value="">--Please choose an option--</option>
                           <option value="Website">Website</option>
                           <option value="Web app">Web app</option>
@@ -95,16 +95,16 @@
                         </select>
                      </div>
                        <div>
-                          <input type="email" placeholder="Email Address" required>
+                          <input type="email" name="email" Id="email" placeholder="Email Address" required>
                        </div>
                        <div>
-                          <input type="text" placeholder="Message" class="input_message" required>
+                          <input type="text" placeholder="Message" name="message" id="message" placeholder="Message" class="input_message" required>
                        </div>
                        <div class="d-flex justify-content-center">
-                          <button type="submit" class="btn_on-hover">
-                          Send
-                          </button>
-                       </div>
+                        <input type="Submit" id="submit" class="btn_on-hover">
+                     </div>
+                     <div id="success-message"></div>
+                     <div id="errorMessage"></div>
                     </form>
                  </div>
               </div>
@@ -202,6 +202,9 @@
      &copy; 2024 All Rights Reserved AA DigitalWorks
   </p>
 </section>
+<script type="text/javascript" src="js/email.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">emailjs.init('nYEsuR8Y6Oc2OeyAt')</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 </body>
 </html>

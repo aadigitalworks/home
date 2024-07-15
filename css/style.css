@@ -808,7 +808,7 @@ a:focus {
   color: rgba(0, 0, 0, 0.4);
 }
 
-.contact_section .contact-form button {
+.contact_section .contact-form button ,#submit{
   border: none;
   outline: none;
   padding: 12px 50px;
@@ -817,6 +817,7 @@ a:focus {
   background-color: #fec913;
   color: #fff;
   border-radius: 30px;
+  max-width: fit-content;
 }
 
 .contact_section .map_img-box {
@@ -881,8 +882,8 @@ a:focus {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin: 20px 0;
 }
 
@@ -897,19 +898,19 @@ a:focus {
   padding: 7px 10px;
 }
 
-.info_section .info_form form button {
+.info_section .info_form form button,#submit {
   display: inline-block;
   padding: 8px 30px;
   background-color: #fbca47;
   border: 1px solid #fbca47;
-  color: #ffffff;
+  color: #000000;
   margin-top: 15px;
   text-transform: uppercase;
   font-size: 15px;
 }
 
-.info_section .info_form form button:hover {
-  background-color: transparent;
+.info_section .info_form form button:hover,#submit:hover {
+  background-color: #000;
   color: #fbca47;
 }
 
