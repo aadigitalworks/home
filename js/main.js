@@ -85,30 +85,40 @@ $('.owl-carousel').owlCarousel({
     loop: true,
     margin: 10,
     autoplay: true, // Enable autoplay
-    autoplayTimeout: 5000, // Set autoplay timeout in milliseconds (adjust as needed)
+    autoplayTimeout: 10000, // Set autoplay timeout in milliseconds (adjust as needed)
     responsive: {
       1000: {
-        items: 1, // Show 1 item on screens wider than 1000px
+        items: 1, 
       }
     }
 });
 
-// Facebook SDK 
-
-    document.addEventListener("DOMContentLoaded", function() {
-    var placeholder = document.getElementById('fb-placeholder');
-    var script = document.createElement('script');
-    script.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0";
-    script.async = true; // Ensures the script is loaded asynchronously
-    script.onload = function() {
-        // Hide placeholder after script loads
-        placeholder.style.display = 'none';
+// Function to dynamically load the Facebook SDK
+function loadFacebookSDK() {
+    return new Promise((resolve) => {
+      var script = document.createElement('script');
+      script.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0";
+      script.async = true; // Ensure the script is loaded asynchronously
+      
+      script.onload = function() {
         // Check if FB object is defined and parse the XFBML
         if (typeof FB !== 'undefined') {
-        FB.XFBML.parse();
+          FB.XFBML.parse();
         }
-    };
-    // Append the script to the body
-    document.body.appendChild(script);
-});
-      
+        resolve();
+      };
+
+      document.body.appendChild(script);
+    });
+  }
+
+  // Load the SDK and hide the placeholder after it has fully loaded
+  window.onload = function() {
+    var placeholder = document.getElementById('fb-placeholder');
+    loadFacebookSDK().then(() => {
+      placeholder.style.display = 'none';
+    }).catch((error) => {
+      console.error('Failed to load Facebook SDK:', error);
+      placeholder.style.display = 'none'; // Hide even if there is an error
+    });
+  };
