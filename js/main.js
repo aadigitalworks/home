@@ -92,3 +92,23 @@ $('.owl-carousel').owlCarousel({
       }
     }
 });
+
+// Facebook SDK 
+
+    document.addEventListener("DOMContentLoaded", function() {
+    var placeholder = document.getElementById('fb-placeholder');
+    var script = document.createElement('script');
+    script.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0";
+    script.async = true; // Ensures the script is loaded asynchronously
+    script.onload = function() {
+        // Hide placeholder after script loads
+        placeholder.style.display = 'none';
+        // Check if FB object is defined and parse the XFBML
+        if (typeof FB !== 'undefined') {
+        FB.XFBML.parse();
+        }
+    };
+    // Append the script to the body
+    document.body.appendChild(script);
+});
+      

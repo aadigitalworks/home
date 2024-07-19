@@ -34,7 +34,6 @@
       <link rel="preload" href="images/background.webp" as="image" type="image/webp" media="(min-width: 1px)">
    </head>
    <body>
-      <div id="fb-root"></div>
       <div class="hero_area">
          <!-- header section strats -->
          <header class="header_section">
@@ -250,7 +249,8 @@
             </div>
             <div class="carousel-wrap">
                <div class="owl-carousel">
-                  <div id="fb-placeholder">Loading Facebook widget...</div>
+                  <div id="fb-placeholder" class="fb-xfbml-parse-ignore">Loading Customers Review ...</div>
+                  <div id="fb-root"></div>
                   <div class="item">
                      <div class="fb-post" data-href="https://www.facebook.com/permalink.php?story_fbid=pfbid0TD3oXzjtQ9hBvSQpCYibXLK544sVRcFGpfTP39NhwBGKNwMBMXbLi2FAb6Bw3UVhl&amp;id=100078732098782" data-width="350" data-show-text="true">
                         <blockquote cite="https://www.facebook.com/permalink.php?story_fbid=384834957484238&amp;id=100078732098782" class="fb-xfbml-parse-ignore">
@@ -477,15 +477,18 @@
       </section>
   <!--Start of Tawk.to Script-->
 <script type="text/javascript" defer>
-   var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-   (function(){
-   var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-   s1.async=true;
-   s1.src='https://embed.tawk.to/66983cf8becc2fed6926deeb/1i31asb44';
-   s1.charset='UTF-8';
-   s1.setAttribute('crossorigin','*');
-   s0.parentNode.insertBefore(s1,s0);
-   })();
+ function loadTawkToScript() {
+   var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+   var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+   s1.async = true;
+   s1.src = 'https://embed.tawk.to/66983cf8becc2fed6926deeb/1i31asb44';
+   s1.charset = 'UTF-8';
+   s1.setAttribute('crossorigin', '*');
+   s0.parentNode.insertBefore(s1, s0);
+ }
+
+ // Wait 30 seconds before loading the Tawk.to script
+ setTimeout(loadTawkToScript, 30000); // 30,000 milliseconds = 30 seconds
 </script>
 <!--End of Tawk.to Script-->
 
@@ -494,23 +497,5 @@
 <script type="text/javascript">emailjs.init('nYEsuR8Y6Oc2OeyAt')</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" defer></script>
 <script type="text/javascript" src="js/main.js" defer></script>
-
-<!-- Facebook SDK -->
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var placeholder = document.getElementById('fb-placeholder');
-    var script = document.createElement('script');
-    script.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0";
-    script.async = true;
-    script.onload = function() {
-      placeholder.style.display = 'none';
-      if (typeof FB !== 'undefined') {
-        FB.XFBML.parse();
-      }
-    };
-    document.body.appendChild(script);
-  });
-</script>
-
    </body>
 </html>
