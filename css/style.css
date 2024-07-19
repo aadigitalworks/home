@@ -3,6 +3,10 @@ body {
   color: #000000;
   background-color: #ffffff;
 }
+img{
+  width: 100%;
+  height: auto;
+}
 
 .Company-name{
   font-size: 40px!important;
