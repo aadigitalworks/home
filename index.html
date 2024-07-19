@@ -250,6 +250,7 @@
             </div>
             <div class="carousel-wrap">
                <div class="owl-carousel">
+                  <div id="fb-placeholder">Loading Facebook widget...</div>
                   <div class="item">
                      <div class="fb-post" data-href="https://www.facebook.com/permalink.php?story_fbid=pfbid0TD3oXzjtQ9hBvSQpCYibXLK544sVRcFGpfTP39NhwBGKNwMBMXbLi2FAb6Bw3UVhl&amp;id=100078732098782" data-width="350" data-show-text="true">
                         <blockquote cite="https://www.facebook.com/permalink.php?story_fbid=384834957484238&amp;id=100078732098782" class="fb-xfbml-parse-ignore">
@@ -495,7 +496,21 @@
 <script type="text/javascript" src="js/main.js" defer></script>
 
 <!-- Facebook SDK -->
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0" nonce="8ombQ1au"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var placeholder = document.getElementById('fb-placeholder');
+    var script = document.createElement('script');
+    script.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0";
+    script.async = true;
+    script.onload = function() {
+      placeholder.style.display = 'none';
+      if (typeof FB !== 'undefined') {
+        FB.XFBML.parse();
+      }
+    };
+    document.body.appendChild(script);
+  });
+</script>
 
    </body>
 </html>
