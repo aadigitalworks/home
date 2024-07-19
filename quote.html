@@ -21,8 +21,11 @@
     <meta name="twitter:description" content="Request a personalized quote from AA DigitalWorks for our digital solutions, including digital ads, SEO, web apps, websites, QR-menus, and digital menus. Contact us for a quote tailored to your requirements.">
     <meta name="twitter:image" content="https://aadigitalworks.github.io/images/twitter-image.png">
     <link rel="canonical" href="https://aadigitalworks.github.io/home/quote.html">
-
-    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- slider stylesheet -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <!-- bootstrap core css -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&family=Poppins:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" />
@@ -69,11 +72,6 @@
                                     <a class="nav-link" href="index.html#wedo"> What we do </a>
                                 </li>
                             </ul>
-                            <div class="user_option">
-                                <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
-                                    <button class="btn my-2 my-sm-0 nav_search-btn" type="submit"></button>
-                                </form>
-                            </div>
                         </div>
                     </div>
                 </nav>
@@ -193,7 +191,9 @@
 
     <!-- Scripts -->
     <script src="js/email.js" defer></script>
+    <script src="js/bootstrap.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" defer></script>
     <script>emailjs.init('nYEsuR8Y6Oc2OeyAt')</script>
     <script>
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
