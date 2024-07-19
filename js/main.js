@@ -92,33 +92,27 @@ $('.owl-carousel').owlCarousel({
       }
     }
 });
-
-// Function to dynamically load the Facebook SDK
 function loadFacebookSDK() {
-    return new Promise((resolve) => {
-      var script = document.createElement('script');
-      script.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0";
-      script.async = true; // Ensure the script is loaded asynchronously
-      
-      script.onload = function() {
-        // Check if FB object is defined and parse the XFBML
-        if (typeof FB !== 'undefined') {
-          FB.XFBML.parse();
-        }
-        resolve();
-      };
-
-      document.body.appendChild(script);
-    });
+    var script = document.createElement('script');
+    script.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0';
+    script.async = true;
+    script.onload = function() {
+      document.getElementById('fb-placeholder').style.display = 'none';
+      if (typeof FB !== 'undefined') {
+        FB.XFBML.parse();
+      }
+    };
+    document.body.appendChild(script);
   }
 
-  // Load the SDK and hide the placeholder after it has fully loaded
-  window.onload = function() {
-    var placeholder = document.getElementById('fb-placeholder');
-    loadFacebookSDK().then(() => {
-      placeholder.style.display = 'none';
-    }).catch((error) => {
-      console.error('Failed to load Facebook SDK:', error);
-      placeholder.style.display = 'none'; // Hide even if there is an error
-    });
-  };
+  document.addEventListener('DOMContentLoaded', function() {
+    // Use Intersection Observer to lazy load
+    var observer = new IntersectionObserver(function(entries) {
+      if (entries[0].isIntersecting === true) {
+        loadFacebookSDK();
+        observer.disconnect();
+      }
+    }, { threshold: [0] });
+
+    observer.observe(document.getElementById('fb-placeholder'));
+  });
