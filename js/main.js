@@ -126,3 +126,11 @@ function loadFacebookSDK() {
       heroArea.style.backgroundImage = 'url(images/background.webp)';
     };
   });
+
+  // for css
+  document.addEventListener("DOMContentLoaded", function() {
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'css/non-critical.css';
+    document.head.appendChild(link);
+  });
