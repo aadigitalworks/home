@@ -116,3 +116,13 @@ function loadFacebookSDK() {
 
     observer.observe(document.getElementById('fb-placeholder'));
   });
+
+  // background img
+  document.addEventListener("DOMContentLoaded", function() {
+    var heroArea = document.getElementById('hero-area');
+    var img = new Image();
+    img.src = 'images/background.webp';
+    img.onload = function() {
+      heroArea.style.backgroundImage = 'url(images/background.webp)';
+    };
+  });

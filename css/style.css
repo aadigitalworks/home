@@ -311,10 +311,9 @@ body {
 .hero_area {
   height: 100vh;
   background-color: #ffffff;
-  background-image: url(../images/background.webp);
+  background-image: url(data:image/webp;base64, /* base64 data here */);
   background-size: cover;
 }
-
 .sub_page .hero_area {
   height: auto;
 }
