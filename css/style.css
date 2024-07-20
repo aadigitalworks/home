@@ -62,7 +62,9 @@ img{
     justify-content: center;
     align-items: center;
   }
-
+.do_section .do_container .arrow_bg::before{
+  display: none;
+}
   .owl-carousel {
     display: flex;
     justify-content: center;
