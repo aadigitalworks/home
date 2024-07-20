@@ -34,7 +34,9 @@
       <link rel="preload" href="images/background.webp" as="image">
       <link rel="preload" href="images/background-mobile.webp" as="image" media="(max-width: 600px)">
       <link rel="stylesheet" href="css/non-critical.css" media="print" onload="this.onload=null;this.removeAttribute('media');">
-      <noscript><link rel="stylesheet" href="css/non-critical.css"></noscript>
+      <link rel="preconnect" href="https://your-cdn.com">
+      <link rel="preload" href="images/background.webp" as="image">
+
    </head>
    <body>
       <div class="hero_area" id="hero-area">
@@ -496,7 +498,8 @@
  setTimeout(loadTawkToScript, 20000); // 20,000 milliseconds = 20 seconds
 </script>
 <!--End of Tawk.to Script-->
-<script src="path/to/script.js" defer></script>
+<script src="js/non-critical.js" defer></script>
+
 
 <script type="text/javascript" src="js/email.js" defer></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>

@@ -308,17 +308,18 @@ body {
 }
 
 /*header section*/
-/*header section*/
 .hero_area {
   height: 100vh;
   background-color: #ffffff;
-  background-image: url(../images/background.webp);
+  background-image: url(data:image/webp;base64,...); /* Base64 encoded low-res image */
   background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s ease-in-out;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 768px) {
   .hero_area {
-    background-image: url(../images/background-mobile.webp);
+    background-image: url(images/background.webp);
   }
 }
 .sub_page .hero_area {
