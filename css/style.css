@@ -19,6 +19,9 @@ img{
 .Company-name{
   font-size: 40px!important;
 }
+.welcome{
+  font-size: 25px!important;
+}
 
 /* General styling */
 .carousel-wrap {
@@ -61,6 +64,9 @@ img{
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  p{
+    max-width: auto;
   }
 .do_section .do_container .arrow_bg::before{
   display: none;
