@@ -140,3 +140,13 @@ function loadFacebookSDK() {
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "ng6tsk5m93");
+    $(document).ready(function() {
+      $('.owl-carousel').owlCarousel({
+          // Owl Carousel options
+      });
+  
+      // Ensure that navigation buttons have the correct aria-label
+      $('.owl-prev').attr('aria-label', 'Previous review');
+      $('.owl-next').attr('aria-label', 'Next review');
+  });
+  
