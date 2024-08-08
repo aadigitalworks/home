@@ -184,3 +184,31 @@ function loadFacebookSDK() {
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-M74XDBHG7P');
+
+    $(document).ready(function(){
+      // Initialize the carousel
+      $('.owl-carousel').owlCarousel({
+          // Your Owl Carousel settings
+          loop: true,
+          margin: 10,
+          nav: true,
+          items: 1
+      });
+  
+      // Function to update aria-labels for carousel dots
+      function updateCarouselDots() {
+          $('.owl-dot').each(function(index) {
+              $(this).attr('aria-label', 'Go to slide ' + (index + 1));
+          });
+      }
+  
+      // Update aria-labels after carousel initialization
+      $('.owl-carousel').on('initialized.owl.carousel', function(event) {
+          updateCarouselDots();
+      });
+  
+      // Update aria-labels when carousel items are changed
+      $('.owl-carousel').on('changed.owl.carousel', function(event) {
+          updateCarouselDots();
+      });
+  });
