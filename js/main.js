@@ -1,6 +1,6 @@
 $(document).ready(function() {
     // Array of roles
-    var roles = ["Designer", "Developer", "SEO", "Freelancer", "Digital Ads","Web Apps","Websites", "QR-Menus" , "Digital Menus"];
+    var roles = ["Designer", "Developer", "Google Ads", "Search Engine Optimization",  "Social Media Ads", "Digital Ads","Web Apps","Websites", "QR-Menus" , "Digital Menus"];
     var currentRoleIndex = 0;
   
     // Function to simulate typing effect
@@ -134,4 +134,53 @@ function loadFacebookSDK() {
     link.href = 'css/non-critical.css';
     document.head.appendChild(link);
   });
-  
+
+ // Toggle dropdown on click for small screens
+ document.addEventListener('DOMContentLoaded', function() {
+  var dropdowns = document.querySelectorAll('.dropdown');
+
+  dropdowns.forEach(function(dropdown) {
+    dropdown.addEventListener('click', function(event) {
+      event.stopPropagation(); // Prevent click from bubbling up
+
+      // Close all other dropdowns
+      dropdowns.forEach(function(otherDropdown) {
+        if (otherDropdown !== dropdown) {
+          otherDropdown.classList.remove('active');
+        }
+      });
+
+      // Toggle the current dropdown
+      dropdown.classList.toggle('active');
+    });
+  });
+
+  // Close dropdowns if clicking outside
+  document.addEventListener('click', function() {
+    dropdowns.forEach(function(dropdown) {
+      dropdown.classList.remove('active');
+    });
+  });
+});
+
+// Tawk.to Script - Load after page load with a delay
+    function loadTawkToScript() {
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/66983cf8becc2fed6926deeb/1i31asb44';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    }
+
+    // Load the Tawk.to script 20 seconds after the page has loaded
+    window.addEventListener('load', function() {
+        setTimeout(loadTawkToScript, 20000); // 20,000 milliseconds = 20 seconds
+    });
+
+// Google Tag Manager (gtag.js) 
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-M74XDBHG7P');
