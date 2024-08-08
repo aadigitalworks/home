@@ -506,25 +506,29 @@
             <div class="row">
                <div class="col-md-9 mx-auto">
                   <div class="contact-form">
-                     <form id="form" class="form">
+                     <form id="form" class="form" onsubmit="return submitForm(event)">
                         <div>
-                           <input type="text" name="Full name" id="Full-name" placeholder="Full Name ">
+                            <label for="Full-name">Full Name</label>
+                            <input type="text" name="Full name" id="Full-name" placeholder="Enter your full name" required>
                         </div>
                         <div>
-                           <input type="tel" name="Phone Number" Id="Phone-Number" placeholder="Phone Number">
+                            <label for="Phone-Number">Phone Number</label>
+                            <input type="tel" name="Phone Number" id="Phone-Number" placeholder="Enter your phone number" required>
                         </div>
                         <div>
-                           <input type="email" name="email" Id="email" placeholder="Email Address">
+                            <label for="email">Email Address</label>
+                            <input type="email" name="email" id="email" placeholder="Enter your email address" required>
                         </div>
                         <div>
-                           <input type="text" placeholder="Message" name="message" id="message" class="input_message">
+                            <label for="message">Message</label>
+                            <input type="text" name="message" id="message" placeholder="Type your message here" class="input_message" required>
                         </div>
                         <div class="d-flex justify-content-center">
-                           <input type="Submit" id="submit" class="btn_on-hover">
+                            <button type="submit" id="submit" class="btn_on-hover">Submit</button>
                         </div>
                         <div id="success-message"></div>
                         <div id="errorMessage"></div>
-                     </form>
+                    </form>                                        
                   </div>
                </div>
             </div>
@@ -633,9 +637,12 @@
                      <div class="info_form">
                          <h3>Newsletter</h3>
                          <form id="newsletter-form" onsubmit="return submitForm(event)">
-                             <input type="email" id="newsletter-email" placeholder="Enter your email" required>
-                             <button type="submit">Subscribe</button>
-                         </form>
+                           <div>
+                               <label for="newsletter-email">Enter your email:</label>
+                               <input type="email" id="newsletter-email" placeholder="example@domain.com" required>
+                           </div>
+                           <button type="submit">Subscribe</button>
+                       </form>
                          <div id="newsletter-response" style="display: none;"></div>
                      </div>
                  </div>

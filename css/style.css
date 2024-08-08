@@ -978,6 +978,12 @@ a:focus {
 }
 
 /* contact section */
+label {
+  display: block; /* Make labels block elements to appear on their own line */
+  margin-bottom: 5px; /* Space between label and input */
+  font-weight: bold; /* Optional: makes the label text bold */
+}
+
 .contact_section .heading_container {
   -webkit-box-align: center;
       -ms-flex-align: center;
