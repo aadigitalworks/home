@@ -345,7 +345,7 @@
                            </p>
                            <p class="review-author" style="color: #000; background-color: #e0e0e0;">
                                Posted by 
-                               <a href="https://www.facebook.com/AADigitalWorks/reviews" aria-label="View review by ريم الاسدي on Facebook" style="color: #0066cc;">
+                               <a href="https://www.facebook.com/AADigitalWorks" aria-label="View review by ريم الاسدي on Facebook" style="color: #0066cc;">
                                    ريم الاسدي
                                </a> 
                                on February 9, 2024
@@ -385,7 +385,7 @@
                            </p>
                            <p class="review-author" style="color: #000; background-color: #e0e0e0;">
                                Posted by 
-                               <a href="https://www.facebook.com/AADigitalWorks/reviews" aria-label="View review by Lisa Burke on Facebook" style="color: #0066cc;">
+                               <a href="https://www.facebook.com/AADigitalWorks" aria-label="View review by Lisa Burke on Facebook" style="color: #0066cc;">
                                    Lisa Burke
                                </a> 
                                on March 3, 2024
@@ -405,7 +405,7 @@
                            </p>
                            <p class="review-author" style="color: #000; background-color: #e0e0e0;">
                                Posted by 
-                               <a href="https://www.facebook.com/AADigitalWorks/reviews" aria-label="View review by Paul Murphy on Facebook" style="color: #0066cc;">
+                               <a href="https://www.facebook.com/AADigitalWorks" aria-label="View review by Paul Murphy on Facebook" style="color: #0066cc;">
                                    Paul Murphy
                                </a> 
                                on February 9, 2024
@@ -425,7 +425,7 @@
                            </p>
                            <p class="review-author" style="color: #000; background-color: #e0e0e0;">
                                Posted by 
-                               <a href="https://www.facebook.com/AADigitalWorks/reviews" aria-label="View review by John Kelly on Facebook" style="color: #0066cc;">
+                               <a href="https://www.facebook.com/AADigitalWorks" aria-label="View review by John Kelly on Facebook" style="color: #0066cc;">
                                    John Kelly
                                </a> 
                                on February 9, 2024
@@ -445,7 +445,7 @@
                            </p>
                            <p class="review-author" style="color: #000; background-color: #e0e0e0;">
                                Posted by 
-                               <a href="https://www.facebook.com/AADigitalWorks/reviews" aria-label="View review by مصطفى ابرايهم on Facebook" style="color: #0066cc;">
+                               <a href="https://www.facebook.com/AADigitalWorks" aria-label="View review by مصطفى ابرايهم on Facebook" style="color: #0066cc;">
                                    مصطفى ابرايهم
                                </a> 
                                on February 9, 2024
@@ -465,7 +465,7 @@
                            </p>
                            <p class="review-author" style="color: #000; background-color: #e0e0e0;">
                                Posted by 
-                               <a href="https://www.facebook.com/AADigitalWorks/reviews" aria-label="View review by Pat Murphy on Facebook" style="color: #0066cc;">
+                               <a href="https://www.facebook.com/AADigitalWorks" aria-label="View review by Pat Murphy on Facebook" style="color: #0066cc;">
                                    Pat Murphy
                                </a> 
                                on March 3, 2024
@@ -485,7 +485,7 @@
                            </p>
                            <p class="review-author" style="color: #000; background-color: #e0e0e0;">
                                Posted by 
-                               <a href="https://www.facebook.com/AADigitalWorks/reviews" aria-label="View review by Mohammad Mohammad on Facebook" style="color: #0066cc;">
+                               <a href="https://www.facebook.com/AADigitalWorks" aria-label="View review by Mohammad Mohammad on Facebook" style="color: #0066cc;">
                                    Mohammad Mohammad
                                </a> 
                                on August 8, 2024
@@ -505,7 +505,7 @@
                            </p>
                            <p class="review-author" style="color: #000; background-color: #e0e0e0;">
                                Posted by 
-                               <a href="https://www.facebook.com/AADigitalWorks/reviews" aria-label="View review by حميدو حميدو on Facebook" style="color: #0066cc;">
+                               <a href="https://www.facebook.com/AADigitalWorks" aria-label="View review by حميدو حميدو on Facebook" style="color: #0066cc;">
                                    حميدو حميدو
                                </a> 
                                on August 4, 2024
@@ -518,6 +518,7 @@
            <div class="owl-dots" role="group" aria-label="Carousel navigation">
                <!-- Carousel dots will be generated dynamically -->
            </div>
+        </div>
        </div>
    </div>
 </section>
@@ -730,20 +731,25 @@
          <p>&copy; 2024 All Rights Reserved AA DigitalWorks</p>
       </section>
  <!-- Google Tag Manager (gtag.js) -->
-<script src="https://www.googletagmanager.com/gtag/js?id=G-M74XDBHG7P" defer></script>
-<!-- Defer Bootstrap and other non-critical scripts -->
+<script src="https://www.googletagmanager.com/gtag/js?id=G-M74XDBHG7P" async></script>
+
+<!-- jQuery (must be loaded before Owl Carousel and other scripts that depend on it) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+
+<!-- Owl Carousel JS (must be loaded after jQuery) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" defer></script>
+
+<!-- EmailJS Setup -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+<script>emailjs.init('nYEsuR8Y6Oc2OeyAt');</script>
+
+<!-- Bootstrap and other non-critical scripts (if needed) -->
 <script src="js/bootstrap.js" defer></script>
 <script src="js/non-critical.js" defer></script>
 <script src="path/to/non-essential.js" defer></script>
 <script src="path/to/another-script.js" defer></script>
 
-<!-- Async and deferred EmailJS setup -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>emailjs.init('nYEsuR8Y6Oc2OeyAt');</script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/owl.carousel/2.3.4/owl.carousel.min.js" defer></script>
-<!-- Deferred Owl Carousel and main.js scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" defer></script>
+<!-- Main JS (initialization scripts should be here) -->
 <script src="js/main.js" defer></script>
 <script src="js/email.js" defer></script>
 
