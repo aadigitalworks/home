@@ -754,7 +754,7 @@ a:focus {
   margin-top: 15px;
 }
 
-.do_section .do_container .box .detail-box h6 {
+.do_section .do_container .box .detail-box h5 {
   font-size: 1rem; /* Service title size */
   margin: 5px 0; /* Space around title */
 }
