@@ -685,81 +685,89 @@ a:focus {
   opacity: 1;
 }
 
+/* General Styles for the Service Section */
+.do_section {
+  padding: 50px 0; /* Adjust top and bottom padding */
+}
+
 .do_section .heading_container {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   text-align: center;
+  margin-bottom: 30px; /* Space between heading and services */
 }
 
+.do_section .heading_container h2 {
+  font-size: 2rem; /* Adjust heading size */
+  margin-bottom: 10px;
+}
+
+.do_section .heading_container p {
+  font-size: 1rem; /* Adjust paragraph size */
+  color: #666; /* Adjust text color */
+}
+
+/* Flex Container for Services */
 .do_section .do_container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding-top: 10px;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: center; /* Center items horizontally */
+  gap: 15px; /* Space between items */
 }
 
+/* Styles for Each Service Box */
 .do_section .do_container .box {
   text-align: center;
   position: relative;
-  z-index: 5;
-  margin: 35px 25px 0 25px;
+  margin: 10px; /* Space around each box */
+  flex: 1 1 150px; /* Flex-grow, flex-shrink, and flex-basis */
+  max-width: 200px; /* Maximum width for responsiveness */
+  border-radius: 8px; /* Rounded corners for boxes */
+  overflow: hidden; /* Hide overflow content */
+  background-color: #f9f9f9; /* Background color of each box */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Box shadow for subtle depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
 }
 
+.do_section .do_container .box:hover {
+  transform: scale(1.03); /* Slight zoom effect on hover */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* Enhanced box shadow on hover */
+}
+
+/* Image Box Inside Each Service */
 .do_section .do_container .box .img-box {
-  width: 120px;
-  height: 120px;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  width: 80px; /* Adjust width */
+  height: 80px; /* Adjust height */
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   background-color: #353434;
-  border-radius: 100%;
+  border-radius: 50%; /* Circular background for images */
+  margin: 0 auto; /* Center horizontally */
+  margin-top: 15px; /* Space above image */
 }
 
 .do_section .do_container .box .img-box img {
-  width: 45px;
+  width: 40px; /* Adjust image size */
 }
 
+/* Detail Box Inside Each Service */
 .do_section .do_container .box .detail-box {
-  margin-top: 35px;
+  margin-top: 15px;
 }
 
-.do_section .do_container .box:hover .img-box {
-  background-color: #fec016;
+.do_section .do_container .box .detail-box h6 {
+  font-size: 1rem; /* Service title size */
+  margin: 5px 0; /* Space around title */
 }
 
+.do_section .do_container .box .detail-box p {
+  font-size: 0.9rem; /* Description text size */
+  color: #666; /* Description text color */
+  margin: 5px 0; /* Space around description */
+}
+
+/* Remove Arrow Backgrounds */
 .do_section .do_container .arrow_bg::before {
-  content: "";
-  position: absolute;
-  top: -23px;
-  left: -17px;
-  width: 262%;
-  height: 90%;
-  z-index: 3;
-  background-size: cover;
-}
-
-.do_section .do_container .arrow-start::before {
-  background-image: url(../images/arrow-start.png);
-}
-
-.do_section .do_container .arrow-middle::before {
-  background-image: url(../images/arrow-middle.png);
-}
-
-.do_section .do_container .arrow-end::before {
-  background-image: url(../images/arrow-end.png);
+  display: none; /* Hide the background */
 }
 
 .who_section .row {
