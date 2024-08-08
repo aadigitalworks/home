@@ -48,6 +48,52 @@ img{
   margin: 0 15px;
 }
 
+
+/* Ensure good contrast and readability */
+.review-author {
+  color: #000; /* Black text color for high contrast */
+  background-color: #e0e0e0; /* Light gray background to improve readability */
+  padding: 5px; /* Add padding to ensure text is not cramped */
+  border-radius: 3px; /* Optional: rounded corners for aesthetics */
+}
+
+.review-text {
+  color: #333; /* Dark gray text for good contrast */
+}
+
+a {
+  color: #0066cc; /* Link color */
+  text-decoration: none; /* Remove underline from links */
+}
+
+a:focus, a:hover {
+  text-decoration: underline; /* Underline links on hover and focus for accessibility */
+}
+
+/* Additional styles for the carousel and review sections */
+.carousel-wrap {
+  padding: 20px;
+}
+
+.item {
+  margin-bottom: 20px;
+}
+
+.facebook-logo {
+  width: 40px; /* Adjust size as needed */
+  height: auto;
+}
+
+/* Ensure good contrast for carousel dots */
+.owl-dots {
+  margin-top: 10px;
+}
+
+.owl-dot {
+  background-color: #0066cc; /* Dot color */
+}
+
+
 .review {
   background-color: #f9f9f9;
   border: 1px solid #ddd;
