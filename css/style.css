@@ -22,6 +22,88 @@ img{
 .welcome{
   font-size: 25px!important;
 }
+.client_section {
+  padding: 40px 0;
+}
+
+.heading_container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.heading_container h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.carousel-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.owl-carousel .item {
+  margin: 0 15px;
+}
+
+.review {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-align: center;
+  max-width: 350px; /* Adjust as needed */
+  margin: 0 auto; /* Center align */
+  position: relative;
+}
+
+.facebook-logo-wrapper {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff; /* Ensure there's a background if image is transparent */
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.facebook-logo {
+  width: 80%;
+  height: auto;
+}
+
+.review-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+
+.review-text {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.review-author {
+  font-size: 14px;
+  color: #666;
+}
+
+.review-author a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.review-author a:hover {
+  text-decoration: underline;
+}
+
 
 /* General styling */
 .carousel-wrap {
@@ -55,7 +137,102 @@ img{
   align-items: center;
   
 }
+/* Styling for WhatsApp icon */
+.info_contact p {
+  margin: 0; /* Remove default margin for better alignment */
+}
 
+.location-info {
+  position: relative;
+  display: block !important;
+  color: white; /* White text color for contrast */
+}
+
+/* Dropdown button style */
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 0.5rem;
+  border-radius: 5px; /* Added border radius for better appearance */
+}
+
+.country-icon {
+  width: 20px;
+  margin-right: 10px;
+}
+
+/* Dropdown content style */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #000;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 100%;
+  max-height: 150px; /* Adjusted height for better scrolling */
+  overflow-y: auto; /* Enables vertical scrolling */
+  box-sizing: border-box; /* Ensures padding and border are included in the width */
+}
+
+.dropdown-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-content li {
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  white-space: nowrap; /* Prevents text wrapping */
+}
+
+.dropdown-content li:hover {
+  background: #555;
+}
+
+.dropdown-icon {
+  width: 16px;
+  margin-right: 8px;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block !important;
+}
+
+/* Adjust styles for smaller screens */
+@media (max-width: 768px) {
+  /* Hide dropdown by default for small screens */
+  .dropdown-content {
+    display: none;
+    position: static;
+    box-shadow: none;
+    width: auto; /* Adjust width on smaller screens */
+    max-height: none; /* Remove max-height for smaller screens */
+    overflow-y: auto;
+  }
+
+  /* Show dropdown when active on small screens */
+  .dropdown.active .dropdown-content {
+    display: block;
+  }
+}
 /* Mobile responsiveness */
 @media (max-width: 575.98px) {
   .carousel-wrap {
@@ -205,9 +382,9 @@ body {
   object-fit:cover;
 }
 
-/*End 3D our job img*/
+/*End 3D our job img
 
-/*For scrolling
+For scrolling
 .scrolling-text {
  
   transform: translateX(0%) translateY(50%);
@@ -222,7 +399,7 @@ body {
   transform: translateX(-50%);
   opacity: 0;
   transition: opacity 0.2s ease, transform 0.5s ease;
-  margin-bottom: 20px; /* Adjust as needed */
+  margin-bottom: 20px; /* Adjust as needed 
 }
 */
 /*End scrolling*/
@@ -335,7 +512,7 @@ body {
 /* Apply the high-resolution image for larger screens */
 @media only screen and (min-width: 768px) {
   .hero_area {
-    background-image: url('images/background.webp');
+    background-image: url('/images/background.webp');
   }
 }
 .sub_page .hero_area {
