@@ -81,7 +81,6 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-  // Initialize the carousel
   var owl = $('.owl-carousel').owlCarousel({
       items: 1,
       loop: true,
@@ -98,25 +97,21 @@ $(document).ready(function() {
       }
   });
 
-  // Set aria-labels for dots
-  owl.on('initialized.owl.carousel changed.owl.carousel', function(event) {
-      var dots = $('.owl-dot');
-      dots.each(function(index) {
-          $(this).attr('aria-label', 'Slide ' + (index + 1));
-      });
-  });
-
   // Custom navigation handlers
-  $('.owl-prev').attr('aria-label', 'Previous Slide').attr('role', 'button');
-  $('.owl-next').attr('aria-label', 'Next Slide').attr('role', 'button');
-
-  // Custom navigation functionality
   $('.owl-prev').click(function() {
       owl.trigger('prev.owl.carousel');
   });
 
   $('.owl-next').click(function() {
       owl.trigger('next.owl.carousel');
+  });
+
+  // Set aria-labels for dots
+  owl.on('initialized.owl.carousel changed.owl.carousel', function(event) {
+      var dots = $('.owl-dot');
+      dots.each(function(index) {
+          $(this).attr('aria-label', 'Slide ' + (index + 1));
+      });
   });
 });
 
