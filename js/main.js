@@ -81,6 +81,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
+  // Initialize the carousel
   var owl = $('.owl-carousel').owlCarousel({
       items: 1,
       loop: true,
@@ -97,15 +98,6 @@ $(document).ready(function() {
       }
   });
 
-  // Custom navigation handlers
-  $('.owl-prev').click(function() {
-      owl.trigger('prev.owl.carousel');
-  });
-
-  $('.owl-next').click(function() {
-      owl.trigger('next.owl.carousel');
-  });
-
   // Set aria-labels for dots
   owl.on('initialized.owl.carousel changed.owl.carousel', function(event) {
       var dots = $('.owl-dot');
@@ -113,32 +105,19 @@ $(document).ready(function() {
           $(this).attr('aria-label', 'Slide ' + (index + 1));
       });
   });
-});
 
+  // Custom navigation handlers
+  $('.owl-prev').attr('aria-label', 'Previous Slide').attr('role', 'button');
+  $('.owl-next').attr('aria-label', 'Next Slide').attr('role', 'button');
 
-function loadFacebookSDK() {
-  var script = document.createElement('script');
-  script.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0';
-  script.async = true;
-  script.onload = function() {
-    document.getElementById('fb-placeholder').style.display = 'none';
-    if (typeof FB !== 'undefined') {
-      FB.XFBML.parse();
-    }
-  };
-  document.body.appendChild(script);
-}
+  // Custom navigation functionality
+  $('.owl-prev').click(function() {
+      owl.trigger('prev.owl.carousel');
+  });
 
-document.addEventListener('DOMContentLoaded', function() {
-  // Use Intersection Observer to lazy load
-  var observer = new IntersectionObserver(function(entries) {
-    if (entries[0].isIntersecting === true) {
-      loadFacebookSDK();
-      observer.disconnect();
-    }
-  }, { threshold: [0] });
-
-  observer.observe(document.getElementById('fb-placeholder'));
+  $('.owl-next').click(function() {
+      owl.trigger('next.owl.carousel');
+  });
 });
 
 // background img
