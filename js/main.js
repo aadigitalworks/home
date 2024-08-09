@@ -85,17 +85,17 @@ $(document).ready(function(){
       items: 1,
       loop: true,
       margin: 10,
-      autoplay: true, // Enable autoplay
-      autoplayTimeout: 10000, // Set autoplay timeout in milliseconds (adjust as needed)
-      autoplayHoverPause: true, // Pause autoplay on hover
-      nav: true, // Show navigation buttons
+      autoplay: true,
+      autoplayTimeout: 10000,
+      autoplayHoverPause: true,
+      nav: true, // Enable navigation
       navText: [
           '<button type="button" class="owl-prev" aria-label="Previous slide">&lt;</button>',
           '<button type="button" class="owl-next" aria-label="Next slide">&gt;</button>'
       ],
       responsive: {
           1000: {
-              items: 1 // Adjust the number of items displayed for larger screens if needed
+              items: 1
           }
       }
   });

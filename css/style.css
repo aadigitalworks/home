@@ -921,34 +921,41 @@ a:focus {
 
 
 /*for button review*/
-
+/* General positioning for owl-nav */
 .owl-nav {
   position: absolute;
   width: 100%;
   bottom: -60px; /* Adjust this value to position buttons below the carousel */
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   z-index: 10;
 }
+
+/* Styling for owl-prev and owl-next buttons */
 .owl-prev, .owl-next {
   width: 50px;
   height: 50px;
-  background-color: #000 !important;;
-  color: #fff !important;;
+  background-color: #000 !important; /* Background color for the buttons */
+  color: #fff !important; /* Text color */
   border: none;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 24px;
+  font-size: 24px; /* Adjust size as needed */
   z-index: 10;
+  outline: none;
 }
+
+/* Positioning for owl-prev button */
 .owl-prev {
-  left: 10px;
+  left: 10px; /* Adjust this value based on positioning */
 }
+
+/* Positioning for owl-next button */
 .owl-next {
-  right: 10px;
+  right: 10px; /* Adjust this value based on positioning */
 }
 
 /*end button review*/
