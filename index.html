@@ -38,6 +38,7 @@
       <link rel="preload" href="images/background-mobile.webp" as="image" media="(max-width: 600px)">
       <link rel="stylesheet" href="css/non-critical.css" media="print" onload="this.onload=null;this.removeAttribute('media');">
       <link rel="preconnect" href="https://your-cdn.com">
+      <link rel="preload" href="styles/non-critical.css" as="style">
       <script>
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -46,7 +47,7 @@
     })(window, document, "clarity", "script", "ng6tsk5m93");
 </script>
 <!-- Structured Data Script -->
-<script type="application/ld+json">
+<script type="application/ld+json" defer>
    {
      "@context": "https://schema.org",
      "@type": "Organization",
@@ -256,7 +257,10 @@
             <div class="row">
                <div class="col-md-5">
                   <div class="img-box">
-                     <img src="images/who-img.jpg" alt="About Us" loading="lazy">
+                    <img src="images/who-img.jpg" 
+                    sizes="(max-width: 600px) 400px, 800px" 
+                    alt="About Us" 
+                    loading="lazy">
                   </div>
                </div>
                <div class="col-md-7" id="aboutus">
