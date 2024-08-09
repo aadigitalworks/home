@@ -80,26 +80,42 @@ $(document).ready(function() {
   // ... (rest of your code)
 });
 
-$(document).ready(function(){
-  $('.owl-carousel').owlCarousel({
+$(document).ready(function() {
+  var owl = $('.owl-carousel').owlCarousel({
       items: 1,
       loop: true,
       margin: 10,
       autoplay: true,
       autoplayTimeout: 10000,
       autoplayHoverPause: true,
-      nav: true, // Enable navigation
-      navText: [
-          '<button type="button" class="owl-prev" aria-label="Previous slide">&lt;</button>',
-          '<button type="button" class="owl-next" aria-label="Next slide">&gt;</button>'
-      ],
+      nav: false, // Disable default navigation buttons
+      dots: true, // Enable dots
       responsive: {
           1000: {
               items: 1
           }
       }
   });
+
+  // Custom navigation handlers
+  $('.owl-prev').click(function() {
+      owl.trigger('prev.owl.carousel');
+  });
+
+  $('.owl-next').click(function() {
+      owl.trigger('next.owl.carousel');
+  });
+
+  // Set aria-labels for dots
+  owl.on('initialized.owl.carousel changed.owl.carousel', function(event) {
+      var dots = $('.owl-dot');
+      dots.each(function(index) {
+          $(this).attr('aria-label', 'Slide ' + (index + 1));
+      });
+  });
 });
+
+
 function loadFacebookSDK() {
   var script = document.createElement('script');
   script.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0';
@@ -201,22 +217,5 @@ document.addEventListener('click', function() {
         margin: 10,
         nav: true,
         items: 1
-    });
-
-    // Function to update aria-labels for carousel dots
-    function updateCarouselDots() {
-        $('.owl-dot').each(function(index) {
-            $(this).attr('aria-label', 'Go to slide ' + (index + 1));
-        });
-    }
-
-    // Update aria-labels after carousel initialization
-    $('.owl-carousel').on('initialized.owl.carousel', function(event) {
-        updateCarouselDots();
-    });
-
-    // Update aria-labels when carousel items are changed
-    $('.owl-carousel').on('changed.owl.carousel', function(event) {
-        updateCarouselDots();
     });
 });

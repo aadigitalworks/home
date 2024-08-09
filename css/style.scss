@@ -463,56 +463,12 @@ a:focus {
     position: relative;
   }
 
-
-  .owl-nav>div {
-    margin-top: -26px;
-    position: absolute;
-    top: 50%;
-    color: #cdcbcd;
-  }
-
-  .owl-carousel .owl-nav .owl-prev,
-  .owl-carousel .owl-nav .owl-next {
-    width: 50px;
-    height: 50px;
-    background-color: $black;
-    background-size: 16px;
-    background-position: center;
-    border-radius: 100%;
-    background-repeat: no-repeat;
-    position: absolute;
-    bottom: -75px;
-    outline: none;
-
     &:hover {
       background-color: rgba($color: #000000, $alpha: .8);
     }
   }
 
-  .owl-carousel .owl-nav .owl-prev {
-    background-image: url(../images/prev.png);
-    left: 50%;
-    transform: translateX(-102%);
-  }
 
-  .owl-carousel .owl-nav .owl-next {
-    right: 50%;
-    background-image: url(../images/next.png);
-    transform: translateX(102%);
-  }
-
-  .owl-carousel .owl-dots.disabled,
-  .owl-carousel .owl-nav.disabled {
-    display: block;
-  }
-
-  .owl-item.active.center {
-    .box {
-      box-shadow: 0 0 20px 0 rgba($color: #000000, $alpha: .2);
-    }
-
-  }
-}
 
 // end client section
 
