@@ -1,6 +1,6 @@
 $(document).ready(function() {
   // Array of roles
-  var roles = ["Designer", "Developer", "Google Ads", "Search Engine Optimization",  "Social Media Ads", "Digital Ads","Web Apps","Websites", "QR-Menus" , "Digital Menus"];
+  var roles = ["Design", "Development", "Google Ads", "Search Engine Optimization",  "Social Media Ads", "Digital Ads","Web Apps","Websites", "QR-Menus" , "Digital Menus"];
   var currentRoleIndex = 0;
 
   // Function to simulate typing effect
