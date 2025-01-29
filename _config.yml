@@ -1,0 +1,11 @@
+title: "AA DigitalWorks"
+description: ""
+baseurl: ""  # Adjust according to your repo name
+url: "https://www.aadigitalworks.com"
+
+---
+layout: default
+title: "Page Not Found"
+permalink: /404.html
+---
+
