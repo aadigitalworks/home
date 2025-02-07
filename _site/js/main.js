@@ -31,16 +31,17 @@ $(document).ready(function() {
 
   // About us more text
   $("#readMoreLink").click(function(event) {
-      event.preventDefault(); // Prevent the default behavior of the link
+    event.preventDefault(); 
 
-      // Toggle between showing and hiding the full text
-      $("#fullText").toggle();
-      $("#introText").toggle();
+    var scrollPosition = $(window).scrollTop();
 
-      // Change the text of the "Read More" link based on its current state
-      var linkText = ($("#fullText").is(":visible")) ? "Read Less" : "Read More";
-      $("#readMoreLink").text(linkText);
-  });
+    $("#fullText").toggle(); // Use toggle() to show/hide text
+
+    var linkText = ($("#fullText").is(":visible")) ? "Read Less" : "Read More";
+    $("#readMoreLink").text(linkText);
+
+    $(window).scrollTop(scrollPosition);
+});
 
   // Intersection observer for scrolling animations
   const elements = document.querySelectorAll(".scrolling-text, .scrolling-text2");

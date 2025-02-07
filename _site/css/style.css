@@ -9,6 +9,14 @@ body {
 }
 
 
+#fullText {
+  display: none; /* Initially hidden */
+}
+
+#fullText.show-text {
+  display: block; /* Show when class is added */
+}
+
 /*font update*/
 
 @font-face {
