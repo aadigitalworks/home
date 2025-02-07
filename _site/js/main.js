@@ -31,16 +31,27 @@ $(document).ready(function() {
 
   // About us more text
   $("#readMoreLink").click(function(event) {
-    event.preventDefault(); 
+    event.preventDefault(); // Prevent the default link behavior
 
-    var scrollPosition = $(window).scrollTop();
+    var $fullText = $("#fullText");
+    var $introText = $("#introText");
+    var scrollPosition = $(window).scrollTop(); // Store current scroll position
 
-    $("#fullText").toggle(); // Use toggle() to show/hide text
-
-    var linkText = ($("#fullText").is(":visible")) ? "Read Less" : "Read More";
-    $("#readMoreLink").text(linkText);
-
-    $(window).scrollTop(scrollPosition);
+    if ($fullText.is(":visible")) {
+        // If the text is already visible, smoothly collapse it
+        $fullText.slideUp(300, function() {
+            $(window).scrollTop(scrollPosition); // Restore scroll position
+        });
+        $("#readMoreLink").text("Read More");
+        $introText.show();
+    } else {
+        // If the text is hidden, smoothly expand it
+        $introText.hide();
+        $fullText.slideDown(300, function() {
+            $(window).scrollTop(scrollPosition); // Keep the user's position
+        });
+        $("#readMoreLink").text("Read Less");
+    }
 });
 
   // Intersection observer for scrolling animations
