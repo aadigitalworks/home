@@ -1,19 +1,40 @@
-name: Limit Posts
+name: Cleanup Old Posts
+
+# Make sure Actions have write permissions
+permissions:
+  contents: write
 
 on:
   push:
-    paths:
-      - '_posts/**'
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * *' # optional: runs daily at midnight UTC
 
 jobs:
   cleanup:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - run: |
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Delete old posts (keep 500 latest)
+        run: |
           ls -1t _posts/*.md | tail -n +501 | xargs -I {} rm {}
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git add _posts
-          git commit -m "Cleanup old posts beyond 500" || echo "No old posts"
-          git push
+
+      - name: Commit changes
+        run: |
+          git add _posts/
+          git commit -m "Delete old posts" || echo "No changes to commit"
+
+      - name: Push changes
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git push https://x-access-token:${TOKEN}@github.com/${{ github.repository }}.git
