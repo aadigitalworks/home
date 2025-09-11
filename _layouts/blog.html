@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{{ page.title }} | AA DigitalWorks</title>
+  <link rel="icon" type="image/svg+xml" href="/images/logo-bimi.svg" />
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Expert SEO, Google Ads, and website development services in the UAE and Saudi Arabia.">
+  <meta name="keywords" content="SEO services, Google Ads management, website development, digital marketing UAE, digital marketing Saudi Arabia, online advertising, search engine optimization, web design UAE, web design Saudi Arabia">
+  <meta name="author" content="AA DigitalWorks">
+  <meta property="og:site_name" content="AA DigitalWorks - SEO Agency">
+  <meta property="og:title" content="{{ page.title }} | AA DigitalWorks">
+  <meta property="og:description" content="Delivering cutting-edge digital solutions including Google Ads, SEO, and websites in UAE and KSA.">
+  <meta property="og:image" content="/images/logo-bimi.svg">
+  <meta property="og:url" content="https://www.aadigitalworks.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page.title }} | AA DigitalWorks">
+  <meta name="twitter:description" content="Delivering cutting-edge digital solutions including Google Ads, SEO, and websites in UAE and KSA.">
+  <meta name="twitter:image" content="/images/logo-bimi.svg">
+  <link rel="canonical" href="https://www.aadigitalworks.com{{ page.url }}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1877f2;
+      --primary-dark: #155bb5;
+      --secondary: #ff6b35;
+      --dark: #333;
+      --light: #f8f9fa;
+      --gray: #6c757d;
+      --border: #dee2e6;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      background-color: #f9fafb;
+    }
+    
+    /* Header & Navigation */
+    .site-header {
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .navbar-brand {
+      font-weight: 700;
+      color: var(--primary) !important;
+      font-size: 1.5rem;
+    }
+    
+    .nav-link {
+      font-weight: 500;
+      position: relative;
+    }
+    
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s;
+    }
+    
+    .nav-link:hover:after {
+      width: 100%;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="{{ '/' | relative_url }}">
+          <i class="fas fa-digital-tachograph me-2"></i>AA DigitalWorks
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="{{ '/' | relative_url }}">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ '/services/' | relative_url }}">Services</a></li>
+            <li class="nav-item active"><a class="nav-link" href="{{ '/blog/' | relative_url }}">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ '/about/' | relative_url }}">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ '/contact/' | relative_url }}">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="blog-hero">
+    <div class="container">
+      <h1>AA DigitalWorks Blog</h1>
+      <p>Insights, tips and latest trends in digital marketing, SEO, and web development</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="blog-container">
+      {% for post in site.posts %}
+        <article class="post-card">
+          {% if post.image %}
+            <div class="post-image">
+              <img src="{{ post.image }}" alt="{{ post.title }}">
+            </div>
+          {% endif %}
+          
+          <div class="post-content">
+            <div class="post-meta">
+              <span class="post-date"><i class="far fa-calendar me-1"></i> {{ post.date | date: "%B %d, %Y" }}</span>
+              <span class="post-category"><i class="far fa-folder me-1"></i> {{ post.category | default: "Digital Marketing" }}</span>
+            </div>
+            
+            <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            
+            <p class="post-description">{{ post.description }}</p>
+            
+            <a href="{{ post.url }}" class="read-more">Read more</a>
+          </div>
+          
+          <div class="post-comments">
+            <h3><i class="far fa-comments me-2"></i>Leave a comment</h3>
+            <form class="comment-form" method="POST" action="https://STATICMAN_URL/v3/entry/github/YOURUSERNAME/YOURREPO/main/comments">
+              <div class="form-group">
+                <input type="text" class="form-control" name="fields[name]" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" name="fields[email]" placeholder="Your Email" required>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="fields[comment]" rows="4" placeholder="Your Comment" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit Comment</button>
+            </form>
+            
+            <!-- Example comment (would be dynamically generated) -->
+            <div class="comments-list">
+              <div class="comment">
+                <div class="comment-header">
+                  <span class="comment-author">John Smith</span>
+                  <span class="comment-date">March 15, 2023</span>
+                </div>
+                <div class="comment-body">
+                  Great article! These tips helped me improve my website's SEO significantly.
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+      
+      <!-- Newsletter Subscription -->
+      <section class="newsletter-section">
+        <h3>Stay Updated with Digital Trends</h3>
+        <p>Subscribe to our newsletter and receive the latest insights on SEO, digital marketing, and web development.</p>
+        <form class="newsletter-form">
+          <input type="email" class="form-control" placeholder="Your email address" required>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </section>
+      
+      <!-- Pagination -->
+      <nav aria-label="Blog pagination">
+        <ul class="pagination">
+          <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+      </nav>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 AA DigitalWorks. All rights reserved.</p>
+      <div class="social-links mt-2">
+        <a href="#" class="text-light mx-2"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-light mx-2"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-light mx-2"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="text-light mx-2"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

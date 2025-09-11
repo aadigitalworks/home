@@ -1,0 +1,22 @@
+backend:
+  name: github
+  repo: https://github.com/aadigitalworks/home/tree/main    # Replace with your GitHub repo
+  branch: main                   # Branch to publish content
+  commit_messages: true
+
+media_folder: "assets/images/uploads"   # Where uploaded images go
+public_folder: "/assets/images/uploads"
+
+collections:
+  - name: "posts"
+    label: "Blog Posts"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Redirect From", name: "redirect_from", widget: "list"}

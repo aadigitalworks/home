@@ -1,11 +1,15 @@
+# Site settings
 title: "AA DigitalWorks"
-description: ""
-baseurl: ""  # Adjust according to your repo name
+description: "Digital marketing, SEO, and web solutions"
+baseurl: ""   # Leave empty unless hosted in a subfolder
 url: "https://www.aadigitalworks.com"
 
----
-layout: default
-title: "Page Not Found"
-permalink: /404.html
----
+# Permalinks
+permalink: /blog/:title/
+redirect_from: /404.html
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
 

@@ -1,0 +1,19 @@
+name: Limit Posts
+
+on:
+  push:
+    paths:
+      - '_posts/**'
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          ls -1t _posts/*.md | tail -n +501 | xargs -I {} rm {}
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add _posts
+          git commit -m "Cleanup old posts beyond 500" || echo "No old posts"
+          git push
