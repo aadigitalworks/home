@@ -1,0 +1,207 @@
+$(document).ready(function() {
+  // Array of roles
+  var roles = ["Design", "Development", "Google Ads", "Search Engine Optimization",  "Social Media Ads", "Digital Ads","Web Apps","Websites", "QR-Menus" , "Digital Menus"];
+  var currentRoleIndex = 0;
+
+  // Function to simulate typing effect
+  function typeText(index, text, callback) {
+      if (index < text.length) {
+          $("#changingText").text(text.substring(0, index + 1));
+          setTimeout(function() {
+              typeText(index + 1, text, callback);
+          }, 100); // Adjust the typing speed (milliseconds)
+      } else {
+          setTimeout(callback, 1000); // Wait for 1 second after typing
+      }
+  }
+
+  // Function to change the text
+  function changeText() {
+      var currentRole = roles[currentRoleIndex];
+      typeText(0, currentRole, function() {
+          // Move to the next role in the array
+          currentRoleIndex = (currentRoleIndex + 1) % roles.length;
+          // Trigger the next role after a delay (e.g., 1 second)
+          setTimeout(changeText, 1000);
+      });
+  }
+
+  // Start the typing animation
+  changeText();
+
+  // About us more text
+  $("#readMoreLink").click(function(event) {
+    event.preventDefault(); // Prevent the default link behavior
+
+    var $fullText = $("#fullText");
+    var $introText = $("#introText");
+    var scrollPosition = $(window).scrollTop(); // Store current scroll position
+
+    if ($fullText.is(":visible")) {
+        // If the text is already visible, smoothly collapse it
+        $fullText.slideUp(300, function() {
+            $(window).scrollTop(scrollPosition); // Restore scroll position
+        });
+        $("#readMoreLink").text("Read More");
+        $introText.show();
+    } else {
+        // If the text is hidden, smoothly expand it
+        $introText.hide();
+        $fullText.slideDown(300, function() {
+            $(window).scrollTop(scrollPosition); // Keep the user's position
+        });
+        $("#readMoreLink").text("Read Less");
+    }
+});
+
+  // Intersection observer for scrolling animations
+  const elements = document.querySelectorAll(".scrolling-text, .scrolling-text2");
+
+  const callbackFunction = function(entries) {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.style.opacity = 1;
+              entry.target.style.transform = "translateX(0%) translateY(0%)";
+          }
+      });
+  };
+
+  const observerOptions = {
+      threshold: 0.3
+  };
+
+  const observer = new IntersectionObserver(callbackFunction, observerOptions);
+
+  elements.forEach(element => {
+      observer.observe(element);
+  });
+
+
+  // About us more text
+  $("#readMoreLink").click(function (event) {
+      event.preventDefault(); // Prevent the default behavior of the link
+
+      // Toggle the visibility of the #fullText with a smooth CSS animation
+      $("#fullText").toggleClass("show-text");
+
+      // Toggle the text of the "Read More" link based on its current state
+      var linkText = ($("#fullText").hasClass("show-text")) ? "Read Less" : "Read More";
+      $("#readMoreLink").text(linkText);
+  });
+
+  // ... (rest of your code)
+});
+
+$(document).ready(function() {
+  var owl = $('.owl-carousel').owlCarousel({
+      items: 1,
+      loop: true,
+      margin: 10,
+      autoplay: true,
+      autoplayTimeout: 10000,
+      autoplayHoverPause: true,
+      nav: false, // Disable default navigation buttons
+      dots: true, // Enable dots
+      responsive: {
+          1000: {
+              items: 1
+          }
+      }
+  });
+
+  // Custom navigation handlers
+  $('.owl-prev').click(function() {
+      owl.trigger('prev.owl.carousel');
+  });
+
+  $('.owl-next').click(function() {
+      owl.trigger('next.owl.carousel');
+  });
+
+  // Set aria-labels for dots
+  owl.on('initialized.owl.carousel changed.owl.carousel', function(event) {
+      var dots = $('.owl-dot');
+      dots.each(function(index) {
+          $(this).attr('aria-label', 'Slide ' + (index + 1));
+      });
+  });
+});
+
+// background img
+document.addEventListener("DOMContentLoaded", function() {
+  var heroArea = document.getElementById('hero-area');
+  var img = new Image();
+  img.src = 'images/background.webp';
+  img.onload = function() {
+    heroArea.style.backgroundImage = 'url(images/background.webp)';
+  };
+});
+
+// for css
+document.addEventListener("DOMContentLoaded", function() {
+  var link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'css/non-critical.css';
+  document.head.appendChild(link);
+});
+
+// Toggle dropdown on click for small screens
+document.addEventListener('DOMContentLoaded', function() {
+var dropdowns = document.querySelectorAll('.dropdown');
+
+dropdowns.forEach(function(dropdown) {
+  dropdown.addEventListener('click', function(event) {
+    event.stopPropagation(); // Prevent click from bubbling up
+
+    // Close all other dropdowns
+    dropdowns.forEach(function(otherDropdown) {
+      if (otherDropdown !== dropdown) {
+        otherDropdown.classList.remove('active');
+      }
+    });
+
+    // Toggle the current dropdown
+    dropdown.classList.toggle('active');
+  });
+});
+
+// Close dropdowns if clicking outside
+document.addEventListener('click', function() {
+  dropdowns.forEach(function(dropdown) {
+    dropdown.classList.remove('active');
+  });
+});
+});
+
+// Tawk.to Script - Load after page load with a delay
+  function loadTawkToScript() {
+      var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/66983cf8becc2fed6926deeb/1i31asb44';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+  }
+
+  // Load the Tawk.to script 20 seconds after the page has loaded
+  window.addEventListener('load', function() {
+      setTimeout(loadTawkToScript, 20000); // 20,000 milliseconds = 20 seconds
+  });
+
+// Google Tag Manager (gtag.js) 
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-M74XDBHG7P');
+
+  $(document).ready(function(){
+    // Initialize the carousel
+    $('.owl-carousel').owlCarousel({
+        // Your Owl Carousel settings
+        loop: true,
+        margin: 10,
+        nav: true,
+        items: 1
+    });
+});

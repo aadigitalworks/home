@@ -1,0 +1,17 @@
+<h1>Oops! Page Not Found</h1>
+<p>Redirecting you if it was a deleted blog post...</p>
+
+<script>
+  // Get current path
+  const path = window.location.pathname;
+
+  // Check if path starts with /blog/
+  if (path.startsWith("/blog/")) {
+    // Redirect to main blog page after 1 second
+    setTimeout(() => {
+      window.location.href = "/blog/";
+    }, );
+  }
+</script>
+
+<p>If you are not redirected, <a href="/blog/">click here to go to the blog</a>.</p>
