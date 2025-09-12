@@ -13,15 +13,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7.6
+          ruby-version: 3.2
 
       - name: Install Bundler
-        run: gem install bundler -v 2.4.27
+        run: gem install bundler -v 2.7.2
 
       - name: Install dependencies
         run: bundle install
