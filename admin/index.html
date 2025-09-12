@@ -1,15 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>AA DigitalWorks CMS</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <body>
-    <!-- Root container for Netlify CMS -->
-    <div id="nc-root"></div>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+</head>
+<body>
+  <h1>Blog Admin</h1>
+  <form id="postForm">
+    <label>Title: <input type="text" name="title" required></label><br>
+    <label>Description: <textarea name="description" required></textarea></label><br>
+    <label>Tags (comma separated): <input type="text" name="tags"></label><br>
+    <label>Body (Markdown): <textarea name="body" required></textarea></label><br>
+    <button type="submit">Submit Post</button>
+  </form>
 
-    <!-- Netlify CMS script -->
-    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-  </body>
+  <script>
+    const form = document.getElementById('postForm');
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+
+      const data = {
+        title: form.title.value,
+        description: form.description.value,
+        tags: form.tags.value.split(',').map(t => t.trim()),
+        body: form.body.value
+      };
+
+      // Send post to GitHub API (we’ll handle this via a serverless function or GitHub Actions)
+      const response = await fetch('/.netlify/functions/create-post', {
+        method: 'POST',
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) alert('Post submitted successfully!');
+      else alert('Error submitting post');
+    });
+  </script>
+</body>
 </html>
