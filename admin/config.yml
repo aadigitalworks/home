@@ -1,12 +1,10 @@
 backend:
   name: github
-  repo: aadigitalworks/home   # your repo username/repo
+  repo: aadigitalworks/home   # your repo
   branch: main
 
 media_folder: "assets/images/uploads"
 public_folder: "/assets/images/uploads"
-
-publish_mode: editorial_workflow  # optional: allows draft & review workflow
 
 collections:
   - name: "posts"
@@ -17,7 +15,8 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "text"}
-      - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Image", name: "image", widget: "image"}
       - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Redirect From", name: "redirect_from", widget: "list"}
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
