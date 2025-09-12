@@ -1,0 +1,32 @@
+name: New Blog Post
+on:
+  repository_dispatch:
+    types: [new-post]
+
+jobs:
+  create-post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Create new post file
+        run: |
+          FILE_NAME="_posts/$(date +'%Y-%m-%d')-${{ github.event.client_payload.slug }}.md"
+          echo "---" > $FILE_NAME
+          echo "title: \"${{ github.event.client_payload.title }}\"" >> $FILE_NAME
+          echo "description: \"${{ github.event.client_payload.description }}\"" >> $FILE_NAME
+          echo "image: \"${{ github.event.client_payload.image }}\"" >> $FILE_NAME
+          echo "tags: [${{ github.event.client_payload.tags }}]" >> $FILE_NAME
+          echo "layout: post" >> $FILE_NAME
+          echo "---" >> $FILE_NAME
+          echo "" >> $FILE_NAME
+          echo "${{ github.event.client_payload.body }}" >> $FILE_NAME
+
+      - name: Commit & Push
+        run: |
+          git config --local user.name "github-actions"
+          git config --local user.email "actions@github.com"
+          git add _posts/
+          git commit -m "New post: ${{ github.event.client_payload.title }}"
+          git push
