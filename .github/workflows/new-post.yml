@@ -1,4 +1,4 @@
-name: New Post Dispatch
+name: Create Post
 
 on:
   repository_dispatch:
@@ -8,14 +8,20 @@ jobs:
   create-post:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Create Markdown post
+      - name: Create _posts folder
+        run: mkdir -p _posts
+
+      - name: Create post file
         run: |
-          mkdir -p _posts
-          FILENAME="_posts/$(date +'%Y-%m-%d')-${GITHUB_EVENT_CLIENT_PAYLOAD_SLUG}.md"
-          echo "$GITHUB_EVENT_CLIENT_PAYLOAD_BODY" > "$FILENAME"
-        env:
-          GITHUB_EVENT_CLIENT_PAYLOAD_BODY: ${{ github.event.client_payload.body }}
-          GITHUB_EVENT_CLIENT_PAYLOAD_SLUG: ${{ github.event.client_payload.slug }}
+          echo "${{ github.event.client_payload.body }}" > _posts/${{ github.event.client_payload.date }}-${{ github.event.client_payload.slug }}.md
+        shell: bash
+
+      - name: Commit & push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add _posts/*
+          git commit -m "New post: ${{ github.event.client_payload.title }}" || echo "No changes to commit"
+          git push
