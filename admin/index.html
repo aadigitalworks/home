@@ -1,15 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>AA DigitalWorks CMS</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <body>
-    <!-- Root container for Netlify CMS -->
-    <div id="nc-root"></div>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AA DigitalWorks Blog Admin</title>
+<style>
+body { font-family: Arial,sans-serif; background:#f4f4f4; margin:0; padding:20px;}
+.container {max-width:900px;margin:auto;background:white;padding:20px;border-radius:10px;}
+h1,h2{text-align:center;}
+input,textarea{width:100%;padding:10px;margin:10px 0;border-radius:5px;border:1px solid #ccc;}
+button{padding:10px 20px;border:none;border-radius:5px;cursor:pointer;background:#1a6bb3;color:white;}
+#status{margin:10px 0;font-weight:bold;text-align:center;}
+.image-preview{width:100%;height:200px;border:2px dashed #ccc;display:flex;align-items:center;justify-content:center;margin-bottom:10px;}
+.image-preview img{max-width:100%;max-height:100%;}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>AA DigitalWorks Blog Admin</h1>
 
-    <!-- Netlify CMS script -->
-    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-  </body>
+<!-- LOGIN -->
+<div id="login-section">
+<h2>Admin Login</h2>
+<input type="text" id="adminUser" placeholder="Username">
+<input type="password" id="adminPass" placeholder="Password">
+<button id="loginBtn">Login</button>
+</div>
+
+<!-- POST CREATION -->
+<div id="post-section" style="display:none;">
+<h2>Create New Post</h2>
+<input type="text" id="title" placeholder="Post Title">
+<input type="text" id="slug" placeholder="URL Slug">
+<textarea id="description" placeholder="Short Description"></textarea>
+<input type="text" id="tags" placeholder="Tags (comma separated)">
+<div class="image-preview" id="imagePreview">Image preview here</div>
+<input type="file" id="imageUpload">
+<input type="text" id="imagePath" placeholder="Image path">
+<textarea id="body" placeholder="Post Content in Markdown"></textarea>
+<button id="publishBtn">Publish Post</button>
+</div>
+
+<div id="status">Please log in.</div>
+</div>
+
+<script>
+const workerUrl = 'https://aadigitalworks-blog-worker.aadigitalworkss.workers.dev'; // <-- Your Worker URL
+
+let loginInfo = null;
+
+// LOGIN
+document.getElementById('loginBtn').addEventListener('click', async()=>{
+  const username = document.getElementById('adminUser').value;
+  const password = document.getElementById('adminPass').value;
+  document.getElementById('status').textContent='Logging in...';
+
+  try{
+    const res = await fetch(workerUrl,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({action:'login', username, password})
+    });
+
+    let data;
+    try { data = await res.json(); }
+    catch(e){ const text = await res.text(); document.getElementById('status').textContent='❌ Worker returned invalid JSON:\n'+text; return; }
+
+    if(data.success){
+      document.getElementById('login-section').style.display='none';
+      document.getElementById('post-section').style.display='block';
+      document.getElementById('status').textContent='✅ Logged in successfully!';
+      loginInfo={username,password};
+    } else {
+      document.getElementById('status').textContent='❌ ' + (data.message || 'Login failed');
+    }
+
+  } catch(err){
+    document.getElementById('status').textContent='❌ Network/Worker error: '+err.message;
+  }
+});
+
+// IMAGE PREVIEW
+const imageUpload=document.getElementById('imageUpload');
+const imagePreview=document.getElementById('imagePreview');
+const imagePath=document.getElementById('imagePath');
+
+imageUpload.addEventListener('change',()=>{
+  const file=imageUpload.files[0];
+  if(file){
+    const reader=new FileReader();
+    reader.onload=e=>{
+      imagePreview.innerHTML=`<img src="${e.target.result}">`;
+      imagePath.value=`/images/blog/${file.name}`; // <-- path for GitHub
+    };
+    reader.readAsDataURL(file);
+  }
+});
+
+// PUBLISH POST
+document.getElementById('publishBtn').addEventListener('click', async()=>{
+  if(!loginInfo){ document.getElementById('status').textContent='❌ Please login first!'; return; }
+
+  const postData={
+    title: document.getElementById('title').value,
+    slug: document.getElementById('slug').value,
+    description: document.getElementById('description').value,
+    tags: document.getElementById('tags').value,
+    image: imagePath.value,
+    body: document.getElementById('body').value,
+    date: new Date().toISOString().split('T')[0]
+  };
+
+  document.getElementById('status').textContent='Publishing...';
+
+  try{
+    const res=await fetch(workerUrl,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({action:'publish', username:loginInfo.username, password:loginInfo.password, postData})
+    });
+
+    let data;
+    try{ data=await res.json(); }
+    catch(e){ const text=await res.text(); document.getElementById('status').textContent='❌ Worker returned invalid JSON:\n'+text; return; }
+
+    if(data.success){
+      document.getElementById('status').textContent='✅ Post published successfully!';
+      // Clear form
+      document.getElementById('title').value='';
+      document.getElementById('slug').value='';
+      document.getElementById('description').value='';
+      document.getElementById('tags').value='';
+      document.getElementById('body').value='';
+      imagePreview.innerHTML='Image preview here';
+      imagePath.value='';
+    } else {
+      document.getElementById('status').textContent='❌ '+(data.message||'Error publishing post');
+    }
+
+  }catch(err){
+    document.getElementById('status').textContent='❌ Network/Worker error: '+err.message;
+  }
+});
+</script>
+</body>
 </html>
