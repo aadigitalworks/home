@@ -2,30 +2,39 @@ name: Build and Deploy Jekyll Site
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+  pull_request:
 
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
 
+    steps:
+      # 1. Checkout your repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # 2. Setup Ruby
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.2
+          bundler-cache: true
 
-      - name: Install dependencies
+      # 3. Install dependencies
+      - name: Install Dependencies
         run: |
-          gem install bundler
+          gem install jekyll -v 4.3.4
+          gem install jekyll-seo-tag jekyll-sitemap jekyll-redirect-from
           bundle install
 
-      - name: Build site
-        run: bundle exec jekyll build
+      # 4. Build the Jekyll site
+      - name: Build Site
+        run: bundle exec jekyll build --destination _site
 
+      # 5. Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v5.0.1
+        uses: peaceiris/actions-gh-pages@v6
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
