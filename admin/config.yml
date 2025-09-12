@@ -1,11 +1,12 @@
 backend:
   name: github
-  repo: aadigitalworks/home
+  repo: aadigitalworks/home   # your repo username/repo
   branch: main
-  commit_messages: true
 
 media_folder: "assets/images/uploads"
 public_folder: "/assets/images/uploads"
+
+publish_mode: editorial_workflow  # optional: allows draft & review workflow
 
 collections:
   - name: "posts"
