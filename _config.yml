@@ -6,7 +6,10 @@ url: "https://www.aadigitalworks.com"
 
 # Permalinks
 permalink: /blog/:title/
-redirect_from: /404.html
+redirect_from: 
+- /404.html
+- /old-url/
+- /another-url/
 # Plugins
 plugins:
   - jekyll-seo-tag
