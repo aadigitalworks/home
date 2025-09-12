@@ -1,18 +1,11 @@
-# Site settings
 title: "AA DigitalWorks"
 description: "Digital marketing, SEO, and web solutions"
-baseurl: ""   # Leave empty unless hosted in a subfolder
+baseurl: ""  
 url: "https://www.aadigitalworks.com"
 
-# Permalinks
 permalink: /blog/:title/
-redirect_from: 
-- /404.html
-- /old-url/
-- /another-url/
-# Plugins
+
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-redirect-from
-
