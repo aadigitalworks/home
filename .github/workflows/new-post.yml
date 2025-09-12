@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          persist-credentials: false  
 
       - name: Create _posts folder
         run: mkdir -p _posts
@@ -24,6 +26,7 @@ jobs:
         run: |
           git config user.name "AA DigitalWorks Bot"
           git config user.email "aadigitalworkss@gmail.com"
+          git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}.git   # 👈 reset remote to use PAT
           git add _posts/*
           git commit -m "New post: ${{ github.event.client_payload.title }}" || echo "No changes to commit"
-          git push https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}.git HEAD:main
+          git push origin HEAD:main
