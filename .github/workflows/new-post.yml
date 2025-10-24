@@ -7,6 +7,7 @@ on:
 jobs:
   create-post:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
         with:
@@ -15,19 +16,23 @@ jobs:
       - name: Create _posts folder
         run: mkdir -p _posts
 
-      - name: Create post file
+      - name: Create post file (safe for spaces)
         run: |
-          FILE_NAME="_posts/${{ github.event.client_payload.date }}-${{ github.event.client_payload.slug }}.md"
-          echo "---" > $FILE_NAME
-          echo "title: \"${{ github.event.client_payload.title }}\"" >> $FILE_NAME
-          echo "description: \"${{ github.event.client_payload.description }}\"" >> $FILE_NAME
-          echo "image: \"${{ github.event.client_payload.image }}\"" >> $FILE_NAME
-          echo "tags: [${{ github.event.client_payload.tags }}]" >> $FILE_NAME
-          echo "layout: post" >> $FILE_NAME
-          echo "date: ${{ github.event.client_payload.date }}" >> $FILE_NAME
-          echo "---" >> $FILE_NAME
-          echo "" >> $FILE_NAME
-          echo "${{ github.event.client_payload.body }}" >> $FILE_NAME
+          SAFE_SLUG=$(echo "${{ github.event.client_payload.slug }}" | tr ' ' '-' | tr -cd '[:alnum:]-')
+          FILE_NAME="_posts/${{ github.event.client_payload.date }}-${SAFE_SLUG}.md"
+
+          {
+            echo "---"
+            echo "title: \"${{ github.event.client_payload.title }}\""
+            echo "description: \"${{ github.event.client_payload.description }}\""
+            echo "image: \"${{ github.event.client_payload.image }}\""
+            echo "tags: [${{ github.event.client_payload.tags }}]"
+            echo "layout: post"
+            echo "date: ${{ github.event.client_payload.date }}"
+            echo "---"
+            echo ""
+            echo "${{ github.event.client_payload.body }}"
+          } > "$FILE_NAME"
         shell: bash
 
       - name: Commit & push
