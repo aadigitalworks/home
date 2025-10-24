@@ -17,7 +17,17 @@ jobs:
 
       - name: Create post file
         run: |
-          echo "${{ github.event.client_payload.body }}" > _posts/${{ github.event.client_payload.date }}-${{ github.event.client_payload.slug }}.md
+          FILE_NAME="_posts/${{ github.event.client_payload.date }}-${{ github.event.client_payload.slug }}.md"
+          echo "---" > $FILE_NAME
+          echo "title: \"${{ github.event.client_payload.title }}\"" >> $FILE_NAME
+          echo "description: \"${{ github.event.client_payload.description }}\"" >> $FILE_NAME
+          echo "image: \"${{ github.event.client_payload.image }}\"" >> $FILE_NAME
+          echo "tags: [${{ github.event.client_payload.tags }}]" >> $FILE_NAME
+          echo "layout: post" >> $FILE_NAME
+          echo "date: ${{ github.event.client_payload.date }}" >> $FILE_NAME
+          echo "---" >> $FILE_NAME
+          echo "" >> $FILE_NAME
+          echo "${{ github.event.client_payload.body }}" >> $FILE_NAME
         shell: bash
 
       - name: Commit & push
@@ -26,7 +36,7 @@ jobs:
         run: |
           git config user.name "AA DigitalWorks Bot"
           git config user.email "aadigitalworkss@gmail.com"
-          git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}.git   # 👈 reset remote to use PAT
+          git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}.git
           git add _posts/*
           git commit -m "New post: ${{ github.event.client_payload.title }}" || echo "No changes to commit"
           git push origin HEAD:main
