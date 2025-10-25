@@ -3,7 +3,7 @@ name: Create Post
 on:
   repository_dispatch:
     types: [new-post]
-  workflow_dispatch: # allows manual trigger from GitHub Actions UI
+  workflow_dispatch: # manual trigger
 
 jobs:
   create-post:
@@ -18,25 +18,23 @@ jobs:
       - name: Create _posts folder
         run: mkdir -p _posts
 
-      - name: Create post file (safe YAML front matter)
+      - name: Create post file safely
         run: |
-          # Make slug safe (replace spaces with hyphens, remove invalid chars)
+          # Make slug safe
           SAFE_SLUG=$(echo "${{ github.event.client_payload.slug }}" | tr ' ' '-' | tr -cd '[:alnum:]-')
           FILE_NAME="_posts/${{ github.event.client_payload.date }}-${SAFE_SLUG}.md"
 
-          cat << EOF > "$FILE_NAME"
----
-title: "${{ github.event.client_payload.title }}"
-description: "${{ github.event.client_payload.description }}"
-image: "${{ github.event.client_payload.image }}"
-tags: [${{ github.event.client_payload.tags }}]
-layout: post
-date: ${{ github.event.client_payload.date }}
----
-
-${{ github.event.client_payload.body }}
-EOF
-        shell: bash
+          # Build post content
+          echo "---" > "$FILE_NAME"
+          echo "title: \"${{ github.event.client_payload.title }}\"" >> "$FILE_NAME"
+          echo "description: \"${{ github.event.client_payload.description }}\"" >> "$FILE_NAME"
+          echo "image: \"${{ github.event.client_payload.image }}\"" >> "$FILE_NAME"
+          echo "tags: [${{ github.event.client_payload.tags }}]" >> "$FILE_NAME"
+          echo "layout: post" >> "$FILE_NAME"
+          echo "date: ${{ github.event.client_payload.date }}" >> "$FILE_NAME"
+          echo "---" >> "$FILE_NAME"
+          echo "" >> "$FILE_NAME"
+          echo "${{ github.event.client_payload.body }}" >> "$FILE_NAME"
 
       - name: Commit & push
         env:
