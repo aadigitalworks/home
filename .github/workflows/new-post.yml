@@ -1,49 +1,55 @@
-name: Create Post with Image
+name: Create Post
 
 on:
   repository_dispatch:
-    types: [new-post]  # Only triggers for new posts
+    types: [new-post]
+  workflow_dispatch: # manual trigger
 
 jobs:
   create-post:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
 
-      - name: Create folders
-        run: |
-          mkdir -p _posts
-          mkdir -p images/blog
+      - name: Create _posts folder
+        run: mkdir -p _posts
 
-      - name: Save post and image
+      - name: Upload image to repo
+        if: ${{ github.event.client_payload.image != '' }}
+        run: |
+          IMAGE_FILE="${{ github.event.client_payload.image }}"
+          IMAGE_PATH="assets/images/blog/$(basename "$IMAGE_FILE")"
+          mkdir -p "$(dirname "$IMAGE_PATH")"
+          # Save image from base64 payload
+          echo "${{ github.event.client_payload.image_base64 }}" | base64 --decode > "$IMAGE_PATH"
+
+      - name: Create post file safely
         run: |
           SAFE_SLUG=$(echo "${{ github.event.client_payload.slug }}" | tr ' ' '-' | tr -cd '[:alnum:]-')
-          POST_FILE="_posts/${{ github.event.client_payload.date }}-${SAFE_SLUG}.md"
-          IMAGE_FILE="images/blog/${SAFE_SLUG}.jpg"
+          FILE_NAME="_posts/${{ github.event.client_payload.date }}-${SAFE_SLUG}.md"
 
-          if [ ! -z "${{ github.event.client_payload.image_base64 }}" ]; then
-            echo "${{ github.event.client_payload.image_base64 }}" | base64 --decode > "$IMAGE_FILE"
+          echo "---" > "$FILE_NAME"
+          echo "title: \"${{ github.event.client_payload.title }}\"" >> "$FILE_NAME"
+          echo "description: \"${{ github.event.client_payload.description }}\"" >> "$FILE_NAME"
+
+          # If image exists, link it; else leave empty
+          if [ "${{ github.event.client_payload.image }}" != "" ]; then
+            IMAGE_NAME=$(basename "${{ github.event.client_payload.image }}")
+            echo "image: \"/assets/images/blog/$IMAGE_NAME\"" >> "$FILE_NAME"
+          else
+            echo "image: \"\"" >> "$FILE_NAME"
           fi
 
-          IMAGE_PATH="/${IMAGE_FILE}"
-
-          cat <<EOF > "$POST_FILE"
----
-title: "${{ github.event.client_payload.title }}"
-slug: "${{ github.event.client_payload.slug }}"
-description: "${{ github.event.client_payload.description }}"
-tags: ["${{ github.event.client_payload.tags }}"]
-layout: post
-date: ${{ github.event.client_payload.date }}
-image: "${IMAGE_PATH}"
----
-
-${{ github.event.client_payload.body }}
-EOF
-        shell: bash
+          echo "tags: [${{ github.event.client_payload.tags }}]" >> "$FILE_NAME"
+          echo "layout: post" >> "$FILE_NAME"
+          echo "date: ${{ github.event.client_payload.date }}" >> "$FILE_NAME"
+          echo "---" >> "$FILE_NAME"
+          echo "" >> "$FILE_NAME"
+          echo "${{ github.event.client_payload.body }}" >> "$FILE_NAME"
 
       - name: Commit & push
         env:
@@ -52,6 +58,7 @@ EOF
           git config user.name "AA DigitalWorks Bot"
           git config user.email "aadigitalworkss@gmail.com"
           git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}.git
-          git add _posts/* images/blog/*
+          git add _posts/*
+          git add assets/images/blog/*
           git commit -m "🆕 New post: ${{ github.event.client_payload.title }}" || echo "No changes to commit"
           git push origin HEAD:main
