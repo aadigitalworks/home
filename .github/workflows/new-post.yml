@@ -8,6 +8,7 @@ on:
 jobs:
   create-post:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -19,14 +20,16 @@ jobs:
           mkdir -p _posts
           mkdir -p assets/images/blog
 
-      - name: Save uploaded image
+      - name: Save uploaded image if base64 provided
         run: |
-          IMAGE_PATH="${{ github.event.client_payload.image }}"
+          IMAGE="${{ github.event.client_payload.image }}"
           IMAGE_BASE64="${{ github.event.client_payload.image_base64 }}"
-          if [ -n "$IMAGE_PATH" ] && [ -n "$IMAGE_BASE64" ]; then
-            IMAGE_FILE=$(basename "$IMAGE_PATH")
+          if [ -n "$IMAGE_BASE64" ]; then
+            IMAGE_FILE=$(basename "$IMAGE")
             echo "$IMAGE_BASE64" | base64 --decode > "assets/images/blog/$IMAGE_FILE"
             echo "Image saved: assets/images/blog/$IMAGE_FILE"
+          else
+            echo "No uploaded image, using URL if provided"
           fi
 
       - name: Create post file
@@ -38,7 +41,8 @@ jobs:
           echo "title: \"${{ github.event.client_payload.title }}\"" >> "$FILE_NAME"
           echo "description: \"${{ github.event.client_payload.description }}\"" >> "$FILE_NAME"
 
-          if [ -n "${{ github.event.client_payload.image }}" ]; then
+          # Image handling
+          if [ -n "${{ github.event.client_payload.image_base64 }}" ]; then
             IMAGE_FILE=$(basename "${{ github.event.client_payload.image }}")
             echo "image: \"/assets/images/blog/$IMAGE_FILE\"" >> "$FILE_NAME"
           elif [ -n "${{ github.event.client_payload.image_link }}" ]; then
@@ -61,7 +65,14 @@ jobs:
           git config user.name "AA DigitalWorks Bot"
           git config user.email "aadigitalworkss@gmail.com"
           git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}.git
+
           git add _posts/*
-          git add assets/images/blog/*
+
+          # Add image if uploaded
+          if [ -n "${{ github.event.client_payload.image_base64 }}" ]; then
+            IMAGE_FILE=$(basename "${{ github.event.client_payload.image }}")
+            git add "assets/images/blog/$IMAGE_FILE"
+          fi
+
           git commit -m "🆕 New post: ${{ github.event.client_payload.title }}" || echo "No changes to commit"
           git push origin HEAD:main
