@@ -18,22 +18,23 @@ jobs:
 
       - name: Create post file (safe YAML front matter)
         run: |
+          # Make slug safe for filename
           SAFE_SLUG=$(echo "${{ github.event.client_payload.slug }}" | tr ' ' '-' | tr -cd '[:alnum:]-')
           FILE_NAME="_posts/${{ github.event.client_payload.date }}-${SAFE_SLUG}.md"
 
-          cat << 'EOF' > "$FILE_NAME"
+          # Write front matter and content
+          cat << EOF > "$FILE_NAME"
 ---
 title: "${{ github.event.client_payload.title }}"
 description: "${{ github.event.client_payload.description }}"
 image: "${{ github.event.client_payload.image }}"
-tags: ["${{ github.event.client_payload.tags }}"]
+tags: [${{ github.event.client_payload.tags }}]
 layout: post
 date: ${{ github.event.client_payload.date }}
 ---
 
 ${{ github.event.client_payload.body }}
 EOF
-        shell: bash
 
       - name: Commit & push
         env:
