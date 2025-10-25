@@ -10,24 +10,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ Checkout repo
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
           persist-credentials: false
 
-      - name: Create _posts folder
-        run: mkdir -p _posts
-
-      - name: Upload image to repo
-        if: ${{ github.event.client_payload.image != '' }}
+      # 2️⃣ Create necessary folders
+      - name: Create folders
         run: |
-          IMAGE_FILE="${{ github.event.client_payload.image }}"
-          IMAGE_PATH="assets/images/blog/$(basename "$IMAGE_FILE")"
-          mkdir -p "$(dirname "$IMAGE_PATH")"
-          # Save image from base64 payload
-          echo "${{ github.event.client_payload.image_base64 }}" | base64 --decode > "$IMAGE_PATH"
+          mkdir -p _posts
+          mkdir -p assets/images/blog
 
-      - name: Create post file safely
+      # 3️⃣ Save uploaded image (if provided)
+      - name: Save uploaded image
+        run: |
+          IMAGE_PATH="${{ github.event.client_payload.image }}"
+          if [ -n "$IMAGE_PATH" ]; then
+            # Extract file name
+            IMAGE_FILE=$(basename "$IMAGE_PATH")
+            # Save base64 image content (from payload) to assets/images/blog/
+            echo "${{ github.event.client_payload.image_base64 }}" | base64 --decode > "assets/images/blog/$IMAGE_FILE"
+            echo "Image saved: assets/images/blog/$IMAGE_FILE"
+          fi
+
+      # 4️⃣ Create post file
+      - name: Create post file
         run: |
           SAFE_SLUG=$(echo "${{ github.event.client_payload.slug }}" | tr ' ' '-' | tr -cd '[:alnum:]-')
           FILE_NAME="_posts/${{ github.event.client_payload.date }}-${SAFE_SLUG}.md"
@@ -36,10 +44,10 @@ jobs:
           echo "title: \"${{ github.event.client_payload.title }}\"" >> "$FILE_NAME"
           echo "description: \"${{ github.event.client_payload.description }}\"" >> "$FILE_NAME"
 
-          # If image exists, link it; else leave empty
-          if [ "${{ github.event.client_payload.image }}" != "" ]; then
-            IMAGE_NAME=$(basename "${{ github.event.client_payload.image }}")
-            echo "image: \"/assets/images/blog/$IMAGE_NAME\"" >> "$FILE_NAME"
+          # Use uploaded image path if exists
+          if [ -n "${{ github.event.client_payload.image }}" ]; then
+            IMAGE_FILE=$(basename "${{ github.event.client_payload.image }}")
+            echo "image: \"/assets/images/blog/$IMAGE_FILE\"" >> "$FILE_NAME"
           else
             echo "image: \"\"" >> "$FILE_NAME"
           fi
@@ -51,14 +59,23 @@ jobs:
           echo "" >> "$FILE_NAME"
           echo "${{ github.event.client_payload.body }}" >> "$FILE_NAME"
 
-      - name: Commit & push
+      # 5️⃣ Commit & push
+      - name: Commit & push changes
         env:
           PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           git config user.name "AA DigitalWorks Bot"
           git config user.email "aadigitalworkss@gmail.com"
           git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}.git
+
+          # Add post file
           git add _posts/*
-          git add assets/images/blog/*
+
+          # Add image if uploaded
+          if [ -n "${{ github.event.client_payload.image }}" ]; then
+            IMAGE_FILE=$(basename "${{ github.event.client_payload.image }}")
+            git add "assets/images/blog/$IMAGE_FILE"
+          fi
+
           git commit -m "🆕 New post: ${{ github.event.client_payload.title }}" || echo "No changes to commit"
           git push origin HEAD:main
