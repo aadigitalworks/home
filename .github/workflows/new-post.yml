@@ -1,12 +1,13 @@
-name: Create Post
+name: Create Post with Image
 
 on:
   repository_dispatch:
-    types: [new-post]
+    types: [new-post]  # Only triggers for new posts
 
 jobs:
   create-post:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
         with:
@@ -15,13 +16,13 @@ jobs:
       - name: Create folders
         run: |
           mkdir -p _posts
-          mkdir -p images/posts
+          mkdir -p images/blog
 
-      - name: Create post file and save image
+      - name: Save post and image
         run: |
           SAFE_SLUG=$(echo "${{ github.event.client_payload.slug }}" | tr ' ' '-' | tr -cd '[:alnum:]-')
           POST_FILE="_posts/${{ github.event.client_payload.date }}-${SAFE_SLUG}.md"
-          IMAGE_FILE="images/posts/${SAFE_SLUG}.jpg"
+          IMAGE_FILE="images/blog/${SAFE_SLUG}.jpg"
 
           if [ ! -z "${{ github.event.client_payload.image_base64 }}" ]; then
             echo "${{ github.event.client_payload.image_base64 }}" | base64 --decode > "$IMAGE_FILE"
@@ -32,11 +33,12 @@ jobs:
           cat <<EOF > "$POST_FILE"
 ---
 title: "${{ github.event.client_payload.title }}"
+slug: "${{ github.event.client_payload.slug }}"
 description: "${{ github.event.client_payload.description }}"
-image: "${IMAGE_PATH}"
 tags: ["${{ github.event.client_payload.tags }}"]
 layout: post
 date: ${{ github.event.client_payload.date }}
+image: "${IMAGE_PATH}"
 ---
 
 ${{ github.event.client_payload.body }}
@@ -50,6 +52,6 @@ EOF
           git config user.name "AA DigitalWorks Bot"
           git config user.email "aadigitalworkss@gmail.com"
           git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}.git
-          git add _posts/* images/posts/*
+          git add _posts/* images/blog/*
           git commit -m "🆕 New post: ${{ github.event.client_payload.title }}" || echo "No changes to commit"
           git push origin HEAD:main
