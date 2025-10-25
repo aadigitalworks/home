@@ -46,13 +46,14 @@ button{padding:10px 20px;border:none;border-radius:5px;cursor:pointer;background
 
 <script>
 const workerUrl = 'https://aadigitalworks-blog-worker.aadigitalworkss.workers.dev'; // <-- Your Worker URL
-
 let loginInfo = null;
 
+// ======================
 // LOGIN
+// ======================
 document.getElementById('loginBtn').addEventListener('click', async()=>{
-  const username = document.getElementById('adminUser').value;
-  const password = document.getElementById('adminPass').value;
+  const username = document.getElementById('adminUser').value.trim();
+  const password = document.getElementById('adminPass').value.trim();
   document.getElementById('status').textContent='Logging in...';
 
   try{
@@ -61,10 +62,7 @@ document.getElementById('loginBtn').addEventListener('click', async()=>{
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify({action:'login', username, password})
     });
-
-    let data;
-    try { data = await res.json(); }
-    catch(e){ const text = await res.text(); document.getElementById('status').textContent='❌ Worker returned invalid JSON:\n'+text; return; }
+    const data = await res.json();
 
     if(data.success){
       document.getElementById('login-section').style.display='none';
@@ -72,7 +70,7 @@ document.getElementById('loginBtn').addEventListener('click', async()=>{
       document.getElementById('status').textContent='✅ Logged in successfully!';
       loginInfo={username,password};
     } else {
-      document.getElementById('status').textContent='❌ ' + (data.message || 'Login failed');
+      document.getElementById('status').textContent='❌ '+(data.message || 'Login failed');
     }
 
   } catch(err){
@@ -80,7 +78,9 @@ document.getElementById('loginBtn').addEventListener('click', async()=>{
   }
 });
 
+// ======================
 // IMAGE PREVIEW
+// ======================
 const imageUpload=document.getElementById('imageUpload');
 const imagePreview=document.getElementById('imagePreview');
 const imagePath=document.getElementById('imagePath');
@@ -97,67 +97,72 @@ imageUpload.addEventListener('change',()=>{
   }
 });
 
+// ======================
 // PUBLISH POST
+// ======================
 document.getElementById('publishBtn').addEventListener('click', async()=>{
-  if(!loginInfo){ document.getElementById('status').textContent='❌ Please login first!'; return; }
+  if(!loginInfo){ 
+    document.getElementById('status').textContent='❌ Please login first!'; 
+    return; 
+  }
 
-  const file=imageUpload.files[0];
-  let image_base64 = '';
+  const file = imageUpload.files[0];
+  let imageBase64 = "";
+  let imageName = "";
+  let imageLink = imagePath.value.trim();
+
   if(file){
     const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = async () => {
-      image_base64 = reader.result.split(',')[1]; // remove data:image/...;base64,
-      await publishPost(image_base64);
+    reader.onload = async e => {
+      imageBase64 = e.target.result.split(',')[1];
+      imageName = file.name;
+      await publishPost(imageBase64, imageName, imageLink);
     };
+    reader.readAsDataURL(file);
   } else {
-    await publishPost(''); // no file, just use URL if provided
+    await publishPost(imageBase64, imageName, imageLink);
   }
 });
 
-async function publishPost(image_base64){
-  const postData={
-    title: document.getElementById('title').value,
-    slug: document.getElementById('slug').value,
-    description: document.getElementById('description').value,
-    tags: document.getElementById('tags').value,
-    image: imageUpload.files[0] ? document.getElementById('imageUpload').files[0].name : '',
-    image_link: imagePath.value,
-    image_base64: image_base64,
-    body: document.getElementById('body').value,
-    date: new Date().toISOString().split('T')[0]
+async function publishPost(imageBase64, imageName, imageLink){
+  const postData = {
+    title: document.getElementById('title').value.trim(),
+    slug: document.getElementById('slug').value.trim(),
+    description: document.getElementById('description').value.trim(),
+    tags: document.getElementById('tags').value.trim(),
+    body: document.getElementById('body').value.trim(),
+    date: new Date().toISOString().split('T')[0],
+    imageBase64,
+    imageName,
+    imageLink
   };
 
-  document.getElementById('status').textContent='Publishing...';
+  document.getElementById('status').textContent = 'Publishing...';
 
-  try{
-    const res=await fetch(workerUrl,{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({action:'publish', username:loginInfo.username, password:loginInfo.password, postData})
+  try {
+    const res = await fetch(workerUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        action: 'publish',
+        username: loginInfo.username,
+        password: loginInfo.password,
+        postData
+      })
     });
 
-    let data;
-    try{ data=await res.json(); }
-    catch(e){ const text=await res.text(); document.getElementById('status').textContent='❌ Worker returned invalid JSON:\n'+text; return; }
-
-    if(data.success){
-      document.getElementById('status').textContent='✅ Post published successfully!';
-      // Clear form
-      document.getElementById('title').value='';
-      document.getElementById('slug').value='';
-      document.getElementById('description').value='';
-      document.getElementById('tags').value='';
-      document.getElementById('body').value='';
-      imagePreview.innerHTML='Image preview here';
-      imagePath.value='';
-      imageUpload.value='';
+    const data = await res.json();
+    if (data.success) {
+      document.getElementById('status').textContent = '✅ Post published successfully!';
+      ['title','slug','description','tags','body','imagePath'].forEach(id => document.getElementById(id).value='');
+      document.getElementById('imagePreview').innerHTML = 'Image preview here';
+      imageUpload.value = '';
     } else {
-      document.getElementById('status').textContent='❌ '+(data.message||'Error publishing post');
+      document.getElementById('status').textContent = '❌ ' + (data.message || 'Error publishing post');
     }
 
-  }catch(err){
-    document.getElementById('status').textContent='❌ Network/Worker error: '+err.message;
+  } catch (err) {
+    document.getElementById('status').textContent = '❌ Network/Worker error: ' + err.message;
   }
 }
 </script>
