@@ -16,23 +16,23 @@ jobs:
       - name: Create _posts folder
         run: mkdir -p _posts
 
-      - name: Create post file (safe for spaces)
+      - name: Create post file (safe YAML front matter)
         run: |
           SAFE_SLUG=$(echo "${{ github.event.client_payload.slug }}" | tr ' ' '-' | tr -cd '[:alnum:]-')
           FILE_NAME="_posts/${{ github.event.client_payload.date }}-${SAFE_SLUG}.md"
 
-          {
-            echo "---"
-            echo "title: \"${{ github.event.client_payload.title }}\""
-            echo "description: \"${{ github.event.client_payload.description }}\""
-            echo "image: \"${{ github.event.client_payload.image }}\""
-            echo "tags: [${{ github.event.client_payload.tags }}]"
-            echo "layout: post"
-            echo "date: ${{ github.event.client_payload.date }}"
-            echo "---"
-            echo ""
-            echo "${{ github.event.client_payload.body }}"
-          } > "$FILE_NAME"
+          cat << 'EOF' > "$FILE_NAME"
+---
+title: "${{ github.event.client_payload.title }}"
+description: "${{ github.event.client_payload.description }}"
+image: "${{ github.event.client_payload.image }}"
+tags: ["${{ github.event.client_payload.tags }}"]
+layout: post
+date: ${{ github.event.client_payload.date }}
+---
+
+${{ github.event.client_payload.body }}
+EOF
         shell: bash
 
       - name: Commit & push
@@ -43,5 +43,5 @@ jobs:
           git config user.email "aadigitalworkss@gmail.com"
           git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}.git
           git add _posts/*
-          git commit -m "New post: ${{ github.event.client_payload.title }}" || echo "No changes to commit"
+          git commit -m "🆕 New post: ${{ github.event.client_payload.title }}" || echo "No changes to commit"
           git push origin HEAD:main
