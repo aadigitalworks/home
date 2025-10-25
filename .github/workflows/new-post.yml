@@ -3,7 +3,7 @@ name: Create Post
 on:
   repository_dispatch:
     types: [new-post]
-  workflow_dispatch:
+  workflow_dispatch: # manual trigger
 
 jobs:
   create-post:
@@ -16,26 +16,24 @@ jobs:
         with:
           persist-credentials: false
 
-      # 2️⃣ Create folders
+      # 2️⃣ Create necessary folders
       - name: Create folders
         run: |
           mkdir -p _posts
           mkdir -p assets/images/blog
 
-      # 3️⃣ Save uploaded image (Base64) if exists
-      - name: Save uploaded image if provided
+      # 3️⃣ Save uploaded image (if provided)
+      - name: Save uploaded image
         run: |
           IMAGE_PATH="${{ github.event.client_payload.image }}"
           IMAGE_BASE64="${{ github.event.client_payload.image_base64 }}"
-          if [ -n "$IMAGE_BASE64" ]; then
+          if [ -n "$IMAGE_PATH" ] && [ -n "$IMAGE_BASE64" ]; then
             IMAGE_FILE=$(basename "$IMAGE_PATH")
             echo "$IMAGE_BASE64" | base64 --decode > "assets/images/blog/$IMAGE_FILE"
-            echo "Uploaded image saved: assets/images/blog/$IMAGE_FILE"
-          else
-            echo "No uploaded image provided, using link if any."
+            echo "Image saved: assets/images/blog/$IMAGE_FILE"
           fi
 
-      # 4️⃣ Create post markdown
+      # 4️⃣ Create post file
       - name: Create post file
         run: |
           SAFE_SLUG=$(echo "${{ github.event.client_payload.slug }}" | tr ' ' '-' | tr -cd '[:alnum:]-')
@@ -45,11 +43,10 @@ jobs:
           echo "title: \"${{ github.event.client_payload.title }}\"" >> "$FILE_NAME"
           echo "description: \"${{ github.event.client_payload.description }}\"" >> "$FILE_NAME"
 
-          if [ -n "${{ github.event.client_payload.image_base64 }}" ]; then
+          # Image front matter
+          if [ -n "${{ github.event.client_payload.image }}" ]; then
             IMAGE_FILE=$(basename "${{ github.event.client_payload.image }}")
             echo "image: \"/assets/images/blog/$IMAGE_FILE\"" >> "$FILE_NAME"
-          elif [ -n "${{ github.event.client_payload.image }}" ]; then
-            echo "image: \"${{ github.event.client_payload.image }}\"" >> "$FILE_NAME"
           else
             echo "image: \"\"" >> "$FILE_NAME"
           fi
@@ -70,8 +67,11 @@ jobs:
           git config user.email "aadigitalworkss@gmail.com"
           git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}.git
 
+          # Add post file
           git add _posts/*
-          if [ -n "${{ github.event.client_payload.image_base64 }}" ]; then
+
+          # Add image if uploaded
+          if [ -n "${{ github.event.client_payload.image }}" ]; then
             IMAGE_FILE=$(basename "${{ github.event.client_payload.image }}")
             git add "assets/images/blog/$IMAGE_FILE"
           fi
