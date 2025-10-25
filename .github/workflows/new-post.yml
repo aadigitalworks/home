@@ -22,14 +22,13 @@ jobs:
 
       - name: Save uploaded image if base64 provided
         run: |
-          IMAGE="${{ github.event.client_payload.image }}"
+          IMAGE_NAME="${{ github.event.client_payload.image_name }}"
           IMAGE_BASE64="${{ github.event.client_payload.image_base64 }}"
-          if [ -n "$IMAGE_BASE64" ]; then
-            IMAGE_FILE=$(basename "$IMAGE")
-            echo "$IMAGE_BASE64" | base64 --decode > "assets/images/blog/$IMAGE_FILE"
-            echo "Image saved: assets/images/blog/$IMAGE_FILE"
+          if [ -n "$IMAGE_BASE64" ] && [ -n "$IMAGE_NAME" ]; then
+            echo "$IMAGE_BASE64" | base64 --decode > "assets/images/blog/$IMAGE_NAME"
+            echo "✅ Image saved: assets/images/blog/$IMAGE_NAME"
           else
-            echo "No uploaded image, using URL if provided"
+            echo "ℹ️ No uploaded image, using URL if provided"
           fi
 
       - name: Create post file
@@ -42,9 +41,8 @@ jobs:
           echo "description: \"${{ github.event.client_payload.description }}\"" >> "$FILE_NAME"
 
           # Image handling
-          if [ -n "${{ github.event.client_payload.image_base64 }}" ]; then
-            IMAGE_FILE=$(basename "${{ github.event.client_payload.image }}")
-            echo "image: \"/assets/images/blog/$IMAGE_FILE\"" >> "$FILE_NAME"
+          if [ -n "${{ github.event.client_payload.image_name }}" ]; then
+            echo "image: \"/assets/images/blog/${{ github.event.client_payload.image_name }}\"" >> "$FILE_NAME"
           elif [ -n "${{ github.event.client_payload.image_link }}" ]; then
             echo "image: \"${{ github.event.client_payload.image_link }}\"" >> "$FILE_NAME"
           else
@@ -69,9 +67,8 @@ jobs:
           git add _posts/*
 
           # Add image if uploaded
-          if [ -n "${{ github.event.client_payload.image_base64 }}" ]; then
-            IMAGE_FILE=$(basename "${{ github.event.client_payload.image }}")
-            git add "assets/images/blog/$IMAGE_FILE"
+          if [ -n "${{ github.event.client_payload.image_name }}" ]; then
+            git add "assets/images/blog/${{ github.event.client_payload.image_name }}"
           fi
 
           git commit -m "🆕 New post: ${{ github.event.client_payload.title }}" || echo "No changes to commit"

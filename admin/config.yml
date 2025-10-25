@@ -1,12 +1,12 @@
 backend:
   name: git-gateway
-  branch: main  # Branch to update
-  identity_url: https://aadigitalworks.netlify.app/.netlify/identity  # Optional if default
+  branch: main
+  identity_url: https://aadigitalworks.netlify.app/.netlify/identity
 
-media_folder: "assets/images/uploads"   # Where uploaded images go
+media_folder: "assets/images/uploads"
 public_folder: "/assets/images/uploads"
 
-publish_mode: editorial_workflow  # Optional: enables draft + review workflow
+publish_mode: editorial_workflow
 
 collections:
   - name: "posts"
