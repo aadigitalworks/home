@@ -3,26 +3,27 @@ name: Create Post
 on:
   repository_dispatch:
     types: [new-post]
+  workflow_dispatch: # allows manual trigger from GitHub Actions UI
 
 jobs:
   create-post:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
         with:
-          persist-credentials: false  
+          persist-credentials: false
 
       - name: Create _posts folder
         run: mkdir -p _posts
 
       - name: Create post file (safe YAML front matter)
         run: |
-          # Make slug safe for filename
+          # Make slug safe (replace spaces with hyphens, remove invalid chars)
           SAFE_SLUG=$(echo "${{ github.event.client_payload.slug }}" | tr ' ' '-' | tr -cd '[:alnum:]-')
           FILE_NAME="_posts/${{ github.event.client_payload.date }}-${SAFE_SLUG}.md"
 
-          # Write front matter and content
           cat << EOF > "$FILE_NAME"
 ---
 title: "${{ github.event.client_payload.title }}"
@@ -35,6 +36,7 @@ date: ${{ github.event.client_payload.date }}
 
 ${{ github.event.client_payload.body }}
 EOF
+        shell: bash
 
       - name: Commit & push
         env:
