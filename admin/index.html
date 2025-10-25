@@ -13,7 +13,6 @@ button{padding:10px 20px;border:none;border-radius:5px;cursor:pointer;background
 #status{margin:10px 0;font-weight:bold;text-align:center;}
 .image-preview{width:100%;height:200px;border:2px dashed #ccc;display:flex;align-items:center;justify-content:center;margin-bottom:10px;}
 .image-preview img{max-width:100%;max-height:100%;}
-.radio-group{display:flex;gap:20px;margin-bottom:10px;}
 </style>
 </head>
 <body>
@@ -35,22 +34,9 @@ button{padding:10px 20px;border:none;border-radius:5px;cursor:pointer;background
 <input type="text" id="slug" placeholder="URL Slug">
 <textarea id="description" placeholder="Short Description"></textarea>
 <input type="text" id="tags" placeholder="Tags (comma separated)">
-
-<h3>Post Image</h3>
-<div class="radio-group">
-  <label><input type="radio" name="imageOption" value="upload" checked> Upload Image</label>
-  <label><input type="radio" name="imageOption" value="link"> Use Image URL</label>
-</div>
-
-<div id="uploadSection">
-  <div class="image-preview" id="imagePreview">Image preview here</div>
-  <input type="file" id="imageUpload">
-</div>
-
-<div id="linkSection" style="display:none;">
-  <input type="text" id="imageLink" placeholder="https://example.com/image.jpg">
-</div>
-
+<div class="image-preview" id="imagePreview">Image preview here</div>
+<input type="file" id="imageUpload">
+<input type="text" id="imagePath" placeholder="Or enter image URL here">
 <textarea id="body" placeholder="Post Content in Markdown"></textarea>
 <button id="publishBtn">Publish Post</button>
 </div>
@@ -97,6 +83,7 @@ document.getElementById('loginBtn').addEventListener('click', async()=>{
 // IMAGE PREVIEW
 const imageUpload=document.getElementById('imageUpload');
 const imagePreview=document.getElementById('imagePreview');
+const imagePath=document.getElementById('imagePath');
 
 imageUpload.addEventListener('change',()=>{
   const file=imageUpload.files[0];
@@ -104,66 +91,39 @@ imageUpload.addEventListener('change',()=>{
     const reader=new FileReader();
     reader.onload=e=>{
       imagePreview.innerHTML=`<img src="${e.target.result}">`;
+      imagePath.value=''; // clear URL if file uploaded
     };
     reader.readAsDataURL(file);
   }
 });
 
-// Toggle between upload or link
-const imageOptionRadios=document.querySelectorAll('input[name="imageOption"]');
-const uploadSection=document.getElementById('uploadSection');
-const linkSection=document.getElementById('linkSection');
-
-imageOptionRadios.forEach(radio=>{
-  radio.addEventListener('change',()=>{
-    if(radio.value==='upload'){
-      uploadSection.style.display='block';
-      linkSection.style.display='none';
-    } else {
-      uploadSection.style.display='none';
-      linkSection.style.display='block';
-    }
-  });
-});
-
 // PUBLISH POST
 document.getElementById('publishBtn').addEventListener('click', async()=>{
-  if(!loginInfo){ 
-    document.getElementById('status').textContent='❌ Please login first!'; 
-    return; 
-  }
+  if(!loginInfo){ document.getElementById('status').textContent='❌ Please login first!'; return; }
 
-  const selectedOption=document.querySelector('input[name="imageOption"]:checked').value;
-  let finalImage='';
-  let imageBase64='';
-
-  if(selectedOption==='upload'){
-    const file=imageUpload.files[0];
-    if(file){
-      finalImage=`/assets/images/blog/${file.name}`;
-      const reader=new FileReader();
-      reader.onload=async e=>{
-        imageBase64=e.target.result.split(',')[1]; // base64 content
-        await sendPost(finalImage,imageBase64);
-      };
-      reader.readAsDataURL(file);
-      return; // wait for file reader
-    }
+  const file=imageUpload.files[0];
+  let image_base64 = '';
+  if(file){
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = async () => {
+      image_base64 = reader.result.split(',')[1]; // remove data:image/...;base64,
+      await publishPost(image_base64);
+    };
   } else {
-    finalImage=document.getElementById('imageLink').value;
+    await publishPost(''); // no file, just use URL if provided
   }
-
-  await sendPost(finalImage,imageBase64);
 });
 
-async function sendPost(finalImage,imageBase64){
+async function publishPost(image_base64){
   const postData={
     title: document.getElementById('title').value,
     slug: document.getElementById('slug').value,
     description: document.getElementById('description').value,
     tags: document.getElementById('tags').value,
-    image: finalImage,
-    image_base64: imageBase64,
+    image: imageUpload.files[0] ? document.getElementById('imageUpload').files[0].name : '',
+    image_link: imagePath.value,
+    image_base64: image_base64,
     body: document.getElementById('body').value,
     date: new Date().toISOString().split('T')[0]
   };
@@ -174,12 +134,7 @@ async function sendPost(finalImage,imageBase64){
     const res=await fetch(workerUrl,{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({
-        action:'publish',
-        username:loginInfo.username,
-        password:loginInfo.password,
-        postData
-      })
+      body: JSON.stringify({action:'publish', username:loginInfo.username, password:loginInfo.password, postData})
     });
 
     let data;
@@ -188,13 +143,14 @@ async function sendPost(finalImage,imageBase64){
 
     if(data.success){
       document.getElementById('status').textContent='✅ Post published successfully!';
+      // Clear form
       document.getElementById('title').value='';
       document.getElementById('slug').value='';
       document.getElementById('description').value='';
       document.getElementById('tags').value='';
       document.getElementById('body').value='';
       imagePreview.innerHTML='Image preview here';
-      document.getElementById('imageLink').value='';
+      imagePath.value='';
       imageUpload.value='';
     } else {
       document.getElementById('status').textContent='❌ '+(data.message||'Error publishing post');

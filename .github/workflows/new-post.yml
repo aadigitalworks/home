@@ -3,26 +3,22 @@ name: Create Post
 on:
   repository_dispatch:
     types: [new-post]
-  workflow_dispatch: # manual trigger
+  workflow_dispatch:
 
 jobs:
   create-post:
     runs-on: ubuntu-latest
-
     steps:
-      # 1️⃣ Checkout repo
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
           persist-credentials: false
 
-      # 2️⃣ Create necessary folders
       - name: Create folders
         run: |
           mkdir -p _posts
           mkdir -p assets/images/blog
 
-      # 3️⃣ Save uploaded image (if provided)
       - name: Save uploaded image
         run: |
           IMAGE_PATH="${{ github.event.client_payload.image }}"
@@ -33,7 +29,6 @@ jobs:
             echo "Image saved: assets/images/blog/$IMAGE_FILE"
           fi
 
-      # 4️⃣ Create post file
       - name: Create post file
         run: |
           SAFE_SLUG=$(echo "${{ github.event.client_payload.slug }}" | tr ' ' '-' | tr -cd '[:alnum:]-')
@@ -43,10 +38,11 @@ jobs:
           echo "title: \"${{ github.event.client_payload.title }}\"" >> "$FILE_NAME"
           echo "description: \"${{ github.event.client_payload.description }}\"" >> "$FILE_NAME"
 
-          # Image front matter
           if [ -n "${{ github.event.client_payload.image }}" ]; then
             IMAGE_FILE=$(basename "${{ github.event.client_payload.image }}")
             echo "image: \"/assets/images/blog/$IMAGE_FILE\"" >> "$FILE_NAME"
+          elif [ -n "${{ github.event.client_payload.image_link }}" ]; then
+            echo "image: \"${{ github.event.client_payload.image_link }}\"" >> "$FILE_NAME"
           else
             echo "image: \"\"" >> "$FILE_NAME"
           fi
@@ -58,7 +54,6 @@ jobs:
           echo "" >> "$FILE_NAME"
           echo "${{ github.event.client_payload.body }}" >> "$FILE_NAME"
 
-      # 5️⃣ Commit & push
       - name: Commit & push changes
         env:
           PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
@@ -66,15 +61,7 @@ jobs:
           git config user.name "AA DigitalWorks Bot"
           git config user.email "aadigitalworkss@gmail.com"
           git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}.git
-
-          # Add post file
           git add _posts/*
-
-          # Add image if uploaded
-          if [ -n "${{ github.event.client_payload.image }}" ]; then
-            IMAGE_FILE=$(basename "${{ github.event.client_payload.image }}")
-            git add "assets/images/blog/$IMAGE_FILE"
-          fi
-
+          git add assets/images/blog/*
           git commit -m "🆕 New post: ${{ github.event.client_payload.title }}" || echo "No changes to commit"
           git push origin HEAD:main
