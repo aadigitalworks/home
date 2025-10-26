@@ -975,43 +975,27 @@
     </div>
     
     <div class="related-posts">
-      <h3 class="section-title">You Might Also Like</h3>
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="related-card">
-            <div class="related-image">
-              <img src="/images/blog-post-1.jpg" alt="SEO Trends">
-            </div>
-            <div class="related-content">
-              <h4 class="related-title"><a href="#">Top SEO Trends to Watch in 2023</a></h4>
-              <div class="related-date">March 5, 2023</div>
-            </div>
-          </div>
+  <h3 class="section-title">You Might Also Like</h3>
+  <div class="row">
+    {% assign related_posts = site.posts | where_exp:"post", "post.url != page.url" | limit:3 %}
+    {% for post in related_posts %}
+    <div class="col-md-4 mb-4">
+      <div class="related-card">
+        {% if post.image %}
+        <div class="related-image">
+          <img src="{{ post.image }}" alt="{{ post.title }}">
         </div>
-        <div class="col-md-4 mb-4">
-          <div class="related-card">
-            <div class="related-image">
-              <img src="/images/blog-post-2.jpg" alt="Google Ads">
-            </div>
-            <div class="related-content">
-              <h4 class="related-title"><a href="#">Maximizing ROI with Google Ads in UAE Market</a></h4>
-              <div class="related-date">February 22, 2023</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="related-card">
-            <div class="related-image">
-              <img src="/images/blog-post-3.jpg" alt="Website Development">
-            </div>
-            <div class="related-content">
-              <h4 class="related-title"><a href="#">Essential Elements of a High-Converting Website</a></h4>
-              <div class="related-date">February 10, 2023</div>
-            </div>
-          </div>
+        {% endif %}
+        <div class="related-content">
+          <h4 class="related-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h4>
+          <div class="related-date">{{ post.date | date: "%B %d, %Y" }}</div>
         </div>
       </div>
     </div>
+    {% endfor %}
+  </div>
+</div>
+
     
     <div class="newsletter-section">
       <h3>Stay Updated with Digital Trends</h3>
