@@ -1,28 +1,17 @@
-# Site settings
-title: "AA DigitalWorks"
-description: "Digital marketing, SEO, and web solutions"
-baseurl: ""  
-url: "https://www.aadigitalworks.com"
-
-# Blog permalink
-permalink: /blog/:title/
-
-# Plugins
-plugins:
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-redirect-from
-  - jekyll-paginate   # <-- add this for pagination
+title: My Jekyll Site
+email: your-email@example.com
+description: >- # this means to ignore newlines until next YAML key
+  A simple Jekyll site with pagination
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://www.aadigitalworks.com" 
 
 # Pagination settings
-paginate: 5           # Show 5 posts per page
-paginate_path: "/blog/page:num/"   # URL structure for paginated pages
+paginate: 5
+paginate_path: "/page:num/"
 
-# Defaults
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      author: "AA DigitalWorks"
+# Build settings
+markdown: kramdown
+theme: minima
+
+plugins:
+  - jekyll-paginate

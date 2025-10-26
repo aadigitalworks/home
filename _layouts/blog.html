@@ -10,25 +10,25 @@ description: "Insights, tips and latest trends in digital marketing, SEO, and we
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>{{ page.title }} | AA DigitalWorks</title>
-  <link rel="icon" type="image/svg+xml" href="/images/logo-bimi.svg" />
-  <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="{{ '/images/logo-bimi.svg' | relative_url }}" />
+  <link rel="icon" type="image/x-icon" href="{{ '/images/favicon.ico' | relative_url }}" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="{{ page.description }}">
   <meta name="author" content="AA DigitalWorks">
   <meta property="og:site_name" content="AA DigitalWorks - SEO Agency">
   <meta property="og:title" content="{{ page.title }} | AA DigitalWorks">
   <meta property="og:description" content="{{ page.description }}">
-  <meta property="og:image" content="/images/logo-bimi.svg">
-  <meta property="og:url" content="https://www.aadigitalworks.com/blog/">
+  <meta property="og:image" content="{{ '/images/logo-bimi.svg' | relative_url }}">
+  <meta property="og:url" content="{{ '/blog/' | relative_url }}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ page.title }} | AA DigitalWorks">
   <meta name="twitter:description" content="{{ page.description }}">
-  <meta name="twitter:image" content="/images/logo-bimi.svg">
-  <link rel="canonical" href="https://www.aadigitalworks.com{{ page.url }}">
+  <meta name="twitter:image" content="{{ '/images/logo-bimi.svg' | relative_url }}">
+  <link rel="canonical" href="{{ '/blog/' | absolute_url }}">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="/css/style.css" rel="stylesheet">
+  <link href="{{ '/css/style.css' | relative_url }}" rel="stylesheet">
   <style>
     :root {
       --primary: #1877f2;
@@ -36,11 +36,7 @@ description: "Insights, tips and latest trends in digital marketing, SEO, and we
       --light: #f8f9fa;
       --gray: #6c757d;
     }
-    body {
-      font-family: 'Poppins', sans-serif;
-      color: #333;
-      background-color: #f9fafb;
-    }
+    body { font-family: 'Poppins', sans-serif; color: #333; background-color: #f9fafb; }
     .site-header { box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
     .navbar-brand { font-weight: 700; color: var(--primary) !important; font-size: 1.5rem; }
     .nav-link { font-weight: 500; position: relative; }
@@ -87,7 +83,7 @@ description: "Insights, tips and latest trends in digital marketing, SEO, and we
   <section class="blog-hero py-4 text-center">
     <div class="container">
       <h1>AA DigitalWorks Blog</h1>
-      <p>Insights, tips and latest trends in digital marketing, SEO, and web development</p>
+      <p>{{ page.description }}</p>
     </div>
   </section>
 
@@ -97,47 +93,16 @@ description: "Insights, tips and latest trends in digital marketing, SEO, and we
       <article class="post-card">
         {% if post.image %}
         <div class="post-image">
-          <img src="{{ post.image }}" alt="{{ post.title }}">
+          <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
         </div>
         {% endif %}
         <div class="post-content">
           <div class="post-meta text-muted mb-2">
             <span><i class="far fa-calendar me-1"></i> {{ post.date | date: "%B %d, %Y" }}</span>
           </div>
-          <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+          <h2 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
           <p class="post-description">{{ post.description | truncate: 160 }}</p>
-          <a href="{{ post.url }}" class="read-more">Read more →</a>
-
-          <!--
-          <div class="post-comments">
-            <h3><i class="far fa-comments me-2"></i>Leave a comment</h3>
-            <form class="comment-form" method="POST" action="https://STATICMAN_URL/v3/entry/github/YOURUSERNAME/YOURREPO/main/comments">
-              <div class="form-group">
-                <input type="text" class="form-control" name="fields[name]" placeholder="Your Name" required>
-              </div>
-              <div class="form-group">
-                <input type="email" class="form-control" name="fields[email]" placeholder="Your Email" required>
-              </div>
-              <div class="form-group">
-                <textarea class="form-control" name="fields[comment]" rows="4" placeholder="Your Comment" required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary">Submit Comment</button>
-            </form>
-
-            Example comment (would be dynamically generated) 
-            <div class="comments-list">
-              <div class="comment">
-                <div class="comment-header">
-                  <span class="comment-author">John Smith</span>
-                  <span class="comment-date">March 15, 2023</span>
-                </div>
-                <div class="comment-body">
-                  Great article! These tips helped me improve my website's SEO significantly.
-                </div>
-              </div>
-            </div>
-          </div>
-          -->
+          <a href="{{ post.url | relative_url }}" class="read-more">Read more →</a>
         </div>
       </article>
       {% endfor %}
@@ -154,7 +119,7 @@ description: "Insights, tips and latest trends in digital marketing, SEO, and we
 
           {% for page in (1..paginator.total_pages) %}
             <li class="page-item {% if page == paginator.page %}active{% endif %}">
-              <a class="page-link" href="{{ paginator.page_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+              <a class="page-link" href="{{ paginator.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
             </li>
           {% endfor %}
 
