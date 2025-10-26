@@ -1,16 +1,12 @@
-title: My Jekyll Site
-email: your-email@example.com
-description: >- # this means to ignore newlines until next YAML key
-  A simple Jekyll site with pagination
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://www.aadigitalworks.com" 
+title: "AA DigitalWorks"
+email: info@aadigitalworks.com
+description: "Insights, tips and latest trends in digital marketing, SEO, and web development"
+baseurl: "" # leave empty if root
+url: "https://www.aadigitalworks.com"
 
 # Pagination settings
 paginate: 5
 paginate_path: "/blog/page:num/"
-collections:
-  posts:
-    output: true
 
 # Build settings
 markdown: kramdown
@@ -18,3 +14,11 @@ theme: minima
 
 plugins:
   - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+
+collections:
+  posts:
+    output: true
