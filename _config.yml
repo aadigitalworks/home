@@ -1,11 +1,28 @@
+# Site settings
 title: "AA DigitalWorks"
 description: "Digital marketing, SEO, and web solutions"
 baseurl: ""  
 url: "https://www.aadigitalworks.com"
 
+# Blog permalink
 permalink: /blog/:title/
 
+# Plugins
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-redirect-from
+  - jekyll-paginate   # <-- add this for pagination
+
+# Pagination settings
+paginate: 5           # Show 5 posts per page
+paginate_path: "/blog/page:num/"   # URL structure for paginated pages
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "AA DigitalWorks"

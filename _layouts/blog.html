@@ -1,3 +1,9 @@
+---
+layout: none
+title: "AA DigitalWorks Blog"
+description: "Insights, tips and latest trends in digital marketing, SEO, and web development"
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,17 +13,16 @@
   <link rel="icon" type="image/svg+xml" href="/images/logo-bimi.svg" />
   <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Expert SEO, Google Ads, and website development services in the UAE and Saudi Arabia.">
-  <meta name="keywords" content="SEO services, Google Ads management, website development, digital marketing UAE, digital marketing Saudi Arabia, online advertising, search engine optimization, web design UAE, web design Saudi Arabia">
+  <meta name="description" content="{{ page.description }}">
   <meta name="author" content="AA DigitalWorks">
   <meta property="og:site_name" content="AA DigitalWorks - SEO Agency">
   <meta property="og:title" content="{{ page.title }} | AA DigitalWorks">
-  <meta property="og:description" content="Delivering cutting-edge digital solutions including Google Ads, SEO, and websites in UAE and KSA.">
+  <meta property="og:description" content="{{ page.description }}">
   <meta property="og:image" content="/images/logo-bimi.svg">
-  <meta property="og:url" content="https://www.aadigitalworks.com">
+  <meta property="og:url" content="https://www.aadigitalworks.com/blog/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ page.title }} | AA DigitalWorks">
-  <meta name="twitter:description" content="Delivering cutting-edge digital solutions including Google Ads, SEO, and websites in UAE and KSA.">
+  <meta name="twitter:description" content="{{ page.description }}">
   <meta name="twitter:image" content="/images/logo-bimi.svg">
   <link rel="canonical" href="https://www.aadigitalworks.com{{ page.url }}">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -28,50 +33,31 @@
     :root {
       --primary: #1877f2;
       --primary-dark: #155bb5;
-      --secondary: #ff6b35;
-      --dark: #333;
       --light: #f8f9fa;
       --gray: #6c757d;
-      --border: #dee2e6;
     }
-    
     body {
       font-family: 'Poppins', sans-serif;
       color: #333;
       background-color: #f9fafb;
     }
-    
-    /* Header & Navigation */
-    .site-header {
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    
-    .navbar-brand {
-      font-weight: 700;
-      color: var(--primary) !important;
-      font-size: 1.5rem;
-    }
-    
-    .nav-link {
-      font-weight: 500;
-      position: relative;
-    }
-    
-    .nav-link:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--primary);
-      transition: width 0.3s;
-    }
-    
-    .nav-link:hover:after {
-      width: 100%;
-    }
-    
+    .site-header { box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    .navbar-brand { font-weight: 700; color: var(--primary) !important; font-size: 1.5rem; }
+    .nav-link { font-weight: 500; position: relative; }
+    .nav-link:after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--primary); transition: width 0.3s; }
+    .nav-link:hover:after { width: 100%; }
+    .post-card { background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 2rem; overflow: hidden; transition: 0.3s; }
+    .post-card:hover { transform: translateY(-3px); }
+    .post-image img { width: 100%; height: auto; }
+    .post-content { padding: 1.5rem; }
+    .post-title a { color: var(--primary-dark); text-decoration: none; }
+    .post-title a:hover { color: var(--primary); }
+    .read-more { color: var(--primary); font-weight: 600; }
+    .newsletter-section { background: var(--light); padding: 2rem; text-align: center; border-radius: 10px; margin-top: 3rem; }
+    .newsletter-form { display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; }
+    .pagination { justify-content: center; margin-top: 2rem; }
+    .pagination .page-item.active .page-link { background-color: var(--primary); border-color: var(--primary); }
+    footer { background: var(--primary-dark); color: white; text-align: center; padding: 1rem 0; margin-top: 3rem; }
   </style>
 </head>
 
@@ -82,7 +68,7 @@
         <a class="navbar-brand" href="{{ '/' | relative_url }}">
           <i class="fas fa-digital-tachograph me-2"></i>AA DigitalWorks
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -98,7 +84,7 @@
     </nav>
   </header>
 
-  <section class="blog-hero">
+  <section class="blog-hero py-4 text-center">
     <div class="container">
       <h1>AA DigitalWorks Blog</h1>
       <p>Insights, tips and latest trends in digital marketing, SEO, and web development</p>
@@ -107,26 +93,21 @@
 
   <main class="container">
     <div class="blog-container">
-      {% for post in site.posts %}
-        <article class="post-card">
-          {% if post.image %}
-            <div class="post-image">
-              <img src="{{ post.image }}" alt="{{ post.title }}">
-            </div>
-          {% endif %}
-          
-          <div class="post-content">
-            <div class="post-meta">
-              <span class="post-date"><i class="far fa-calendar me-1"></i> {{ post.date | date: "%B %d, %Y" }}</span>
-              <span class="post-category"><i class="far fa-folder me-1"></i> {{ post.category | default: "Digital Marketing" }}</span>
-            </div>
-            
-            <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-            
-            <p class="post-description">{{ post.description }}</p>
-            
-            <a href="{{ post.url }}" class="read-more">Read more</a>
+      {% for post in paginator.posts %}
+      <article class="post-card">
+        {% if post.image %}
+        <div class="post-image">
+          <img src="{{ post.image }}" alt="{{ post.title }}">
+        </div>
+        {% endif %}
+        <div class="post-content">
+          <div class="post-meta text-muted mb-2">
+            <span><i class="far fa-calendar me-1"></i> {{ post.date | date: "%B %d, %Y" }}</span>
           </div>
+          <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+          <p class="post-description">{{ post.description | truncate: 160 }}</p>
+          <a href="{{ post.url }}" class="read-more">Read more →</a>
+
           <!--
           <div class="post-comments">
             <h3><i class="far fa-comments me-2"></i>Leave a comment</h3>
@@ -142,8 +123,8 @@
               </div>
               <button type="submit" class="btn btn-primary">Submit Comment</button>
             </form>
-            -->
-            <!-- Example comment (would be dynamically generated) 
+
+            Example comment (would be dynamically generated) 
             <div class="comments-list">
               <div class="comment">
                 <div class="comment-header">
@@ -156,29 +137,45 @@
               </div>
             </div>
           </div>
-        </article>
-      {% endfor %}-->
-      
-      <!-- Newsletter Subscription -->
+          -->
+        </div>
+      </article>
+      {% endfor %}
+
+      <!-- Pagination -->
+      {% if paginator.total_pages > 1 %}
+      <nav aria-label="Blog pagination">
+        <ul class="pagination">
+          {% if paginator.previous_page %}
+            <li class="page-item"><a class="page-link" href="{{ paginator.previous_page_path | relative_url }}">&laquo; Previous</a></li>
+          {% else %}
+            <li class="page-item disabled"><span class="page-link">&laquo; Previous</span></li>
+          {% endif %}
+
+          {% for page in (1..paginator.total_pages) %}
+            <li class="page-item {% if page == paginator.page %}active{% endif %}">
+              <a class="page-link" href="{{ paginator.page_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+            </li>
+          {% endfor %}
+
+          {% if paginator.next_page %}
+            <li class="page-item"><a class="page-link" href="{{ paginator.next_page_path | relative_url }}">Next &raquo;</a></li>
+          {% else %}
+            <li class="page-item disabled"><span class="page-link">Next &raquo;</span></li>
+          {% endif %}
+        </ul>
+      </nav>
+      {% endif %}
+
+      <!-- Newsletter -->
       <section class="newsletter-section">
         <h3>Stay Updated with Digital Trends</h3>
-        <p>Subscribe to our newsletter and receive the latest insights on SEO, digital marketing, and web development.</p>
+        <p>Subscribe to our newsletter for the latest insights on SEO and marketing.</p>
         <form class="newsletter-form">
-          <input type="email" class="form-control" placeholder="Your email address" required>
+          <input type="email" class="form-control" placeholder="Your email address" required style="max-width:300px;">
           <button type="submit" class="btn btn-primary">Subscribe</button>
         </form>
       </section>
-      
-      <!-- Pagination -->
-      <nav aria-label="Blog pagination">
-        <ul class="pagination">
-          <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-          <li class="page-item active"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-      </nav>
     </div>
   </main>
 
