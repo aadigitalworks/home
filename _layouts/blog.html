@@ -1,76 +1,846 @@
----
-layout: none
-title: "AA DigitalWorks Blog"
-description: "Insights, tips and latest trends in digital marketing, SEO, and web development"
-pagination: 
-  enabled: true
-permalink: /blog/
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>{{ page.title }} | AA DigitalWorks</title>
-  <link rel="icon" type="image/svg+xml" href="{{ '/images/logo-bimi.svg' | relative_url }}" />
-  <link rel="icon" type="image/x-icon" href="{{ '/images/favicon.ico' | relative_url }}" />
+  <link rel="icon" type="image/svg+xml" href="/images/logo-bimi.svg" />
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="{{ page.description }}">
+  <meta name="description" content="{{ page.description | default: 'Expert SEO, Google Ads, and website development services in the UAE and Saudi Arabia.' }}">
+  <meta name="keywords" content="{{ page.tags | join: ', ' }}, SEO services, Google Ads management, website development, digital marketing UAE, digital marketing Saudi Arabia">
   <meta name="author" content="AA DigitalWorks">
   <meta property="og:site_name" content="AA DigitalWorks - SEO Agency">
   <meta property="og:title" content="{{ page.title }} | AA DigitalWorks">
-  <meta property="og:description" content="{{ page.description }}">
-  <meta property="og:image" content="{{ '/images/logo-bimi.svg' | relative_url }}">
-  <meta property="og:url" content="{{ '/blog/' | relative_url }}">
+  <meta property="og:description" content="{{ page.description | default: 'Delivering cutting-edge digital solutions including Google Ads, SEO, and websites in UAE and KSA.' }}">
+  <meta property="og:image" content="{{ page.image | default: '/images/logo-bimi.svg' }}">
+  <meta property="og:url" content="https://www.aadigitalworks.com{{ page.url }}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ page.title }} | AA DigitalWorks">
-  <meta name="twitter:description" content="{{ page.description }}">
-  <meta name="twitter:image" content="{{ '/images/logo-bimi.svg' | relative_url }}">
-  <link rel="canonical" href="{{ '/blog/' | absolute_url }}">
-
-  <!-- CSS Libraries -->
+  <meta name="twitter:description" content="{{ page.description | default: 'Delivering cutting-edge digital solutions including Google Ads, SEO, and websites in UAE and KSA.' }}">
+  <meta name="twitter:image" content="{{ page.image | default: '/images/logo-bimi.svg' }}">
+  <link rel="canonical" href="https://www.aadigitalworks.com{{ page.url }}">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="{{ '/css/style.css' | relative_url }}" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #1877f2;
-      --primary-dark: #155bb5;
-      --light: #f8f9fa;
-      --gray: #6c757d;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --primary-light: #dbeafe;
+      --secondary: #f97316;
+      --dark: #1e293b;
+      --dark-light: #334155;
+      --light: #f8fafc;
+      --gray: #64748b;
+      --gray-light: #cbd5e1;
+      --border: #e2e8f0;
+      --light-bg: #f1f5f9;
+      --success: #10b981;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --radius: 8px;
+      --radius-lg: 12px;
     }
-    body { font-family: 'Poppins', sans-serif; color: #333; background-color: #f9fafb; }
-    .site-header { box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-    .navbar-brand { font-weight: 700; color: var(--primary) !important; font-size: 1.5rem; }
-    .nav-link { font-weight: 500; position: relative; }
-    .nav-link:after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--primary); transition: width 0.3s; }
-    .nav-link:hover:after { width: 100%; }
-    .post-card { background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 2rem; overflow: hidden; transition: 0.3s; }
-    .post-card:hover { transform: translateY(-3px); }
-    .post-image img { width: 100%; height: auto; }
-    .post-content { padding: 1.5rem; }
-    .post-title a { color: var(--primary-dark); text-decoration: none; }
-    .post-title a:hover { color: var(--primary); }
-    .read-more { color: var(--primary); font-weight: 600; }
-    .newsletter-section { background: var(--light); padding: 2rem; text-align: center; border-radius: 10px; margin-top: 3rem; }
-    .newsletter-form { display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; }
-    .pagination { justify-content: center; margin-top: 2rem; }
-    .pagination .page-item.active .page-link { background-color: var(--primary); border-color: var(--primary); }
-    footer { background: var(--primary-dark); color: white; text-align: center; padding: 1rem 0; margin-top: 3rem; }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      background-color: var(--light);
+      line-height: 1.7;
+      font-weight: 400;
+      scroll-behavior: smooth;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+    
+    /* Header & Navigation */
+    .site-header {
+      box-shadow: var(--shadow-sm);
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    
+    .site-header.scrolled {
+      box-shadow: var(--shadow);
+    }
+    
+    .navbar-brand {
+      font-weight: 700;
+      color: var(--primary) !important;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+    }
+    
+    .navbar-brand i {
+      font-size: 1.8rem;
+    }
+    
+    .nav-link {
+      font-weight: 500;
+      position: relative;
+      color: var(--dark) !important;
+      transition: color 0.3s;
+    }
+    
+    .nav-link:hover {
+      color: var(--primary) !important;
+    }
+    
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s;
+    }
+    
+    .nav-link:hover:after {
+      width: 100%;
+    }
+    
+    .nav-item.active .nav-link {
+      color: var(--primary) !important;
+    }
+    
+    .nav-item.active .nav-link:after {
+      width: 100%;
+    }
+    
+    /* Article Container */
+    .article-container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .article-container:hover {
+      box-shadow: var(--shadow-lg);
+    }
+    
+    /* Article Header */
+    .article-header {
+      padding: 50px 50px 30px;
+      position: relative;
+    }
+    
+    .article-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--dark);
+      line-height: 1.2;
+    }
+    
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 20px;
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+    
+    .meta-item {
+      display: flex;
+      align-items: center;
+      margin-right: 25px;
+      margin-bottom: 10px;
+    }
+    
+    .meta-item i {
+      margin-right: 8px;
+      color: var(--primary);
+    }
+    
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+    
+    .article-tag {
+      background: var(--primary-light);
+      color: var(--primary);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+    
+    .article-tag:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    /* Article Image */
+    .article-image {
+      margin-bottom: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .article-image img {
+      width: 100%;
+      height: auto;
+      max-height: 450px;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    
+    .article-image:hover img {
+      transform: scale(1.03);
+    }
+    
+    .image-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+    
+    /* Article Content */
+    .article-content {
+      padding: 0 50px 50px;
+    }
+    
+    .article-content p {
+      margin-bottom: 24px;
+      font-size: 1.1rem;
+      color: var(--dark-light);
+    }
+    
+    .article-content h2 {
+      font-size: 1.8rem;
+      margin: 45px 0 25px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      color: var(--dark);
+    }
+    
+    .article-content h3 {
+      font-size: 1.5rem;
+      margin: 35px 0 20px;
+      color: var(--dark);
+    }
+    
+    .article-content blockquote {
+      border-left: 4px solid var(--primary);
+      padding-left: 25px;
+      margin: 35px 0;
+      font-style: italic;
+      color: var(--gray);
+      background: var(--light-bg);
+      padding: 25px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      position: relative;
+    }
+    
+    .article-content blockquote:before {
+      content: """;
+      font-family: Georgia, serif;
+      font-size: 3rem;
+      color: var(--primary-light);
+      position: absolute;
+      left: 10px;
+      top: -10px;
+      opacity: 0.5;
+    }
+    
+    .article-content ul, .article-content ol {
+      margin-bottom: 25px;
+      padding-left: 25px;
+    }
+    
+    .article-content li {
+      margin-bottom: 10px;
+      color: var(--dark-light);
+    }
+    
+    .article-content a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: color 0.3s;
+      font-weight: 500;
+      border-bottom: 1px dotted transparent;
+    }
+    
+    .article-content a:hover {
+      color: var(--primary-dark);
+      border-bottom: 1px dotted var(--primary);
+    }
+    
+    .article-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: var(--radius);
+      margin: 25px 0;
+      box-shadow: var(--shadow);
+    }
+    
+    /* Table of Contents */
+    .toc {
+      background: var(--light-bg);
+      border-radius: var(--radius);
+      padding: 25px;
+      margin: 35px 0;
+      border-left: 4px solid var(--primary);
+    }
+    
+    .toc-title {
+      font-size: 1.3rem;
+      margin-bottom: 18px;
+      font-weight: 600;
+      color: var(--dark);
+    }
+    
+    .toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .toc-list li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 15px;
+    }
+    
+    .toc-list li:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      background: var(--primary);
+      border-radius: 50%;
+    }
+    
+    .toc-list a {
+      color: var(--gray);
+      text-decoration: none;
+      transition: color 0.3s;
+      display: block;
+      padding: 5px 0;
+    }
+    
+    .toc-list a:hover {
+      color: var(--primary);
+    }
+    
+    /* Social Sharing */
+    .social-sharing {
+      display: flex;
+      align-items: center;
+      margin: 35px 0;
+      padding: 25px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .sharing-label {
+      margin-right: 20px;
+      font-weight: 500;
+      color: var(--dark);
+    }
+    
+    .sharing-buttons {
+      display: flex;
+    }
+    
+    .share-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      color: white;
+      margin-right: 12px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: var(--shadow);
+    }
+    
+    .share-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .facebook { background: #3b5998; }
+    .twitter { background: #1da1f2; }
+    .linkedin { background: #0077b5; }
+    .whatsapp { background: #25d366; }
+    
+    /* Author Bio */
+    .author-bio {
+      display: flex;
+      align-items: center;
+      background: var(--light-bg);
+      border-radius: var(--radius);
+      padding: 30px;
+      margin: 45px 0;
+      transition: transform 0.3s;
+    }
+    
+    .author-bio:hover {
+      transform: translateY(-5px);
+    }
+    
+    .author-avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin-right: 25px;
+      object-fit: cover;
+      border: 4px solid white;
+      box-shadow: var(--shadow);
+    }
+    
+    .author-info h4 {
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--dark);
+    }
+    
+    .author-info p {
+      margin-bottom: 0;
+      color: var(--gray);
+    }
+    
+    /* Related Posts */
+    .related-posts {
+      margin: 60px 0 40px;
+    }
+    
+    .section-title {
+      font-size: 1.6rem;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border);
+      font-weight: 600;
+      color: var(--dark);
+      position: relative;
+    }
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 80px;
+      height: 3px;
+      background: var(--primary);
+    }
+    
+    .related-card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+      height: 100%;
+      border: 1px solid var(--border);
+    }
+    
+    .related-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .related-image {
+      height: 180px;
+      overflow: hidden;
+    }
+    
+    .related-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    
+    .related-card:hover .related-image img {
+      transform: scale(1.1);
+    }
+    
+    .related-content {
+      padding: 20px;
+    }
+    
+    .related-title {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    
+    .related-title a {
+      color: var(--dark);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .related-title a:hover {
+      color: var(--primary);
+    }
+    
+    .related-date {
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+    
+    /* Comments Section */
+    .comments-section {
+      margin: 60px 0 40px;
+    }
+    
+    .comment-form {
+      background: var(--light-bg);
+      border-radius: var(--radius);
+      padding: 30px;
+      margin-bottom: 35px;
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .comment-form h4 {
+      margin-bottom: 20px;
+      color: var(--dark);
+    }
+    
+    .form-group {
+      margin-bottom: 25px;
+    }
+    
+    .form-control {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      font-family: 'Inter', sans-serif;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      width: 100%;
+      font-size: 1rem;
+    }
+    
+    .form-control:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+      outline: none;
+    }
+    
+    textarea.form-control {
+      min-height: 160px;
+      resize: vertical;
+    }
+    
+    .btn-primary {
+      background: var(--primary);
+      border: none;
+      padding: 14px 30px;
+      border-radius: var(--radius);
+      font-weight: 500;
+      transition: all 0.3s;
+      cursor: pointer;
+      font-size: 1rem;
+      box-shadow: var(--shadow);
+    }
+    
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .comment {
+      background: white;
+      border-radius: var(--radius);
+      padding: 25px;
+      margin-bottom: 25px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      transition: transform 0.3s;
+    }
+    
+    .comment:hover {
+      transform: translateY(-3px);
+    }
+    
+    .comment-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      align-items: center;
+    }
+    
+    .comment-author {
+      font-weight: 600;
+      color: var(--dark);
+      font-size: 1.05rem;
+    }
+    
+    .comment-date {
+      color: var(--gray);
+      font-size: 0.85rem;
+    }
+    
+    .comment-body {
+      color: var(--dark-light);
+      line-height: 1.6;
+    }
+    
+    /* Newsletter Section */
+    .newsletter-section {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      margin: 60px 0;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .newsletter-section:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    
+    .newsletter-section h3 {
+      margin-bottom: 15px;
+      font-weight: 600;
+      position: relative;
+    }
+    
+    .newsletter-section p {
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 25px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+    }
+    
+    .newsletter-form {
+      display: flex;
+      max-width: 500px;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    .newsletter-form .form-control {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border: none;
+      padding: 15px 20px;
+    }
+    
+    .newsletter-form .btn {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      background: var(--secondary);
+      border: none;
+      padding: 15px 25px;
+      font-weight: 500;
+    }
+    
+    .newsletter-form .btn:hover {
+      background: #ea580c;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 50px 0 25px;
+      margin-top: 70px;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+    
+    .footer-link {
+      color: rgba(255,255,255,0.7);
+      margin: 0 18px;
+      text-decoration: none;
+      transition: color 0.3s;
+      font-weight: 500;
+    }
+    
+    .footer-link:hover {
+      color: white;
+    }
+    
+    .social-links {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .social-link {
+      color: white;
+      margin: 0 12px;
+      font-size: 1.3rem;
+      transition: color 0.3s, transform 0.3s;
+    }
+    
+    .social-link:hover {
+      color: var(--primary-light);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      text-align: center;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+    }
+    
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: var(--shadow-lg);
+      transition: all 0.3s;
+      z-index: 99;
+      opacity: 0;
+      visibility: hidden;
+    }
+    
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .back-to-top:hover {
+      background: var(--primary-dark);
+      transform: translateY(-5px);
+      color: white;
+    }
+    
+    /* Progress Bar */
+    .reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: var(--primary);
+      z-index: 1001;
+      transition: width 0.2s;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .article-container {
+        margin: 20px 0;
+        border-radius: 0;
+      }
+      
+      .article-header,
+      .article-content {
+        padding: 30px;
+      }
+      
+      .article-title {
+        font-size: 2rem;
+      }
+      
+      .author-bio {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .author-avatar {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+      
+      .social-sharing {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .sharing-label {
+        margin-bottom: 15px;
+      }
+      
+      .newsletter-form {
+        flex-direction: column;
+      }
+      
+      .newsletter-form .form-control {
+        border-radius: var(--radius);
+        margin-bottom: 10px;
+      }
+      
+      .newsletter-form .btn {
+        border-radius: var(--radius);
+      }
+      
+      .newsletter-section {
+        padding: 30px 20px;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <!-- Header -->
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress"></div>
+  
   <header class="site-header">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
         <a class="navbar-brand" href="{{ '/' | relative_url }}">
           <i class="fas fa-digital-tachograph me-2"></i>AA DigitalWorks
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -86,88 +856,242 @@ permalink: /blog/
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="blog-hero py-4 text-center">
-    <div class="container">
-      <h1>AA DigitalWorks Blog</h1>
-      <p>{{ page.description }}</p>
-    </div>
-  </section>
-
-  <!-- Blog Posts -->
   <main class="container">
-    <div class="blog-container">
-      {% for post in paginator.posts %}
-      <article class="post-card">
-        {% if post.image %}
-        <div class="post-image">
-          <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+    <div class="article-container">
+      <header class="article-header">
+        <h1 class="article-title">{{ page.title }}</h1>
+        
+        <div class="article-meta">
+          <div class="meta-item">
+            <i class="far fa-user"></i> By {{ page.author | default: "AA DigitalWorks" }}
+          </div>
+          <div class="meta-item">
+            <i class="far fa-calendar"></i> {{ page.date | date: "%B %d, %Y" }}
+          </div>
+          <div class="meta-item">
+            <i class="far fa-clock"></i> {{ content | reading_time }} read
+          </div>
+        </div>
+        
+        {% if page.tags %}
+        <div class="article-tags">
+          {% for tag in page.tags %}
+            <span class="article-tag">{{ tag }}</span>
+          {% endfor %}
         </div>
         {% endif %}
-        <div class="post-content">
-          <div class="post-meta text-muted mb-2">
-            <span><i class="far fa-calendar me-1"></i> {{ post.date | date: "%B %d, %Y" }}</span>
-          </div>
-          <h2 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-          <p class="post-description">{{ post.description | truncate: 160 }}</p>
-          <a href="{{ post.url | relative_url }}" class="read-more">Read more →</a>
-        </div>
-      </article>
-      {% endfor %}
-
-      <!-- Pagination -->
-      {% if paginator.total_pages > 1 %}
-      <nav aria-label="Blog pagination">
-        <ul class="pagination">
-          {% if paginator.previous_page %}
-            <li class="page-item"><a class="page-link" href="{{ paginator.previous_page_path | relative_url }}">&laquo; Previous</a></li>
-          {% else %}
-            <li class="page-item disabled"><span class="page-link">&laquo; Previous</span></li>
-          {% endif %}
-
-          {% for page_num in (1..paginator.total_pages) %}
-            <li class="page-item {% if page_num == paginator.page %}active{% endif %}">
-              <a class="page-link" href="{{ paginator.paginate_path | relative_url | replace: ':num', page_num }}">{{ page_num }}</a>
-            </li>
-          {% endfor %}
-
-          {% if paginator.next_page %}
-            <li class="page-item"><a class="page-link" href="{{ paginator.next_page_path | relative_url }}">Next &raquo;</a></li>
-          {% else %}
-            <li class="page-item disabled"><span class="page-link">Next &raquo;</span></li>
-          {% endif %}
-        </ul>
-      </nav>
+      </header>
+      
+      {% if page.image %}
+      <div class="article-image">
+        <img src="{{ page.image }}" alt="{{ page.title }}">
+        {% if page.image_caption %}
+        <div class="image-caption">{{ page.image_caption }}</div>
+        {% endif %}
+      </div>
       {% endif %}
-
-      <!-- Newsletter -->
-      <section class="newsletter-section">
-        <h3>Stay Updated with Digital Trends</h3>
-        <p>Subscribe to our newsletter for the latest insights on SEO and marketing.</p>
-        <form class="newsletter-form">
-          <input type="email" class="form-control" placeholder="Your email address" required style="max-width:300px;">
-          <button type="submit" class="btn btn-primary">Subscribe</button>
+      
+      <div class="article-content">
+        {% if page.toc %}
+        <div class="toc">
+          <h3 class="toc-title">Table of Contents</h3>
+          {{ content | toc }}
+        </div>
+        {% endif %}
+        
+        {{ content }}
+        
+        <div class="social-sharing">
+          <span class="sharing-label">Share this article:</span>
+          <div class="sharing-buttons">
+            <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="share-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        
+        <div class="author-bio">
+          <img src="/images/author-avatar.jpg" alt="Author" class="author-avatar">
+          <div class="author-info">
+            <h4>{{ page.author | default: "AA DigitalWorks Team" }}</h4>
+            <p>Digital marketing experts with over 10 years of experience helping businesses in UAE and Saudi Arabia grow their online presence through SEO, Google Ads, and website development.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="comments-section">
+      <h3 class="section-title">Comments</h3>
+      
+      <!-- Comment Form -->
+      <div class="comment-form">
+        <h4>Leave a Comment</h4>
+        <form method="POST" action="#">
+          <div class="form-group">
+            <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" name="comment" rows="4" placeholder="Your Comment" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit Comment</button>
         </form>
-      </section>
+      </div>
+      
+      <!--
+      <div class="comment">
+        <div class="comment-header">
+          <span class="comment-author">Sarah Johnson</span>
+          <span class="comment-date">March 15, 2023</span>
+        </div>
+        <div class="comment-body">
+          Great article! These tips helped me improve my website's SEO significantly. I especially found the section about keyword research very helpful.
+        </div>
+      </div>
+      
+      <div class="comment">
+        <div class="comment-header">
+          <span class="comment-author">Ahmed Al-Mansoori</span>
+          <span class="comment-date">March 12, 2023</span>
+        </div>
+        <div class="comment-body">
+          As a business owner in Dubai, I can confirm that implementing these strategies has greatly increased our online visibility. Thank you for the valuable insights!
+        </div>
+      </div>
+      
+      <div class="comment">
+        <div class="comment-header">
+          <span class="comment-author">Michael Chen</span>
+          <span class="comment-date">March 10, 2023</span>
+        </div>
+        <div class="comment-body">
+          I've been following your blog for a while now, and I must say the content quality is consistently excellent. Looking forward to more articles about technical SEO.
+        </div>
+      </div>
+      -->
+    </div>
+    
+    <div class="related-posts">
+      <h3 class="section-title">You Might Also Like</h3>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="related-card">
+            <div class="related-image">
+              <img src="/images/blog-post-1.jpg" alt="SEO Trends">
+            </div>
+            <div class="related-content">
+              <h4 class="related-title"><a href="#">Top SEO Trends to Watch in 2023</a></h4>
+              <div class="related-date">March 5, 2023</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="related-card">
+            <div class="related-image">
+              <img src="/images/blog-post-2.jpg" alt="Google Ads">
+            </div>
+            <div class="related-content">
+              <h4 class="related-title"><a href="#">Maximizing ROI with Google Ads in UAE Market</a></h4>
+              <div class="related-date">February 22, 2023</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="related-card">
+            <div class="related-image">
+              <img src="/images/blog-post-3.jpg" alt="Website Development">
+            </div>
+            <div class="related-content">
+              <h4 class="related-title"><a href="#">Essential Elements of a High-Converting Website</a></h4>
+              <div class="related-date">February 10, 2023</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="newsletter-section">
+      <h3>Stay Updated with Digital Trends</h3>
+      <p>Subscribe to our newsletter and receive the latest insights on SEO, digital marketing, and web development.</p>
+      <form class="newsletter-form">
+        <input type="email" class="form-control" placeholder="Your email address" required>
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
     </div>
   </main>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; 2025 AA DigitalWorks. All rights reserved.</p>
-      <div class="social-links mt-2">
-        <a href="#" class="text-light mx-2"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="text-light mx-2"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="text-light mx-2"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" class="text-light mx-2"><i class="fab fa-instagram"></i></a>
+      <div class="footer-links">
+        <a href="{{ '/' | relative_url }}" class="footer-link">Home</a>
+        <a href="{{ '/services/' | relative_url }}" class="footer-link">Services</a>
+        <a href="{{ '/blog/' | relative_url }}" class="footer-link">Blog</a>
+        <a href="{{ '/about/' | relative_url }}" class="footer-link">About</a>
+        <a href="{{ '/contact/' | relative_url }}" class="footer-link">Contact</a>
+        <a href="{{ '/privacy/' | relative_url }}" class="footer-link">Privacy Policy</a>
+        <a href="{{ '/terms/' | relative_url }}" class="footer-link">Terms of Service</a>
       </div>
+      
+      <div class="social-links">
+        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+      </div>
+      
+      <p class="copyright">&copy; 2025 AA DigitalWorks. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- JS Libraries -->
+  <a href="#" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  
+  <script>
+    // Back to top button
+    $(document).ready(function(){
+      $(window).scroll(function(){
+        if ($(this).scrollTop() > 100) {
+          $('.back-to-top').addClass('visible');
+          $('.site-header').addClass('scrolled');
+        } else {
+          $('.back-to-top').removeClass('visible');
+          $('.site-header').removeClass('scrolled');
+        }
+        
+        // Reading progress bar
+        var winHeight = $(window).height();
+        var docHeight = $(document).height();
+        var scrollTop = $(window).scrollTop();
+        var progress = (scrollTop / (docHeight - winHeight)) * 100;
+        $('.reading-progress').css('width', progress + '%');
+      });
+      
+      $('.back-to-top').click(function(){
+        $('html, body').animate({scrollTop : 0}, 800);
+        return false;
+      });
+      
+      // Smooth scrolling for table of contents links
+      $('a[href^="#"]').on('click', function(e) {
+        e.preventDefault();
+        
+        var target = this.hash;
+        var $target = $(target);
+        
+        $('html, body').animate({
+          'scrollTop': $target.offset().top - 80
+        }, 800, 'swing');
+      });
+    });
+  </script>
 </body>
 </html>
