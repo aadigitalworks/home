@@ -1,20 +1,18 @@
 title: "AA DigitalWorks"
 email: info@aadigitalworks.com
 description: "Insights, tips and latest trends in digital marketing, SEO, and web development"
-baseurl: "" # leave empty if root
+baseurl: "" 
 url: "https://www.aadigitalworks.com"
 
-# Pagination settings
 paginate: 5
 paginate_path: "/blog/page:num/"
 
-# Build settings
 markdown: kramdown
 theme: minima
 
 plugins:
   - jekyll-paginate
-  - jekyll-sitemap
   - jekyll-feed
+  - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-redirect-from
