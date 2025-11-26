@@ -1,24 +1,42 @@
-backend:
-  name: git-gateway
-  branch: main
-  identity_url: https://aadigitalworks.netlify.app/.netlify/identity
+# _config.yml
 
-media_folder: "assets/images/uploads"
-public_folder: "/assets/images/uploads"
+# Site Settings
+title: "AA DigitalWorks"
+description: "Expert SEO, Google Ads, and website development services in the UAE and Saudi Arabia."
+baseurl: ""
+url: "https://www.aadigitalworks.com"
 
-publish_mode: editorial_workflow
+# Build Settings
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+paginate: 5
+paginate_path: /blog/page:num/
 
+# Collections
 collections:
-  - name: "posts"
-    label: "Blog Posts"
-    folder: "_posts"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Image", name: "image", widget: "image"}
-      - {label: "Tags", name: "tags", widget: "list"}
-      - {label: "Redirect From", name: "redirect_from", widget: "list"}
-      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "AA DigitalWorks Team"
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - admin.html
