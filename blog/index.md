@@ -2,6 +2,8 @@
 layout: default
 title: "AA DigitalWorks Blog"
 description: "Insights, tips and latest trends in digital marketing, SEO, and web development"
+pagination: 
+  enabled: true
 ---
 
 <section class="blog-hero py-5 text-center bg-light">
@@ -12,69 +14,125 @@ description: "Insights, tips and latest trends in digital marketing, SEO, and we
 </section>
 
 <main class="container py-5">
-  <!-- Debug Info -->
-  <div class="alert alert-info mb-5">
-    <h5>Debug Information:</h5>
-    <p><strong>Total Posts:</strong> {{ site.posts.size }}</p>
-    <p><strong>Using:</strong> site.posts (all posts)</p>
-    <p><strong>Posts Found:</strong></p>
-    <ul>
-    {% for post in site.posts %}
-      <li>{{ post.date | date: "%Y-%m-%d" }}: {{ post.title }}</li>
-    {% endfor %}
-    </ul>
+  <!-- Page Info (instead of debug) -->
+  <div class="text-center mb-5">
+    <p class="text-muted">
+      Page {{ paginator.page }} of {{ paginator.total_pages }} • 
+      Showing {{ paginator.posts.size }} of {{ paginator.total_posts }} articles
+    </p>
   </div>
 
   <div class="row">
-    {% if site.posts.size > 0 %}
-      {% for post in site.posts %}
-      <div class="col-lg-6 mb-4">
-        <article class="card h-100 shadow-sm post-card">
-          {% if post.image %}
-          <div class="post-image">
-            <img src="{{ post.image | relative_url }}" class="card-img-top" alt="{{ post.title }}">
-          </div>
-          {% else %}
-          <div class="post-image-placeholder bg-light d-flex align-items-center justify-content-center">
-            <i class="fas fa-newspaper text-muted fa-3x"></i>
-          </div>
-          {% endif %}
-          
-          <div class="card-body d-flex flex-column">
-            <div class="post-meta text-muted small mb-2">
-              <i class="far fa-calendar me-1"></i> 
-              <time datetime="{{ post.date | date_to_xmlschema }}">
-                {{ post.date | date: "%B %d, %Y" }}
-              </time>
-            </div>
-            
-            <h2 class="post-title card-title h5">
-              <a href="{{ post.url | relative_url }}" class="text-dark text-decoration-none">{{ post.title }}</a>
-            </h2>
-            
-            <p class="post-description card-text flex-grow-1">
-              {{ post.description | default: "Discover insights and strategies for digital marketing success." | truncate: 120 }}
-            </p>
-            
-            <div class="mt-auto">
-              <a href="{{ post.url | relative_url }}" class="read-more btn btn-primary btn-sm">
-                Read More <i class="fas fa-arrow-right ms-1"></i>
-              </a>
-            </div>
-          </div>
-        </article>
-      </div>
-      {% endfor %}
-    {% else %}
-      <div class="col-12 text-center py-5">
-        <div class="alert alert-warning">
-          <h3>No blog posts yet!</h3>
-          <p>Check back soon for amazing content.</p>
+    {% for post in paginator.posts %}
+    <div class="col-lg-6 mb-4">
+      <article class="card h-100 shadow-sm post-card">
+        {% if post.image %}
+        <div class="post-image">
+          <img src="{{ post.image | relative_url }}" class="card-img-top" alt="{{ post.title }}">
         </div>
-      </div>
-    {% endif %}
+        {% else %}
+        <div class="post-image-placeholder bg-light d-flex align-items-center justify-content-center">
+          <i class="fas fa-newspaper text-muted fa-3x"></i>
+        </div>
+        {% endif %}
+        
+        <div class="card-body d-flex flex-column">
+          <div class="post-meta text-muted small mb-2">
+            <i class="far fa-calendar me-1"></i> 
+            <time datetime="{{ post.date | date_to_xmlschema }}">
+              {{ post.date | date: "%B %d, %Y" }}
+            </time>
+            <span class="mx-2">•</span>
+            <i class="far fa-clock me-1"></i>
+            {% assign words = post.content | number_of_words %}
+            {% if words < 360 %}
+              1 min read
+            {% else %}
+              {{ words | divided_by: 180 }} min read
+            {% endif %}
+          </div>
+          
+          <h2 class="post-title card-title h5">
+            <a href="{{ post.url | relative_url }}" class="text-dark text-decoration-none">{{ post.title }}</a>
+          </h2>
+          
+          <p class="post-description card-text flex-grow-1 text-muted">
+            {{ post.description | default: post.excerpt | strip_html | truncate: 140 }}
+          </p>
+          
+          <div class="mt-auto">
+            {% if post.tags %}
+            <div class="post-tags mb-3">
+              {% for tag in post.tags limit:3 %}
+              <span class="badge bg-light text-dark me-1 small">{{ tag }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
+            
+            <a href="{{ post.url | relative_url }}" class="read-more btn btn-primary btn-sm d-inline-flex align-items-center">
+              Read More <i class="fas fa-arrow-right ms-2 small"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+    {% endfor %}
   </div>
-</section>
+
+  <!-- Pagination -->
+  {% if paginator.total_pages > 1 %}
+  <nav aria-label="Blog pagination" class="mt-5">
+    <ul class="pagination justify-content-center">
+      <!-- Previous Page -->
+      {% if paginator.previous_page %}
+        <li class="page-item">
+          <a class="page-link" href="{{ paginator.previous_page_path | relative_url }}">
+            <i class="fas fa-chevron-left me-1"></i> Previous
+          </a>
+        </li>
+      {% else %}
+        <li class="page-item disabled">
+          <span class="page-link">
+            <i class="fas fa-chevron-left me-1"></i> Previous
+          </span>
+        </li>
+      {% endif %}
+
+      <!-- Page Numbers -->
+      {% for page in (1..paginator.total_pages) %}
+        {% if page == paginator.page %}
+          <li class="page-item active" aria-current="page">
+            <span class="page-link">{{ page }}</span>
+          </li>
+        {% elsif page == 1 %}
+          <li class="page-item">
+            <a class="page-link" href="{{ '/blog/' | relative_url }}">{{ page }}</a>
+          </li>
+        {% else %}
+          <li class="page-item">
+            <a class="page-link" href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+
+      <!-- Next Page -->
+      {% if paginator.next_page %}
+        <li class="page-item">
+          <a class="page-link" href="{{ paginator.next_page_path | relative_url }}">
+            Next <i class="fas fa-chevron-right ms-1"></i>
+          </a>
+        </li>
+      {% else %}
+        <li class="page-item disabled">
+          <span class="page-link">
+            Next <i class="fas fa-chevron-right ms-1"></i>
+          </span>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
+  {% endif %}
+</main>
 
 <section class="newsletter-section bg-primary text-white py-5 mt-4">
   <div class="container text-center">
@@ -95,11 +153,12 @@ description: "Insights, tips and latest trends in digital marketing, SEO, and we
   border: none;
   border-radius: 12px;
   overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.08);
 }
 
 .post-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
 
 .post-image {
@@ -126,6 +185,7 @@ description: "Insights, tips and latest trends in digital marketing, SEO, and we
 .post-title a {
   color: #2c3e50;
   transition: color 0.3s ease;
+  line-height: 1.4;
 }
 
 .post-title a:hover {
@@ -134,7 +194,20 @@ description: "Insights, tips and latest trends in digital marketing, SEO, and we
 }
 
 .post-meta {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+.post-description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #495057;
+}
+
+.post-tags .badge {
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border: 1px solid #dee2e6;
 }
 
 .read-more {
@@ -142,9 +215,32 @@ description: "Insights, tips and latest trends in digital marketing, SEO, and we
   padding: 8px 20px;
   font-weight: 500;
   transition: all 0.3s ease;
+  font-size: 0.9rem;
 }
 
 .read-more:hover {
   transform: translateX(5px);
+  background-color: #2c3e50;
+  border-color: #2c3e50;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #3498db;
+  border-color: #3498db;
+}
+
+.pagination .page-link {
+  color: #2c3e50;
+  border: 1px solid #e9ecef;
+  margin: 0 3px;
+  border-radius: 8px;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+}
+
+.pagination .page-link:hover {
+  background-color: #f8f9fa;
+  border-color: #3498db;
+  color: #3498db;
 }
 </style>
