@@ -4,15 +4,26 @@ description: "Insights, tips and latest trends in digital marketing, SEO, and we
 baseurl: "" 
 url: "https://www.aadigitalworks.com"
 
+# Pagination - try this format
 paginate: 5
 paginate_path: "/blog/page:num/"
 
 markdown: kramdown
 theme: minima
 
+# Make sure plugins are properly listed
 plugins:
   - jekyll-paginate
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-redirect-from
+
+collections:
+  posts:
+    output: true
+    permalink: /:year/:month/:day/:title/
+
+# Add this to ensure proper loading
+gems:
+  - jekyll-paginate
