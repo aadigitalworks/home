@@ -44,70 +44,15 @@
 </section>
 
 <main class="container py-5">
-  <!-- Debug Info -->
-  <div class="alert alert-info">
-    <h5>Debug Information:</h5>
-    <p><strong>Total Posts Found:</strong> 2</p>
-    
-      <p><strong>Post List:</strong></p>
-      <ul>
-      
-        <li>2025-11-26: <strong>sdasdf</strong> - /2025/11/26/sadfaf.html</li>
-      
-        <li>2025-09-10: <strong>My First SEO-Friendly Post</strong> - /2025/09/10/my-first-post.html</li>
-      
-      </ul>
-    
-  </div>
-
   <div class="row">
     
-      
-      <div class="col-lg-6 mb-4">
-        <article class="card h-100 shadow-sm">
-          
-          <img src="/asfas" class="card-img-top" alt="sdasdf" style="height: 200px; object-fit: cover;" />
-          
-          <div class="card-body d-flex flex-column">
-            <div class="text-muted small mb-2">
-              <i class="far fa-calendar me-1"></i> November 26, 2025
-            </div>
-            <h3 class="card-title h5">
-              <a href="/2025/11/26/sadfaf.html" class="text-dark text-decoration-none">sdasdf</a>
-            </h3>
-            <p class="card-text flex-grow-1">
-              safasf
-            </p>
-            <a href="/2025/11/26/sadfaf.html" class="btn btn-primary btn-sm align-self-start mt-auto">Read more →</a>
-          </div>
-        </article>
-      </div>
-      
-      <div class="col-lg-6 mb-4">
-        <article class="card h-100 shadow-sm">
-          
-          <img src="/images/background.webp" class="card-img-top" alt="My First SEO-Friendly Post" style="height: 200px; object-fit: cover;" />
-          
-          <div class="card-body d-flex flex-column">
-            <div class="text-muted small mb-2">
-              <i class="far fa-calendar me-1"></i> September 10, 2025
-            </div>
-            <h3 class="card-title h5">
-              <a href="/2025/09/10/my-first-post.html" class="text-dark text-decoration-none">My First SEO-Friendly Post</a>
-            </h3>
-            <p class="card-text flex-grow-1">
-              This is a short description for SEO.
-            </p>
-            <a href="/2025/09/10/my-first-post.html" class="btn btn-primary btn-sm align-self-start mt-auto">Read more →</a>
-          </div>
-        </article>
-      </div>
-      
-    
   </div>
+
+  <!-- Dynamic Pagination -->
+  
 </main>
 
-<section class="newsletter-section bg-primary text-white py-5">
+<section class="newsletter-section bg-primary text-white py-5 mt-4">
   <div class="container text-center">
     <h3>Stay Updated with Digital Trends</h3>
     <p class="mb-4">Subscribe to our newsletter for the latest insights on SEO and marketing.</p>
@@ -119,6 +64,85 @@
     </form>
   </div>
 </section>
+
+<style>
+.post-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.post-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.post-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.post-card:hover .post-image img {
+  transform: scale(1.05);
+}
+
+.post-image-placeholder {
+  height: 200px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.post-title a {
+  color: #2c3e50;
+  transition: color 0.3s ease;
+}
+
+.post-title a:hover {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.post-meta {
+  font-size: 0.85rem;
+}
+
+.read-more {
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.read-more:hover {
+  transform: translateX(5px);
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #3498db;
+  border-color: #3498db;
+}
+
+.pagination .page-link {
+  color: #2c3e50;
+  border: 1px solid #e9ecef;
+  margin: 0 3px;
+  border-radius: 8px;
+  padding: 8px 16px;
+}
+
+.pagination .page-link:hover {
+  background-color: #f8f9fa;
+  border-color: #3498db;
+}
+</style>
+
 
       </div>
     </main><footer class="site-footer h-card">
