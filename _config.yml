@@ -4,16 +4,12 @@ description: "Insights, tips and latest trends in digital marketing, SEO, and we
 baseurl: "" 
 url: "https://www.aadigitalworks.com"
 
-# Pagination settings
-paginate: 5
-paginate_path: "/blog/page:num/"
 
 markdown: kramdown
 theme: minima
 
 # Plugins
 plugins:
-  - jekyll-paginate
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
@@ -27,21 +23,7 @@ collections:
 
 # For Jekyll 3.x compatibility (use 'gems' instead of 'plugins')
 gems:
-  - jekyll-paginate
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-redirect-from
-
-# Defaults for paginated pages
-defaults:
-  - scope:
-      path: "blog/page/*"
-      type: pages
-    values:
-      layout: "default"
-      sitemap: false
-
-# Exclude pagination pages from processing
-exclude:
-  - "blog/page/*"
