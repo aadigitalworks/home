@@ -205,3 +205,5 @@ document.addEventListener('click', function() {
         items: 1
     });
 });
+
+document.getElementById("year").textContent = new Date().getFullYear();
