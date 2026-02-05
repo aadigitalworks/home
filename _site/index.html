@@ -1,442 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>AA DigitalWorks - Global Digital Agency | SEO, Google Ads & Web Development</title>
-        <link rel="icon" type="image/svg+xml" href="images/logo-bimi.svg" />
-        <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="Global digital marketing agency offering SEO, Google Ads, website development, and software solutions across Ireland, Iraq, USA, Canada, UAE, and Saudi Arabia.">      
-        <meta name="keywords" content="SEO services, Google Ads management, website development, software development, digital marketing agency, online advertising, search engine optimization, web design, custom software, digital solutions, Ireland, Iraq, USA, Canada, UAE, Saudi Arabia">
-        <meta name="author" content="AA DigitalWorks">
-        <meta property="og:site_name" content="AA DigitalWorks - Global Digital Agency">
-        <meta property="og:title" content="AA DigitalWorks - Global Digital Solutions Agency">
-        <meta property="og:description" content="International digital agency providing cutting-edge SEO, Google Ads, web development, and software solutions worldwide.">
-        <meta property="og:image" content="/images/logo-bimi.svg">
-        <meta property="og:url" content="https://www.aadigitalworks.com">
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="AA DigitalWorks - Global Digital Solutions Agency">
-        <meta name="twitter:description" content="International digital agency providing cutting-edge SEO, Google Ads, web development, and software solutions worldwide.">
-        <meta name="twitter:image" content="/images/logo-bimi.svg">
-        <link rel="canonical" href="https://www.aadigitalworks.com">
-        <!-- Font Awesome for star icons -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"  defer></script>
-        <!-- slider stylesheet -->
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-        <!-- bootstrap core css -->
-        <link rel="stylesheet" href="css/bootstrap.css" media="print" onload="this.media='all'">
-        <noscript><link rel="stylesheet" href="css/bootstrap.css"></noscript>
-        <!-- fonts style -->
-        <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&family=Poppins:400,700&display=swap" as="style">
-        <!-- Custom styles for this template -->
-        <link href="css/style.css" rel="stylesheet">
-        <link href="css/style.scss" rel="stylesheet">
-        <!-- responsive style -->
-        <link rel="preload" href="css/style.css" as="style">
-        <link rel="preload" href="images/background.webp" as="image">
-        <link rel="preload" href="images/background-mobile.webp" as="image" media="(max-width: 600px)">
-        <link rel="stylesheet" href="css/non-critical.css" media="print" onload="this.onload=null;this.removeAttribute('media');">
-        <link rel="preconnect" href="https://your-cdn.com">
-        <link rel="preload" href="styles/non-critical.css" as="style">
-        <!-- Custom CSS for Google Reviews and WhatsApp -->
-        <style>
-            /* Google Reviews Styling */
-            .google-review-section {
-                background: #f8f9fa;
-                padding: 80px 0;
-            }
-            
-            .section-title {
-                font-size: 2.5rem;
-                font-weight: 700;
-                margin-bottom: 30px;
-                color: #333;
-            }
-            
-            .text-primary {
-                color: #4285F4 !important;
-            }
-            
-            .review-stars {
-                color: #fbbc04;
-            }
-            
-            .review-stars i {
-                margin-right: 2px;
-            }
-            
-            .testimonial-carousel .d-flex {
-                background: white;
-                padding: 30px;
-                border-radius: 10px;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-                height: 100%;
-            }
-            
-            .testimonial-carousel .img-fluid.rounded-circle {
-                border: 3px solid #4285F4;
-            }
-            
-            .btn-google-review {
-                background: #4285F4;
-                color: white;
-                padding: 12px 25px;
-                border-radius: 5px;
-                font-weight: 600;
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                text-decoration: none;
-                transition: all 0.3s;
-                border: none;
-            }
-            
-            .btn-google-review:hover {
-                background: #3367d6;
-                color: white;
-                transform: translateY(-2px);
-                box-shadow: 0 5px 15px rgba(66, 133, 244, 0.3);
-            }
-            
-            .google-logo {
-                width: 20px;
-                height: auto;
-                margin-right: 10px;
-            }
-            
-            .owl-prev, .owl-next {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                background: #4285F4 !important;
-                color: white !important;
-                width: 40px;
-                height: 40px;
-                border-radius: 50%;
-                display: flex !important;
-                align-items: center;
-                justify-content: center;
-                font-size: 20px;
-            }
-            
-            .owl-prev {
-                left: -50px;
-            }
-            
-            .owl-next {
-                right: -50px;
-            }
-            
-            .owl-prev:hover, .owl-next:hover {
-                background: #3367d6 !important;
-            }
-            
-            /* WhatsApp Styling */
-            .whatsapp-float {
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                width: 60px;
-                height: 60px;
-                background: #25D366;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                z-index: 9999;
-                cursor: pointer;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            }
-            
-            .whatsapp-float .icon {
-                width: 32px;
-                height: 32px;
-                color: white;
-            }
-            
-            .whatsapp-float::before {
-                content: "";
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 60px;
-                height: 60px;
-                border: 2px solid #25D366;
-                border-radius: 50%;
-                opacity: 0;
-                animation: halo 1.8s infinite;
-                z-index: 1;
-            }
-            
-            @keyframes halo {
-                0% {
-                    width: 60px;
-                    height: 60px;
-                    opacity: 0.5;
-                }
-                100% {
-                    width: 90px;
-                    height: 90px;
-                    opacity: 0;
-                }
-            }
-            
-            /* WhatsApp Box */
-            .whatsapp-box {
-                display: none;
-                position: fixed;
-                bottom: 90px;
-                right: 20px;
-                width: 300px;
-                background: #fff;
-                border-radius: 8px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-                z-index: 10000;
-                font-family: 'Tahoma', sans-serif;
-                overflow: hidden;
-            }
-            
-            .whatsapp-header {
-                background-color: #25D366;
-                color: white;
-                padding: 12px;
-                position: relative;
-            }
-            
-            .whatsapp-close {
-                position: absolute;
-                top: 8px;
-                left: 10px;
-                font-size: 20px;
-                color: white;
-                cursor: pointer;
-            }
-            
-            .whatsapp-description h3 {
-                margin: 0;
-                font-size: 18px;
-                font-weight: bold;
-            }
-            
-            .whatsapp-description p {
-                margin: 4px 0;
-                font-size: 14px;
-            }
-            
-            .small-text {
-                font-size: 12px;
-            }
-            
-            .whatsapp-body {
-                padding: 10px;
-            }
-            
-            .whatsapp-account {
-                display: flex;
-                align-items: center;
-                text-decoration: none;
-                background: #f5f5f5;
-                border-radius: 6px;
-                padding: 8px;
-                transition: background 0.2s;
-            }
-            
-            .whatsapp-account:hover {
-                background: #e0e0e0;
-            }
-            
-            .whatsapp-avatar .icon {
-                width: 32px;
-                height: 32px;
-                color: #25D366;
-                margin-left: 10px;
-            }
-            
-            .whatsapp-info {
-                margin-right: 10px;
-                display: flex;
-                flex-direction: column;
-            }
-            
-            .whatsapp-label {
-                font-size: 12px;
-                color: #555;
-            }
-            
-            .whatsapp-name {
-                font-size: 14px;
-                font-weight: bold;
-                color: #333;
-            }
-            
-            .whatsapp-footer {
-                padding: 10px;
-                background: #f9f9f9;
-            }
-            
-            .whatsapp-footer p {
-                font-size: 12px;
-                text-align: center;
-                color: #666;
-            }
-            
-            /* Responsive adjustments */
-            @media (max-width: 768px) {
-                .owl-prev {
-                    left: 10px;
-                }
-                
-                .owl-next {
-                    right: 10px;
-                }
-                
-                .section-title {
-                    font-size: 2rem;
-                }
-                
-                .whatsapp-box {
-                    width: 280px;
-                    right: 10px;
-                }
-            }
-        </style>
-        <script defer>
-        (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "ng6tsk5m93");
-        </script>
-<!-- Structured Data Script -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "AA DigitalWorks",
-  "url": "https://www.aadigitalworks.com",
-  "logo": "https://www.aadigitalworks.com/images/logo-bimi.svg",
-  "description": "AA DigitalWorks offers global digital solutions including SEO, Google Ads, website development, and custom software services.",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "Customer Service",
-    "email": "info@aadigitalworks.com",
-    "availableLanguage": ["English", "Arabic"]
-  },
-  "serviceArea": {
-    "@type": "Place",
-    "name": "Global - Serving Ireland, Iraq, USA, Canada, UAE, Saudi Arabia and worldwide"
-  },
-  "service": [
-    {
-      "@type": "Service",
-      "serviceType": "SEO Services",
-      "provider": {
-        "@type": "Organization",
-        "name": "AA DigitalWorks"
-      }
-    },
-    {
-      "@type": "Service",
-      "serviceType": "Google Ads Management",
-      "provider": {
-        "@type": "Organization",
-        "name": "AA DigitalWorks"
-      }
-    },
-    {
-      "@type": "Service",
-      "serviceType": "Website Development",
-      "provider": {
-        "@type": "Organization",
-        "name": "AA DigitalWorks"
-      }
-    },
-    {
-      "@type": "Service",
-      "serviceType": "Custom Software Development",
-      "provider": {
-        "@type": "Organization",
-        "name": "AA DigitalWorks"
-      }
-    },
-    {
-      "@type": "Service",
-      "serviceType": "System Development",
-      "provider": {
-        "@type": "Organization",
-        "name": "AA DigitalWorks"
-      }
-    },
-    {
-      "@type": "Service",
-      "serviceType": "Web Applications",
-      "provider": {
-        "@type": "Organization",
-        "name": "AA DigitalWorks"
-      }
-    }
-  ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "3568",
-    "bestRating": "5"
-  }
-}
-</script>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>AA DigitalWorks - SEO Agency | Google ads and Websites</title>
+      <link rel="icon" type="image/svg+xml" href="images/logo-bimi.svg" />
+      <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description"
+         content="Expert SEO, Google Ads, and website development services in the UAE and Saudi Arabia.">
+      <meta name="keywords"
+         content="SEO services, Google Ads management, website development, digital marketing UAE, digital marketing Saudi Arabia, online advertising, search engine optimization, web design UAE, web design Saudi Arabia">
+      <meta name="author" content="AA DigitalWorks">
+      <meta property="og:site_name" content="AA DigitalWorks - SEO Agency">
+      <meta property="og:title" content="AA DigitalWorks - Digital Solutions in UAE and Saudi Arabia">
+      <meta property="og:description"
+         content="Delivering cutting-edge digital solutions including Google Ads, SEO, and websites in UAE and KSA.">
+      <meta property="og:image" content="/images/logo-bimi.svg">
+      <meta property="og:url" content="https://www.aadigitalworks.com">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:title" content="AA DigitalWorks - Digital Solutions in UAE and Saudi Arabia">
+      <meta name="twitter:description"
+         content="Delivering cutting-edge digital solutions including Google Ads, SEO, and websites in UAE and KSA.">
+      <meta name="twitter:image" content="/images/logo-bimi.svg">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+      <link rel="canonical" href="https://www.aadigitalworks.com">
+      <link rel="canonical" href="https://www.aadigitalworks.com">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js" defer></script>
+      <!-- slider stylesheet -->
+      <link rel="stylesheet" type="text/css"
+         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+      <!-- bootstrap core css -->
+      <link rel="stylesheet" href="css/bootstrap.css" media="print" onload="this.media='all'">
+      <noscript>
+         <link rel="stylesheet" href="css/bootstrap.css">
+      </noscript>
+      <!-- fonts style -->
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+      <!-- Custom styles for this template -->
+      <link href="css/style.css" rel="stylesheet">
+      <!-- responsive style -->
+      <link rel="preload" href="css/style.css" as="style">
+      <link rel="preload" href="images/background.webp" as="image">
+      <link rel="preload" href="images/background-mobile.webp" as="image" type="image/webp" media="(max-width: 600px)">
+      <link rel="preconnect" href="https://your-cdn.com">
+      <script defer>
+         (function (c, l, a, r, i, t, y) {
+           c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+           t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+           y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+         })(window, document, "clarity", "script", "ng6tsk5m93");
+      </script>
+      <!-- Structured Data Script -->
+      <script type="application/ld+json">
+         {
+           "@context": "https://schema.org",
+           "@type": "Organization",
+           "name": "AA DigitalWorks",
+           "url": "https://www.aadigitalworks.com",
+           "logo": "https://www.aadigitalworks.com/images/logo-bimi.svg",
+           "description": "AA DigitalWorks offers SEO, Google Ads, and website development services across the UAE and Saudi Arabia.",
+           "contactPoint": {
+             "@type": "ContactPoint",
+             "contactType": "Customer Service",
+             "email": "info@aadigitalworks.com",
+             "availableLanguage": "English"
+           },
+           "serviceArea": {
+             "@type": "Place",
+             "name": "UAE and Saudi Arabia"
+           },
+           "service": [
+             {
+               "@type": "Service",
+               "serviceType": "SEO",
+               "provider": {
+                 "@type": "Organization",
+                 "name": "AA DigitalWorks"
+               }
+             },
+             {
+               "@type": "Service",
+               "serviceType": "Google Ads",
+               "provider": {
+                 "@type": "Organization",
+                 "name": "AA DigitalWorks"
+               }
+             },
+             {
+               "@type": "Service",
+               "serviceType": "Website Development",
+               "provider": {
+                 "@type": "Organization",
+                 "name": "AA DigitalWorks"
+               }
+             },
+             {
+               "@type": "Service",
+               "serviceType": "Web Apps",
+               "provider": {
+                 "@type": "Organization",
+                 "name": "AA DigitalWorks"
+               }
+             },
+             {
+               "@type": "Service",
+               "serviceType": "Social Media Ads",
+               "provider": {
+                 "@type": "Organization",
+                 "name": "AA DigitalWorks"
+               }
+             }
+           ],
+           "aggregateRating": {
+             "@type": "AggregateRating",
+             "ratingValue": "5",
+             "reviewCount": "3568"
+           },
+           "review": {
+             "@type": "Review",
+             "reviewRating": {
+               "@type": "Rating",
+               "ratingValue": "5"
+             },
+             "author": {
+               "@type": "Person",
+               "name": "Riyadh Al-Harthiy"
+             },
+             "reviewBody": "AA DigitalWorks helped our Dubai-based brand grow quickly with a strong SEO strategy. We reached page 1 on Google in a short time. Their team is smart, responsive, and professional. Truly one of the top SEO providers in the UAE and Saudi Arabia."
+           }
+         }
+      </script>
    </head>
    <body>
-      <!-- WhatsApp Floating Button -->
-      <div class="whatsapp-float" onclick="toggleWhatsAppBox()">
-          <svg class="icon" viewBox="0 0 448 512">
-              <path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path>
-          </svg>
-      </div>
-      
-      <!-- WhatsApp Chat Box -->
-      <div class="whatsapp-box" id="whatsappBox">
-          <div class="whatsapp-header">
-              <span class="whatsapp-close" onclick="toggleWhatsAppBox()">×</span>
-              <div class="whatsapp-description">
-                  <h3>Welcome to AA DigitalWorks!</h3>
-                  <p>Global Digital Agency - We're here to help</p>
-                  <p class="small-text">Click on contact to chat on WhatsApp</p>
-              </div>
-          </div>
-          <div class="whatsapp-body">
-              <a href="https://wa.me/+353899888746?text=Hello%20AA%20DigitalWorks,%20I%20would%20like%20to%20discuss%20a%20project" target="_blank" class="whatsapp-account">
-                  <div class="whatsapp-avatar">
-                      <svg class="icon" viewBox="0 0 448 512" width="32" height="32">
-                          <path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
-                      </svg>
-                  </div>
-                  <div class="whatsapp-info">
-                      <span class="whatsapp-label">Technical Support</span>
-                      <span class="whatsapp-name">AA DigitalWorks Team</span>
-                  </div>
-              </a>
-          </div>
-          <div class="whatsapp-footer">
-              <p class="small-text">Click for direct WhatsApp communication</p>
-          </div>
-      </div>
-      
       <div class="hero_area" id="hero-area">
-         
          <!-- header section strats -->
          <header class="header_section">
             <div class="container-fluid">
                <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
                   <a class="navbar-brand" href="\">
                   <span>
-                  AA DigitalWorks 
+                  AA DigitalWorks
                   </span>
                   </a>
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -446,10 +155,10 @@
                               <a class="nav-link" href="#aboutus"> About </a>
                            </li>
                            <li class="nav-item">
-                              <a class="nav-link" href="#wedo"> Services </a>
+                              <a class="nav-link" href="#wedo"> What we do </a>
                            </li>
                            <li class="nav-item">
-                              <a class="nav-link" href="#Form">Contact</a>
+                              <a class="nav-link" href="#Form">Contact us</a>
                            </li>
                         </ul>
                      </div>
@@ -468,15 +177,18 @@
                            <div class="detail-box">
                               <div>
                                  <h1 class="welcome">
-                                    Digital Solutions for Global Businesses
+                                    Google Ads | SEO | Websites
                                  </h1>
                                  <h2 class="Company-name">
-                                  AA DigitalWorks 
+                                    AA DigitalWorks
                                  </h2>
-                                 <h3><span class="typed" id="changingText"></span><span class="typed-cursor" aria-hidden="true">|</span></h3>
+                                 <!--<h3 class="Company-name">Agency</h3>-->
+                                 <!-- HTML with a placeholder for the changing text and cursor -->
+                                 <h3><span class="typed" id="changingText"></span><span class="typed-cursor"
+                                    aria-hidden="true">|</span></h3>
                                  <div class="">
                                     <a href="quote">
-                                    Get A Free Quote
+                                    Get A Quote
                                     </a>
                                  </div>
                               </div>
@@ -491,347 +203,471 @@
       </div>
       <section id="wedo" class="do_section layout_padding scrolling-text">
          <div class="container">
-           <div class="heading_container">
-             <h2>Our Global Services</h2>
-             <p>AA DigitalWorks provides comprehensive digital solutions for businesses worldwide.</p>
-           </div>
-           <div class="do_container">
-             <div class="box arrow-start arrow_bg">
-               <div class="img-box">
-                 <img src="images/d-1.png" alt="SEO Services" loading="lazy">
+            <div class="heading_container">
+               <h2>Our Services</h2>
+               <p>At AA DigitalWorks, we specialize in delivering cutting-edge solutions to meet your digital needs.</p>
+               <p>Our expertise encompasses:</p>
+            </div>
+            <div class="do_container">
+               <div class="box arrow-start arrow_bg">
+                  <div class="img-box">
+                     <img src="images/d-1.png" alt="Digital Ads & SEO" loading="lazy">
+                  </div>
+                  <div class="detail-box">
+                     <h3>Digital Ads & SEO</h3>
+                     <p>Comprehensive digital marketing and SEO services to boost your online presence.</p>
+                  </div>
                </div>
-               <div class="detail-box">
-                 <h3>Search Engine Optimization</h3>
-                 <p>Comprehensive SEO strategies to improve your visibility and organic rankings globally.</p>
+               <div class="box arrow-middle arrow_bg">
+                  <div class="img-box">
+                     <img src="images/d-2.png" alt="Web Apps" loading="lazy">
+                  </div>
+                  <div class="detail-box">
+                     <h3>Web Apps</h3>
+                     <p>Custom web applications tailored to your business needs.</p>
+                  </div>
                </div>
-             </div>
-             <div class="box arrow-middle arrow_bg">
-               <div class="img-box">
-                 <img src="images/d-2.png" alt="Google Ads Management" loading="lazy">
+               <div class="box arrow-end arrow_bg">
+                  <div class="img-box">
+                     <img src="images/d-4.png" alt="Websites" loading="lazy">
+                  </div>
+                  <div class="detail-box">
+                     <h3>Websites</h3>
+                     <p>High-quality websites designed to engage and convert visitors.</p>
+                  </div>
                </div>
-               <div class="detail-box">
-                 <h3>Google Ads Management</h3>
-                 <p>Strategic PPC campaigns to drive targeted traffic and maximize ROI across all markets.</p>
+               <div class="box arrow-middle arrow_bg">
+                  <div class="img-box">
+                     <img src="images/Qr-menus.png" alt="QR Menus" loading="lazy">
+                  </div>
+                  <div class="detail-box">
+                     <h3>QR Menus</h3>
+                     <p>Innovative QR code menus for modern dining experiences.</p>
+                  </div>
                </div>
-             </div>
-             <div class="box arrow-end arrow_bg">
-               <div class="img-box">
-                 <img src="images/d-4.png" alt="Website Development" loading="lazy">
+               <div class="box">
+                  <div class="img-box">
+                     <img src="images/menus.png" alt="Digital Menus" loading="lazy">
+                  </div>
+                  <div class="detail-box">
+                     <h3>Digital Menus</h3>
+                     <p>Interactive digital menus for an enhanced customer experience.</p>
+                  </div>
                </div>
-               <div class="detail-box">
-                 <h3>Website Development</h3>
-                 <p>Custom websites designed to engage visitors and convert leads across all devices.</p>
-               </div>
-             </div>
-             <div class="box arrow-middle arrow_bg">
-               <div class="img-box">
-                 <img src="images/webapps.jpg" alt="Web Applications" loading="lazy">
-               </div>
-               <div class="detail-box">
-                 <h3>Web Applications</h3>
-                 <p>Custom web applications and SaaS solutions tailored to your business requirements.</p>
-               </div>
-             </div>
-             <div class="box">
-               <div class="img-box">
-                 <img src="images/software-dev.png" alt="Software Development" loading="lazy">
-               </div>
-               <div class="detail-box">
-                 <h3>Software Development</h3>
-                 <p>Custom software solutions and business applications for operational efficiency.</p>
-               </div>
-             </div>
-             <div class="box">
-               <div class="img-box">
-                 <img src="images/system-dev.png" alt="System Development" loading="lazy">
-               </div>
-               <div class="detail-box">
-                 <h3>System Development</h3>
-                 <p>Enterprise-level system architecture and development for scalable business growth.</p>
-               </div>
-             </div>
-           </div>
+            </div>
          </div>
-       </section>
-       <!-- end do section -->
+      </section>
+      <!-- end do section -->
       <!-- who section -->
       <section class="who_section scrolling-text">
-        <div class="container">
-           <div class="row">
-              <div class="col-md-5">
-                 <div class="img-box">
-                   <img src="../images/who-img.jpg" 
-                   sizes="(max-width: 600px) 400px, 800px" 
-                   alt="About Us" 
-                   loading="lazy">
-                 </div>
-              </div>
-              <div class="col-md-7" id="aboutus">
-                 <div class="detail-box">
-                    <div class="heading_container">
-                       <br><br><br>
-                       <h2>About AA DigitalWorks</h2>
-                    </div>
-                    <p id="introText">
-                       AA DigitalWorks is a global digital agency with expertise spanning multiple continents and industries.
-                    </p>
-                    <div id="fullText" style="display: none;">
-                       <p>At AA DigitalWorks, we are a globally recognized digital agency with a passion for innovation and a commitment to excellence across international markets. Our team brings together diverse expertise from around the world to deliver cutting-edge digital solutions that empower businesses to thrive in today's competitive landscape.</p>
-                       <p>With operations spanning Ireland, Iraq, USA, Canada, UAE, Saudi Arabia, and beyond, we understand the unique digital needs of businesses in different regions. Whether it's designing responsive websites that work seamlessly across continents, developing custom software solutions that streamline operations, implementing strategic SEO campaigns that drive international traffic, or managing Google Ads accounts with localized targeting, we have the global perspective and local knowledge to make your digital initiatives succeed.</p>
-                       <p>Our comprehensive service portfolio includes Search Engine Optimization (SEO), Google Ads management, website development, custom web applications, software development, and enterprise system solutions. We combine technical expertise with creative thinking to deliver results that matter to your business.</p>
-                       <p>What sets us apart is our client-centric approach, where open communication and collaboration are fundamental to our methodology. We recognize that every business is unique, and we tailor our solutions to match your specific goals, market requirements, and budget considerations, regardless of your location.</p>
-                       <p>Embark on a digital transformation journey with AA DigitalWorks, where global expertise meets local understanding. Together, we'll elevate your brand to new heights in the digital world.</p>
-                    </div>
-                    <div id="readMoreContainer">
-                       <a href="#" id="readMoreLink" title="Click to read more about our global services">Read More</a>
-                   </div>                    
-                 </div>
-              </div>
-           </div>
-        </div>
-     </section>
+         <div class="container">
+            <div class="row">
+               <div class="col-md-5">
+                  <div class="img-box">
+                     <img src="../images/who-img.jpg" sizes="(max-width: 600px) 400px, 800px" alt="About Us" loading="lazy">
+                  </div>
+               </div>
+               <div class="col-md-7" id="aboutus">
+                  <div class="detail-box">
+                     <div class="heading_container">
+                        <br><br><br>
+                        <h2>About Us</h2>
+                     </div>
+                     <p id="introText">
+                        At AA DigitalWorks, we are a team driven by a passion for innovation and a commitment to excellence.
+                     </p>
+                     <div id="fullText" style="display: none;">
+                        <p>At AA DigitalWorks, we are a team driven by a passion for innovation and a commitment to excellence.
+                        </p>
+                        <p>Our expertise lies in crafting cutting-edge digital solutions that empower businesses to thrive in
+                           today's fast-paced world. Whether it's designing visually stunning websites, developing tailored web
+                           applications, enhancing search engine visibility with strategic SEO services, or revolutionizing the
+                           dining experience with advanced digital menu solutions, we are dedicated to bringing your digital vision
+                           to life.
+                        </p>
+                        <p>Choose AA DigitalWorks for a client-centric approach, where open communication and collaboration are
+                           the pillars of our service. We understand that every business is unique, and we tailor our solutions to
+                           match your specific goals, preferences, and budget.
+                        </p>
+                        <p>Embark on a digital journey with AA DigitalWorks, where innovation meets expertise, and together, we'll
+                           elevate your brand to new heights. We support both Arabic and English languages, catering to clients in
+                           United Arab Emirates (UAE), Iraq, Saudi Arabia, Lebanon, Jordan, and Kuwait.
+                        </p>
+                     </div>
+                     <div id="readMoreContainer">
+                        <a href="#" id="readMoreLink" title="Click to read more about our services">Read More</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
       <!-- end who section -->
-      <!-- work section -->
+       <!--work section-->
+       <section>
+
+     <div class="aa-portfolio-wrapper">
+    <div class="main-terminal">
+        
+        <div class="header-bar">
+            <div class="dots-group">
+                <span class="dot-c r"></span><span class="dot-c y"></span><span class="dot-c g"></span>
+            </div>
+            <div class="system-path">A_A_DIGITAL_WORKS // LIVE_PROJECT_STREAM</div>
+        </div>
+
+        <div class="scroll-zone">
+            <div class="infinite-track" id="projectTrack">
+
+                <div class="work-card">
+                    <div class="img-frame">
+                        <img src="images/nails.png" alt="Nails Project">
+                        <div class="work-details">
+                            <span class="tag-dev">WEB DESIGN & UI</span>
+                            <h2>Luxury Nails Portfolio</h2>
+                            <p>Premium booking platform and gallery for aesthetic services.</p>
+                            <a href="https://www.aadigitalworks.com/" target="_blank" class="live-link">VERIFY PROJECT _</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <div class="img-frame">
+                        <img src="images/group.png" alt="Whiskey Project">
+                        <div class="work-details">
+                            <span class="tag-dev">BRAND SYSTEM</span>
+                            <h2>Spirit & Distillery Hub</h2>
+                            <p>High-performance showcase with age-gate and product filtration.</p>
+                            <a href="https://www.aadigitalworks.com/" target="_blank" class="live-link">VERIFY PROJECT _</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <div class="img-frame">
+                        <img src="images/eletcreper.png" alt="Electric Repair">
+                        <div class="work-details">
+                            <span class="tag-dev">LOCAL SEO ENGINE</span>
+                            <h2>Electrical Services Hub</h2>
+                            <p>Optimized for rapid lead generation and local search dominance.</p>
+                            <a href="https://www.aadigitalworks.com/" target="_blank" class="live-link">VERIFY PROJECT _</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <div class="img-frame">
+                        <img src="images/Cityofelectronics.png" alt="Electronics Store">
+                        <div class="work-details">
+                            <span class="tag-dev">E-COMMERCE & ADS</span>
+                            <h2>City of Electronics</h2>
+                            <p>Massive product catalog integrated with automated Google Shopping Ads.</p>
+                            <a href="https://www.aadigitalworks.com/" target="_blank" class="live-link">VERIFY PROJECT _</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <div class="img-frame">
+                        <img src="images/webapp.jpg" alt="Web Application">
+                        <div class="work-details">
+                            <span class="tag-dev">CUSTOM WEB APP</span>
+                            <h2>Enterprise Admin Dashboard</h2>
+                            <p>Full-stack backend system for managing client KPIs and ad performance.</p>
+                            <a href="https://www.aadigitalworks.com/" target="_blank" class="live-link">VERIFY PROJECT _</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <div class="img-frame">
+                        <img src="images/tv-menu.png" alt="TV Menu">
+                        <div class="work-details">
+                            <span class="tag-dev">DIGITAL SIGNAGE</span>
+                            <h2>Cloud-Based TV Menu</h2>
+                            <p>Real-time digital menu updates for hospitality environments.</p>
+                            <a href="https://www.aadigitalworks.com/" target="_blank" class="live-link">VERIFY PROJECT _</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div> </div> </div>
+</div>
+       </section>
+       <!--end work section-->
+      <!-- old work section 
       <section class="work_section layout_padding scrolling-text2">
          <div class="container">
             <div class="heading_container">
                <h2>
-                  Global Portfolio
+                  Our WORKS
                </h2>
                <p>
-                  Explore our international portfolio showcasing innovative digital solutions across multiple industries and regions. From enterprise software systems to responsive websites and custom applications, our work demonstrates technical excellence and creative thinking that delivers results worldwide.
+                  Step into a realm of innovation with AA DigitalWorks's portfolio. Our visually stunning websites and tailored
+                  web applications showcase a fusion of creativity and functionality, while our revolutionary digital menu
+                  solutions and impactful digital ads redefine industry standards. Explore the possibilities as we bring brands
+                  to life in the digital age.
                </p>
             </div>
             <div class="work_container layout_padding2" style="justify-content: center; overflow: hidden;">
                <div class="gallery">
                   <span style="--i:1">
-                  <img src="images/church.png" alt="International Church Website" loading="lazy">
+                  <img src="images/church.png" alt="church website" loading="lazy">
                   </span>
                   <span style="--i:2">
-                  <img src="images/webapps.jpg" alt="Global Food Web Application" loading="lazy">
+                  <img src="images/webapps.jpg" alt="food web app" loading="lazy">
                   </span>
                   <span style="--i:3">
-                  <img src="images/webapp.jpg" alt="International Car Rental System" loading="lazy">
+                  <img src="images/webapp.jpg" alt="cars web app" loading="lazy">
                   </span>
                   <span style="--i:4">
-                  <img src="images/nails.png" alt="Beauty Salon Website" loading="lazy">
+                  <img src="images/nails.png" alt="nalis website" loading="lazy">
                   </span>
                   <span style="--i:5">
-                     <img src="images/Cityofelectronics.png" alt="E-commerce Platform" loading="lazy">
+                  <img src="images/Cityofelectronics.png" alt="City website" loading="lazy">
                   </span>
                   <span style="--i:6">
-                  <img src="images/eletcreper.png" alt="Restaurant Management System" loading="lazy">
+                  <img src="images/eletcreper.png" alt="eletwebsite" loading="lazy">
                   </span>
                   <span style="--i:7">
-                  <img src="images/group.png" alt="Corporate Group Website" loading="lazy">
+                  <img src="images/group.png" alt="groupwebsite" loading="lazy">
                   </span>
                   <span style="--i:8">
-                  <img src="images/software-portfolio.png" alt="Custom Software Dashboard" loading="lazy">
+                  <img src="images/tv-menu.png" alt="menuwebsite" loading="lazy">
                   </span>
                </div>
             </div>
          </div>
-      </section>
+      </section>-->
       <!-- end work section -->
-<!-- Google Reviews Section -->
-<section class="google-review-section scrolling-text2">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-7 py-5 pr-md-5">
-                <h4 class="text-primary font-weight-normal text-uppercase mb-3 pt-5">Google Rating</h4>
-                <h1 class="mb-4 section-title">Our Clients Rating</h1>
-                <div class="d-flex justify-content-center align-items-center mb-4">
-                    <!-- Google Logo -->
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" style="width: 60px; height: auto;" class="mr-3">
-                    <!-- Rating -->
-                    <div>
-                        <h1 class="mb-2">4.9/5</h1>
-                        <div class="review-stars mb-2">
-                            <!-- Full stars -->
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <p class="text-muted">Based on 3,568 reviews</p>
-                    </div>
-                </div>
+      <!-- client section -->
+      <section class="py-5"
+         style="background-color: #f8f9fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+         <div class="container">
+            <div class="google-rating-header mb-5 text-center">
+               <div class="mb-3">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"
+                     style="width: 110px;">
+               </div>
+               <h2
+                  style="font-weight: 700; color: #202124; margin-bottom: 8px; display: flex; align-items: center; justify-content: center;">
+                  Excellent Google Rating
+                  <span style="display: inline-flex; margin-left: 8px;" title="Verified Business">
+                     <svg width="20" height="20" viewBox="0 0 24 24" fill="#1a73e8">
+                        <path
+                           d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z">
+                        </path>
+                     </svg>
+                  </span>
+               </h2>
+               <div class="d-flex justify-content-center align-items-center mb-2">
+                  <span style="font-weight: 700; font-size: 2.2rem; color: #202124; line-height: 1;" class="mr-3">5.0</span>
+                  <div class="google-stars-wrapper">
+                     <span class="g-star">★</span><span class="g-star">★</span><span class="g-star">★</span><span
+                        class="g-star">★</span><span class="g-star">★</span>
+                  </div>
+               </div>
+               <div class="text-muted d-flex justify-content-center align-items-center"
+                  style="font-size: 0.95rem; font-weight: 500;">
+                  <svg width="14" height="14" fill="#ea4335" class="mr-2" viewBox="0 0 24 24">
+                     <path
+                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                  </svg>
+                  Based on 3,568 Google reviews
+               </div>
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- Google Reviews Carousel -->
-<section class="py-5 scrolling-text">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-7 py-5 pr-md-5">
-                <h6 class="text-primary font-weight-normal text-uppercase mb-3 pt-5">Google Reviews</h6>
-                <h1 class="mb-4 section-title">What Our Clients Say</h1>
-                <div class="owl-carousel testimonial-carousel position-relative pb-5 mb-md-5">
-                    <!-- Review 1 -->
-                    <div class="d-flex flex-column">
-                        <div class="d-flex align-items-center mb-3">
-                            <img class="img-fluid rounded-circle" src="https://lh3.googleusercontent.com/a-/ALV-UjXwroHDFCa0o44Yk31CyXCbXn7Vh7qrYOl9xUljj6si2F5MQz_u=w75-h75-p-rp-mo-ba3-br100" style="width: 60px; height: 60px;" alt="Sarah O'Connor">
-                            <div class="ml-3">
-                                <h5>Sarah O'Connor</h5>
-                                <div class="d-flex align-items-center">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" style="width: 20px; height: auto;" class="mr-2">
-                                    <div class="review-stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="position-relative px-md-5">
+               <div class="owl-carousel google-small-carousel">
+                  <div class="google-box">
+                     <div class="g-header">
+                        <div class="g-avatar av-blue">R</div>
+                        <div class="g-user-info">
+                           <div class="g-name">ريم الاسدي</div>
+                           <div class="g-stars">★★★★★</div>
                         </div>
-                        <p>"AA DigitalWorks transformed our Dublin-based retail business. Their SEO strategy increased our organic traffic by 300% in just 4 months. Professional and responsive team!"</p>
-                        <small class="text-muted">Dublin, Ireland</small>
-                    </div>
-                    
-                    <!-- Review 2 -->
-                    <div class="d-flex flex-column">
-                        <div class="d-flex align-items-center mb-3">
-                            <img class="img-fluid rounded-circle" src="https://lh3.googleusercontent.com/a/ACg8ocKrSgPRUundXfUJ6GQwZF9Ux3oNkwrmkPHSyd2F5DmVjY2bRA=w75-h75-p-rp-mo-br100" style="width: 60px; height: 60px;" alt="Michael Rodriguez">
-                            <div class="ml-3">
-                                <h5>Michael Rodriguez</h5>
-                                <div class="d-flex align-items-center">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" style="width: 20px; height: auto;" class="mr-2">
-                                    <div class="review-stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
+                        <img
+                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/archive/c/c1/20170301123009%21Google_%22G%22_logo.svg/120px-Google_%22G%22_logo.svg.png"
+                           class="g-logo">
+                     </div>
+                     <div class="g-text">"لقد تعاملت معهم وكانوا صادقين بكل كلمه واعطوني نصائح حقيقة..."</div>
+                  </div>
+                  <div class="google-box">
+                     <div class="g-header">
+                        <div class="g-avatar av-red">S</div>
+                        <div class="g-user-info">
+                           <div class="g-name">Slaneyside Furniture</div>
+                           <div class="g-stars">★★★★★</div>
                         </div>
-                        <p>"Outstanding Google Ads management! Our e-commerce store saw a 450% ROI increase working with AA DigitalWorks. Their expertise in US market targeting is exceptional."</p>
-                        <small class="text-muted">New York, USA</small>
-                    </div>
-                    
-                    <!-- Review 3 -->
-                    <div class="d-flex flex-column">
-                        <div class="d-flex align-items-center mb-3">
-                            <img class="img-fluid rounded-circle" src="https://lh3.googleusercontent.com/a-/ALV-UjUrJRnjPbEyK_Rz6Ki6lhogMRg9CpmeRsHLJhSkVvCb-JUWGWve=w45-h45-p-rp-mo-br100" style="width: 60px; height: 60px;" alt="Ahmed Al-Mansoor">
-                            <div class="ml-3">
-                                <h5>Ahmed Al-Mansoor</h5>
-                                <div class="d-flex align-items-center">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" style="width: 20px; height: auto;" class="mr-2">
-                                    <div class="review-stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
+                        <img
+                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/archive/c/c1/20170301123009%21Google_%22G%22_logo.svg/120px-Google_%22G%22_logo.svg.png"
+                           class="g-logo">
+                     </div>
+                     <div class="g-text">"I recommend AA Digitalworks; they rebuilt our website to make it professional."</div>
+                  </div>
+                  <div class="google-box">
+                     <div class="g-header">
+                        <div class="g-avatar av-green">L</div>
+                        <div class="g-user-info">
+                           <div class="g-name">Lisa Burke</div>
+                           <div class="g-stars">★★★★★</div>
                         </div>
-                        <p>"محترفين جداً! لقد ساعدونا في تطوير نظام إدارة متكامل لشركتنا في الرياض. فريق AA DigitalWorks يفهم تماماً متطلبات السوق السعودي ويعمل بجدية واحترافية."</p>
-                        <small class="text-muted">Riyadh, Saudi Arabia</small>
-                    </div>
-                    
-                    <!-- Review 4 -->
-                    <div class="d-flex flex-column">
-                        <div class="d-flex align-items-center mb-3">
-                            <img class="img-fluid rounded-circle" src="https://lh3.googleusercontent.com/a-/ALV-UjVONpHBZLyz0sDZbK8A1j5ZhI-kJ9dHaF2R9-hBYNHlZX91cM4g=w75-h75-p-rp-mo-br100" style="width: 60px; height: 60px;" alt="Jennifer Lee">
-                            <div class="ml-3">
-                                <h5>Jennifer Lee</h5>
-                                <div class="d-flex align-items-center">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" style="width: 20px; height: auto;" class="mr-2">
-                                    <div class="review-stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
+                        <img
+                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/archive/c/c1/20170301123009%21Google_%22G%22_logo.svg/120px-Google_%22G%22_logo.svg.png"
+                           class="g-logo">
+                     </div>
+                     <div class="g-text">"Highly recommended AA DigitalWorks; they are the best to deal with."</div>
+                  </div>
+                  <div class="google-box">
+                     <div class="g-header">
+                        <div class="g-avatar av-orange">P</div>
+                        <div class="g-user-info">
+                           <div class="g-name">Paul Murphy</div>
+                           <div class="g-stars">★★★★★</div>
                         </div>
-                        <p>"The custom web application developed by AA DigitalWorks has streamlined our Canadian operations dramatically. Their team was collaborative and delivered beyond expectations."</p>
-                        <small class="text-muted">Toronto, Canada</small>
-                    </div>
-                    
-                    <!-- Review 5 -->
-                    <div class="d-flex flex-column">
-                        <div class="d-flex align-items-center mb-3">
-                            <img class="img-fluid rounded-circle" src="https://lh3.googleusercontent.com/a/ACg8ocL0JE-5IgoYNpfJO9ejPfKrIX8ApYFOZ77_Dl7Q8VR5DTrBpA=w75-h75-p-rp-mo-br100" style="width: 60px; height: 60px;" alt="Fatima Al-Zaabi">
-                            <div class="ml-3">
-                                <h5>Fatima Al-Zaabi</h5>
-                                <div class="d-flex align-items-center">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" style="width: 20px; height: auto;" class="mr-2">
-                                    <div class="review-stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
+                        <img
+                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/archive/c/c1/20170301123009%21Google_%22G%22_logo.svg/120px-Google_%22G%22_logo.svg.png"
+                           class="g-logo">
+                     </div>
+                     <div class="g-text">"Best friendly people I have dealt with."</div>
+                  </div>
+                  <div class="google-box">
+                     <div class="g-header">
+                        <div class="g-avatar av-purple">J</div>
+                        <div class="g-user-info">
+                           <div class="g-name">John Kelly</div>
+                           <div class="g-stars">★★★★★</div>
                         </div>
-                        <p>"Exceptional service for our Dubai-based hospitality business. The website they created is stunning and functional. Their multilingual support made all the difference."</p>
-                        <small class="text-muted">Dubai, UAE</small>
-                    </div>
-                </div>
-                <div class="text-center mt-4">
-                    <a href="https://g.page/r/CxEXAMPLE/review" target="_blank" class="btn btn-google-review">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" class="google-logo">
-                        Give us a Review
-                    </a>
-                </div>
+                        <img
+                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/archive/c/c1/20170301123009%21Google_%22G%22_logo.svg/120px-Google_%22G%22_logo.svg.png"
+                           class="g-logo">
+                     </div>
+                     <div class="g-text">"It is the best company ever; they supported my business from 0 to 10."</div>
+                  </div>
+                  <div class="google-box">
+                     <div class="g-header">
+                        <div class="g-avatar av-teal">M</div>
+                        <div class="g-user-info">
+                           <div class="g-name">مصطفى ابرايهم</div>
+                           <div class="g-stars">★★★★★</div>
+                        </div>
+                        <img
+                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/archive/c/c1/20170301123009%21Google_%22G%22_logo.svg/120px-Google_%22G%22_logo.svg.png"
+                           class="g-logo">
+                     </div>
+                     <div class="g-text">"سعيد جدا بالتعامل مع هذه الشركه الفريده من نوعها محترفين حقا."</div>
+                  </div>
+                  <div class="google-box">
+                     <div class="g-header">
+                        <div class="g-avatar av-red">P</div>
+                        <div class="g-user-info">
+                           <div class="g-name">Pat Murphy</div>
+                           <div class="g-stars">★★★★★</div>
+                        </div>
+                        <img
+                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/archive/c/c1/20170301123009%21Google_%22G%22_logo.svg/120px-Google_%22G%22_logo.svg.png"
+                           class="g-logo">
+                     </div>
+                     <div class="g-text">"I highly recommend AA DigitalWorks; very professional."</div>
+                  </div>
+                  <div class="google-box">
+                     <div class="g-header">
+                        <div class="g-avatar av-blue">M</div>
+                        <div class="g-user-info">
+                           <div class="g-name">Mohammad Salim</div>
+                           <div class="g-stars">★★★★★</div>
+                        </div>
+                        <img
+                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/archive/c/c1/20170301123009%21Google_%22G%22_logo.svg/120px-Google_%22G%22_logo.svg.png"
+                           class="g-logo">
+                     </div>
+                     <div class="g-text">"اوصي وبشدة التعامل معهم لقد أثبتوا جدارتهم بالفعل"</div>
+                  </div>
+                  <div class="google-box">
+                     <div class="g-header">
+                        <div class="g-avatar av-green">H</div>
+                        <div class="g-user-info">
+                           <div class="g-name">محمد كاظم</div>
+                           <div class="g-stars">★★★★★</div>
+                        </div>
+                        <img
+                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/archive/c/c1/20170301123009%21Google_%22G%22_logo.svg/120px-Google_%22G%22_logo.svg.png"
+                           class="g-logo">
+                     </div>
+                     <div class="g-text">"لقد ثبتت جدارة هذه الشركة بامتيازات جيدة معي والحمد لله"</div>
+                  </div>
+               </div>
             </div>
-        </div>
-    </div>
-</section>
-  <!--end of Google Reviews Section-->
- <!-- target section -->
+            <div class="google-nav mt-4 d-flex justify-content-center align-items-center">
+               <button class="g-nav-btn prev"><i class="fa fa-chevron-left"></i></button>
+               <button class="g-nav-btn  next"><i class="fa fa-chevron-right"></i></button>
+            </div>
+         </div>
+      </section>
+      <!--end of clinet Section-->
       <section class="target_section layout_padding2 scrolling-text">
          <div class="container">
             <div class="row">
                <div class="col-md-3 col-sm-6">
                   <div class="detail-box">
-                     <h2>
-                        15 +
-                     </h2>
+                     <div class="stats-container">
+                        <h2 class="counter" data-base="15" data-year-start="2009" data-annual-increase="1">
+                           <span class="counter-value">15</span>
+                        </h2>
+                        <span class="years-info">Since 2009</span>
+                        <div class="year-progress">
+                           <div class="year-progress-fill" style="width: 100%"></div>
+                        </div>
+                     </div>
                      <h3>
-                        Years Global Experience
+                        <i class="fas fa-business-time"></i> Years of Experience
                      </h3>
                   </div>
                </div>
                <div class="col-md-3 col-sm-6">
                   <div class="detail-box">
-                     <h2>
-                        5000 +
-                     </h2>
+                     <div class="stats-container">
+                        <h2 class="counter" data-base="690" data-year-start="2009" data-annual-increase="12">
+                           <span class="counter-value">5,000</span>
+                        </h2>
+                        <span class="years-info">+12% annually</span>
+                        <div class="year-progress">
+                           <div class="year-progress-fill" style="width: 100%"></div>
+                        </div>
+                     </div>
                      <h3>
-                        Global Projects
+                        <i class="fas fa-project-diagram"></i> Projects Delivered
                      </h3>
                   </div>
                </div>
                <div class="col-md-3 col-sm-6">
                   <div class="detail-box">
-                     <h2>
-                        6 +
-                     </h2>
+                     <div class="stats-container">
+                        <h2 class="counter" data-base="490" data-year-start="2009" data-annual-increase="10">
+                           <span class="counter-value">4,000</span>
+                        </h2>
+                        <span class="years-info">+10% annually</span>
+                        <div class="year-progress">
+                           <div class="year-progress-fill" style="width: 100%"></div>
+                        </div>
+                     </div>
                      <h3>
-                        Countries Served
+                        <i class="fas fa-user-check"></i> Satisfied Customers
                      </h3>
                   </div>
                </div>
                <div class="col-md-3 col-sm-6">
                   <div class="detail-box">
-                     <h2>
-                        4.9
-                     </h2>
+                     <div class="stats-container">
+                        <h2 class="counter" data-base="1500" data-year-start="2009" data-annual-increase="15">
+                           <span class="counter-value">15,000,000</span>
+                        </h2>
+                        <span class="years-info">+15% annually</span>
+                        <div class="year-progress">
+                           <div class="year-progress-fill" style="width: 100%"></div>
+                        </div>
+                     </div>
                      <h3>
-                        Google Rating
+                        <i class="fas fa-coffee"></i> Cups of Coffee
                      </h3>
                   </div>
                </div>
@@ -839,12 +675,46 @@
          </div>
       </section>
       <!-- end target section -->
-          <!-- contact section -->
+      <!-- Floating WhatsApp Icon -->
+      <div class="whatsapp-float" onclick="toggleWhatsAppBox()">
+         <svg class="icon" viewBox="0 0 448 512">
+            <path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+         </svg>
+      </div>
+      <!-- WhatsApp Chat Box -->
+      <div class="whatsapp-box" id="whatsappBox">
+         <div class="whatsapp-header">
+            <span class="whatsapp-close" onclick="toggleWhatsAppBox()">×</span>
+            <div class="whatsapp-description">
+               <h3>Welcome!</h3>
+               <p>Welcome to AA DigitalWorks — Your trusted digital marketing agency.</p>
+               <p class="small-text">Click below to contact us on WhatsApp</p>
+            </div>
+         </div>
+         <div class="whatsapp-body">
+            <a href="https://wa.me/353899888746?text=Hi!%20I%27m%20interested%20in%20your%20digital%20marketing%20services%20from%20AA%20DigitalWorks." 
+               target="_blank" class="whatsapp-account">
+               <div class="whatsapp-avatar">
+                  <svg class="icon" viewBox="0 0 448 512" width="32" height="32">
+                     <path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+                  </svg>
+               </div>
+               <div class="whatsapp-info">
+                  <span class="whatsapp-label">Customer Support</span>
+                  <span class="whatsapp-name">AA DigitalWorks</span>
+               </div>
+            </a>
+         </div>
+         <div class="whatsapp-footer">
+            <p class="small-text">Click to chat directly on WhatsApp</p>
+         </div>
+      </div>
+      <!-- contact section -->
       <section class="contact_section layout_padding scrolling-text2">
          <div class="container">
             <div class="heading_container" id="Form">
                <h2>
-                  Contact Us
+                  Request A Call Back
                </h2>
             </div>
             <div class="row">
@@ -852,27 +722,28 @@
                   <div class="contact-form">
                      <form id="form" class="form" onsubmit="return submitForm(event)">
                         <div>
-                            <label for="Full-name">Full Name</label>
-                            <input type="text" name="Full name" id="Full-name" placeholder="Enter your full name" required>
+                           <label for="Full-name">Full Name</label>
+                           <input type="text" name="Full name" id="Full-name" placeholder="Enter your full name" required>
                         </div>
                         <div>
-                            <label for="Phone-Number">Phone Number</label>
-                            <input type="tel" name="Phone Number" id="Phone-Number" placeholder="Enter your phone number" required>
+                           <label for="Phone-Number">Phone Number</label>
+                           <input type="tel" name="Phone Number" id="Phone-Number" placeholder="Enter your phone number" required>
                         </div>
                         <div>
-                            <label for="email">Email Address</label>
-                            <input type="email" name="email" id="email" placeholder="Enter your email address" required>
+                           <label for="email">Email Address</label>
+                           <input type="email" name="email" id="email" placeholder="Enter your email address" required>
                         </div>
                         <div>
-                            <label for="message">Message</label>
-                            <input type="text" name="message" id="message" placeholder="Type your message here" required>
+                           <label for="message">Message</label>
+                           <input type="text" name="message" id="message" placeholder="Type your message here"
+                              class="input_message" required>
                         </div>
                         <div class="d-flex justify-content-center">
-                            <button type="submit" id="submit" class="btn_on-hover">Submit</button>
+                           <button type="submit" id="submit" class="btn_on-hover">Submit</button>
                         </div>
                         <div id="success-message"></div>
                         <div id="errorMessage"></div>
-                    </form>                                        
+                     </form>
                   </div>
                </div>
             </div>
@@ -881,303 +752,861 @@
       <!-- end contact section -->
       <section class="info_section scrolling-text">
          <div class="container">
-             <div class="row">
-                 <div class="col-md-3">
-                     <div class="info_contact">
-                         <h3>Global Locations</h3>
-                         <!-- Location Section -->
-                         <div class="location-info">
-                             <!-- Ireland - All Counties -->
-                             <div class="dropdown">
-                                 <button class="dropbtn">
-                                     <img src="images/location-white.png" class="country-icon" alt="Location Icon">
-                                     Ireland
-                                 </button>
-                                 <div class="dropdown-content">
-                                     <ul>
-                                         <!-- Major Cities -->
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/dublin">Dublin</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/cork">Cork</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/galway">Galway</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/limerick">Limerick</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/waterford">Waterford</a></li>
-                                         <!-- Counties -->
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/antrim">Antrim</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/armagh">Armagh</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/carlow">Carlow</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/cavan">Cavan</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/clare">Clare</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/derry">Derry</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/donegal">Donegal</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/down">Down</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/fermanagh">Fermanagh</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/kerry">Kerry</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/kildare">Kildare</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/kilkenny">Kilkenny</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/laois">Laois</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/leitrim">Leitrim</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/longford">Longford</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/louth">Louth</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/mayo">Mayo</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/meath">Meath</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/monaghan">Monaghan</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/offaly">Offaly</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/roscommon">Roscommon</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/sligo">Sligo</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/tipperary">Tipperary</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/tyrone">Tyrone</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/wexford">Wexford</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/wicklow">Wicklow</a></li>
-                                     </ul>
-                                 </div>
-                             </div>
-     
-                             <!-- USA -->
-                             <div class="dropdown">
-                                 <button class="dropbtn">
-                                     <img src="images/location-white.png" class="country-icon" alt="Location Icon">
-                                     United States
-                                 </button>
-                                 <div class="dropdown-content">
-                                     <ul>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/new-york">New York</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/los-angeles">Los Angeles</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/chicago">Chicago</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/houston">Houston</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/miami">Miami</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/san-francisco">San Francisco</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/boston">Boston</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/seattle">Seattle</a></li>
-                                     </ul>
-                                 </div>
-                             </div>
-                             
-                             <!-- Canada -->
-                             <div class="dropdown">
-                                 <button class="dropbtn">
-                                     <img src="images/location-white.png" class="country-icon" alt="Location Icon">
-                                     Canada
-                                 </button>
-                                 <div class="dropdown-content">
-                                     <ul>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/toronto">Toronto</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/vancouver">Vancouver</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/montreal">Montreal</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/calgary">Calgary</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/ottawa">Ottawa</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/edmonton">Edmonton</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/winnipeg">Winnipeg</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/quebec">Quebec City</a></li>
-                                     </ul>
-                                 </div>
-                             </div>
-                             
-                             <!-- Iraq -->
-                             <div class="dropdown">
-                                 <button class="dropbtn">
-                                     <img src="images/location-white.png" class="country-icon" alt="Location Icon">
-                                     Iraq
-                                 </button>
-                                 <div class="dropdown-content">
-                                     <ul>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/baghdad">Baghdad</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/basra">Basra</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/erbil">Erbil</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/mosul">Mosul</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/najaf">Najaf</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/karbala">Karbala</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/sulaymaniyah">Sulaymaniyah</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/kirkuk">Kirkuk</a></li>
-                                     </ul>
-                                 </div>
-                             </div>
-
-                             <!-- Saudi Arabia - All Major Cities -->
-                             <div class="dropdown">
-                                 <button class="dropbtn">
-                                     <img src="images/location-white.png" class="country-icon" alt="Location Icon">
-                                     Saudi Arabia
-                                 </button>
-                                 <div class="dropdown-content">
-                                     <ul>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/riyadh">Riyadh</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/jeddah">Jeddah</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/mecca">Mecca</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/medina">Medina</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/dammam">Dammam</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/khobar">Khobar</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/tabuk">Tabuk</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/abha">Abha</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/jubail">Jubail</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/taif">Taif</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/buraidah">Buraidah</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/hail">Hail</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/najran">Najran</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/jizan">Jizan</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/al-hasa">Al-Hasa</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/qassim">Qassim</a></li>
-                                     </ul>
-                                 </div>
-                             </div>
-
-                             <!-- UAE - All Emirates -->
-                             <div class="dropdown">
-                                 <button class="dropbtn">
-                                     <img src="images/location-white.png" class="country-icon" alt="Location Icon">
-                                     United Arab Emirates
-                                 </button>
-                                 <div class="dropdown-content">
-                                     <ul>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/abu-dhabi">Abu Dhabi</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/dubai">Dubai</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/sharjah">Sharjah</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/ajman">Ajman</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/umm-al-quwain">Umm Al Quwain</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/ras-al-khaimah">Ras Al Khaimah</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/fujairah">Fujairah</a></li>
-                                         <!-- Major Areas within Emirates -->
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/dubai-marina">Dubai Marina</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/jumeirah">Jumeirah</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/business-bay">Business Bay</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/al-barsha">Al Barsha</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/khalifa-city">Khalifa City</a></li>
-                                         <li><img src="images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="locations/mussafah">Mussafah</a></li>
-                                     </ul>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="col-md-3">
+            <div class="row">
+               <div class="col-md-10">
                   <div class="info_contact">
-                      <h3>Contact Information</h3>
-                      <div>
-                           <div class="img-box">
-                               <img src="images/WhatsApp-Logo.wine.png" style="width: 50px;" alt="WhatsApp icon" loading="lazy">
+                     <h3><i class="fas fa-map-marker-alt"></i> Locations</h3>
+                     <div class="location-info">
+                        <!-- UAE Dropdown -->
+                        <div class="dropdown" onclick="toggleDropdown(this)">
+                           <button class="dropbtn">
+                           <i class="fas fa-chevron-down"></i>
+                           <img src="images/location-white.png" class="country-icon" alt="Location Icon">
+                           United Arab Emirates
+                           </button>
+                           <div class="dropdown-content">
+                              <ul>
+                                 <li><i class="fas fa-city"></i><a href="locations/abu-dhabi">Abu Dhabi</a></li>
+                                 <li><i class="fas fa-city"></i><a href="locations/ajman">Ajman</a></li>
+                                 <li><i class="fas fa-city"></i><a href="locations/dubai">Dubai</a></li>
+                                 <li><i class="fas fa-city"></i><a href="locations/fujairah">Fujairah</a></li>
+                                 <li><i class="fas fa-city"></i><a href="locations/ras-al-khaimah">Ras Al Khaimah</a></li>
+                                 <li><i class="fas fa-city"></i><a href="locations/sharjah">Sharjah</a></li>
+                                 <li><i class="fas fa-city"></i><a href="locations/umm-al-quwain">Umm Al Quwain</a></li>
+                              </ul>
                            </div>
-                           <a href="https://wa.me/+353899888746" target="_blank" rel="noopener noreferrer" title="WhatsApp">
-                               <p>WhatsApp</p>
-                           </a>
-                      </div>
-                      <div>
-                          <div class="img-box">
-                              <img src="images/envelope-white.png" style="width: 18px;" alt="envelop icon" loading="lazy">
-                          </div>
-                          <a href="mailto:info@aadigitalworks.com" title="Email address">
-                              <p>info@aadigitalworks.com</p>
-                          </a>
-                      </div>
+                        </div>
+                        <!-- Saudi Arabia Dropdown -->
+                        <div class="dropdown" onclick="toggleDropdown(this)">
+                           <button class="dropbtn">
+                           <i class="fas fa-chevron-down"></i>
+                           <img src="images/location-white.png" class="country-icon" alt="Location Icon">
+                           Saudi Arabia
+                           </button>
+                           <div class="dropdown-content">
+                              <ul>
+                                 <li><i class="fas fa-city"></i><a href="locations/riyadh">Riyadh</a></li>
+                                 <li><i class="fas fa-city"></i><a href="locations/jeddah">Jeddah</a></li>
+                                 <li><i class="fas fa-city"></i><a href="locations/mecca">Mecca</a></li>
+                                 <li><i class="fas fa-city"></i><a href="locations/medina">Medina</a></li>
+                                 <li><i class="fas fa-city"></i><a href="locations/dammam">Dammam</a></li>
+                                 <li><i class="fas fa-city"></i><a href="locations/khobar">Khobar</a></li>
+                                 <li><i class="fas fa-city"></i><a href="locations/tabuk">Tabuk</a></li>
+                                 <li><i class="fas fa-city"></i><a href="locations/abha">Abha</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                        <!-- Iraq Dropdown -->
+                        <div class="dropdown" onclick="toggleDropdown(this)">
+                           <button class="dropbtn">
+                           <i class="fas fa-chevron-down"></i>
+                           <img src="images/location-white.png" class="country-icon" alt="Location Icon">
+                           Iraq
+                           </button>
+                           <div class="dropdown-content">
+                              <ul>
+                                 <li><i class="fas fa-city"></i><a href="locations/baghdad">Baghdad</a></li>
+                                 <li><i class="fas fa-city"></i><a href="locations/basra">Basra</a></li>
+                                 <li><i class="fas fa-city"></i><a href="locations/mosul">Mosul</a></li>
+                                 <li><i class="fas fa-city"></i><a href="locations/erbil">Erbil</a></li>
+                                 <li><i class="fas fa-city"></i><a href="locations/karbala">Karbala</a></li>
+                                 <li><i class="fas fa-city"></i><a href="locations/najaf">Najaf</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                        <!-- USA Dropdown -->
+                        <div class="dropdown" onclick="toggleDropdown(this)">
+                           <button class="dropbtn">
+                           <i class="fas fa-chevron-down"></i>
+                           <img src="images/location-white.png" class="country-icon" alt="Location Icon">
+                           USA
+                           </button>
+                           <div class="dropdown-content">
+                              <ul>
+                                 <li><i class="fas fa-city"></i><a href="locations/new-york">New York</a></li>
+                                 <li><i class="fas fa-city"></i><a href="locations/los-angeles">Los Angeles</a></li>
+                                 <li><i class="fas fa-city"></i><a href="locations/chicago">Chicago</a></li>
+                                 <li><i class="fas fa-city"></i><a href="locations/houston">Houston</a></li>
+                                 <li><i class="fas fa-city"></i><a href="locations/miami">Miami</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                        <!-- Canada Dropdown -->
+                        <div class="dropdown" onclick="toggleDropdown(this)">
+                           <button class="dropbtn">
+                           <i class="fas fa-chevron-down"></i>
+                           <img src="images/location-white.png" class="country-icon" alt="Location Icon">
+                           Canada
+                           </button>
+                           <div class="dropdown-content">
+                              <ul>
+                                 <li><i class="fas fa-city"></i><a href="locations/toronto">Toronto</a></li>
+                                 <li><i class="fas fa-city"></i><a href="locations/vancouver">Vancouver</a></li>
+                                 <li><i class="fas fa-city"></i><a href="locations/montreal">Montreal</a></li>
+                                 <li><i class="fas fa-city"></i><a href="locations/calgary">Calgary</a></li>
+                                 <li><i class="fas fa-city"></i><a href="locations/ottawa">Ottawa</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
                   </div>
-              </div>
-                 <div class="col-md-3 d-flex flex-column align-items-center text-center">
-                     <h3>Our Social Media</h3>
+               </div>
+               <div class="col-md-8">
+                  <div class="info_contact">
+                     <h3><i class="fas fa-address-book"></i> Contact Information</h3>
                      <div>
-                         <div class="social_box">
-                             <a href="https://www.facebook.com/AADigitalWorks">
-                                 <img src="images/fb.png" style="width: 30px;" alt="Facebook Icon" loading="lazy">
-                             </a>
-                             <a href="https://www.linkedin.com/company/aadigitalworks" target="_blank" rel="noopener noreferrer">
-                                 <img src="images/linkedin.png" style="width: 30px;" alt="LinkedIn Icon" loading="lazy">
-                             </a>
-                             <a href="https://g.page/r/your-google-business-link" target="_blank" rel="noopener noreferrer">
-                                 <img src="images/google-logo.png" style="width: 30px;" alt="Google Business Icon" loading="lazy">
-                             </a>
-                             <a href="https://www.youtube.com/@AADigitalWorks">
-                                 <img src="images/youtube.png" style="width: 30px;" alt="Youtube Icon" loading="lazy">
-                             </a>
-                         </div>
+                        <div class="img-box">
+                           <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <a href="https://wa.me/+353899888746" target="_blank" rel="noopener noreferrer" title="WhatsApp">
+                           <p>WhatsApp</p>
+                        </a>
                      </div>
-                 </div>
-     
-                 <div class="col-md-3">
-                     <div class="info_form">
-                         <h3>Newsletter</h3>
-                         <form id="newsletter-form" onsubmit="return submitForm(event)">
-                           <div>
-                               <label for="newsletter-email">Enter your email:</label>
-                               <input type="email" id="newsletter-email" placeholder="example@domain.com" required>
-                           </div>
-                           <button type="submit">Subscribe</button>
-                       </form>
-                         <div id="newsletter-response" style="display: none;"></div>
+                     <div>
+                        <div class="img-box">
+                           <i class="fas fa-envelope"></i>
+                        </div>
+                        <a href="mailto:info@aadigitalworks.com" title="Email address">
+                           <p>info@aadigitalworks.com</p>
+                        </a>
                      </div>
-                 </div>
-             </div>
+                  </div>
+               </div>
+               <div class="col-md-8 d-flex flex-column align-items-center text-center">
+                  <h3><i class="fas fa-share-alt"></i> Our Social Media</h3>
+                  <div>
+                     <div class="social_box">
+                        <a href="https://www.facebook.com/AADigitalWorks" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@aadigitalworks" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@AADigitalWorks" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-youtube"></i>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-10">
+                  <div class="info_form">
+                     <h3><i class="fas fa-newspaper"></i> Newsletter</h3>
+                     <form id="newsletter-form" onsubmit="return submitForm(event)">
+                        <div>
+                           <label for="newsletter-email">Stay updated with our latest news:</label>
+                           <input type="email" id="newsletter-email" placeholder="your.email@example.com" required>
+                        </div>
+                        <button type="submit">Subscribe</button>
+                     </form>
+                     <div id="newsletter-response" style="display: none;"></div>
+                  </div>
+               </div>
+            </div>
          </div>
-     </section>                  
-      <section class="container-fluid footer_section">
-         <h2 style="display: none;">Footer</h2>
-         <p>&copy; 2025 All Rights Reserved AA DigitalWorks - Global Digital Agency</p>
-         <p>Serving: Ireland | Iraq | USA | Canada | UAE | Saudi Arabia | Worldwide</p>
       </section>
- <!-- Google Tag Manager (gtag.js) -->
-<script src="https://www.googletagmanager.com/gtag/js?id=G-M74XDBHG7P" defer></script>
-
-<!-- jQuery (must be loaded before Owl Carousel and other scripts that depend on it) -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
-
-<!-- Owl Carousel JS (must be loaded after jQuery) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" defer></script>
-
-<!-- EmailJS Setup -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script  defer>emailjs.init('nYEsuR8Y6Oc2OeyAt');</script>
-
-<!-- Bootstrap and other non-critical scripts (if needed) -->
-<script src="js/bootstrap.js" defer></script>
-<script src="js/non-critical.js" defer></script>
-<script src="path/to/non-essential.js" defer></script>
-<script src="path/to/another-script.js" defer></script>
-
-<!-- Main JS (initialization scripts should be here) -->
-<script src="js/main.js" defer></script>
-<script src="js/email.js" defer></script>
-
-<!-- WhatsApp Function -->
-<script>
-function toggleWhatsAppBox() {
-    var whatsappBox = document.getElementById('whatsappBox');
-    if (whatsappBox.style.display === 'block') {
-        whatsappBox.style.display = 'none';
-    } else {
-        whatsappBox.style.display = 'block';
-    }
+      <section class="container-fluid footer_section">
+         <p>&copy; <span id="year"></span> All Rights Reserved AA DigitalWorks</p>
+      </section>
+      <script type="text/javascript">
+         (function (c, l, a, r, i, t, y) {
+           c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+           t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/ng6tsk5m93";
+           y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+         })(window, document, "clarity", "script", "ng6tsk5m93");
+      </script>
+      <!-- Google Tag Manager (gtag.js) -->
+      <script src="https://www.googletagmanager.com/gtag/js?id=G-M74XDBHG7P" defer></script>
+      <!-- jQuery (must be loaded before Owl Carousel and other scripts that depend on it) -->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+      <!-- Owl Carousel JS (must be loaded after jQuery) -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" defer></script>
+      <!-- EmailJS Setup -->
+      <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+      <script defer>emailjs.init('nYEsuR8Y6Oc2OeyAt');</script>
+      <!-- Bootstrap and other non-critical scripts (if needed) -->
+      <script src="js/bootstrap.js" defer></script>
+      <!-- Main JS (initialization scripts should be here) -->
+      <script src="js/main.js" defer></script>
+      <script src="js/email.js" defer></script>
+      <script>
+         // Toggle dropdown functionality
+         function toggleDropdown(element) {
+             const dropdown = element.closest('.dropdown');
+             const dropdownContent = dropdown.querySelector('.dropdown-content');
+             const chevron = dropdown.querySelector('.fa-chevron-down');
+             const isActive = dropdownContent.classList.contains('show');
+             
+             // Close all other dropdowns
+             document.querySelectorAll('.dropdown-content').forEach(content => {
+                 if (content !== dropdownContent) {
+                     content.classList.remove('show');
+                     content.closest('.dropdown').querySelector('.fa-chevron-down').style.transform = 'rotate(0deg)';
+                 }
+             });
+             
+             // Toggle current dropdown
+             if (!isActive) {
+                 dropdownContent.classList.add('show');
+                 chevron.style.transform = 'rotate(180deg)';
+             } else {
+                 dropdownContent.classList.remove('show');
+                 chevron.style.transform = 'rotate(0deg)';
+             }
+         }
+         
+         // Newsletter form submission
+         function submitForm(event) {
+             event.preventDefault();
+             
+             const emailInput = document.getElementById('newsletter-email');
+             const responseDiv = document.getElementById('newsletter-response');
+             const email = emailInput.value.trim();
+             
+             // Simple email validation
+             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+             
+             if (!emailRegex.test(email)) {
+                 responseDiv.innerHTML = 'Please enter a valid email address.';
+                 responseDiv.className = 'error';
+                 responseDiv.style.display = 'block';
+                 
+                 // Shake animation for error
+                 emailInput.style.animation = 'shake 0.5s ease';
+                 setTimeout(() => {
+                     emailInput.style.animation = '';
+                 }, 500);
+                 
+                 return false;
+             }
+             
+             // Simulate form submission
+             responseDiv.innerHTML = 'Thank you for subscribing! Check your email for confirmation.';
+             responseDiv.className = 'success';
+             responseDiv.style.display = 'block';
+             emailInput.value = '';
+             
+             // Hide response after 5 seconds
+             setTimeout(() => {
+                 responseDiv.style.display = 'none';
+             }, 5000);
+             
+             return false;
+         }
+         
+         // Close dropdowns when clicking outside
+         document.addEventListener('click', function(event) {
+             if (!event.target.closest('.dropdown')) {
+                 document.querySelectorAll('.dropdown-content').forEach(content => {
+                     content.classList.remove('show');
+                     content.closest('.dropdown').querySelector('.fa-chevron-down').style.transform = 'rotate(0deg)';
+                 });
+             }
+         });
+         
+         // Add shake animation for errors
+         const style = document.createElement('style');
+         style.textContent = `
+             @keyframes shake {
+                 0%, 100% { transform: translateX(0); }
+                 25% { transform: translateX(-5px); }
+                 75% { transform: translateX(5px); }
+             }
+         `;
+         document.head.appendChild(style);
+         
+           function toggleWhatsAppBox() {
+             const box = document.getElementById('whatsappBox');
+             if (box.style.display === 'block') {
+                 box.style.display = 'none';
+             } else {
+                 box.style.display = 'block';
+             }
+         }
+         
+           // Animated counter function
+         // Business Statistics Class
+         class BusinessStats {
+             constructor() {
+                 this.currentYear = new Date().getFullYear();
+                 this.counters = [];
+                 this.initialized = false;
+             }
+         
+             initialize() {
+                 this.counters = Array.from(document.querySelectorAll('.counter'));
+                 
+                 // Calculate current values based on year
+                 this.counters.forEach(counter => {
+                     const base = parseInt(counter.getAttribute('data-base'));
+                     const yearStart = parseInt(counter.getAttribute('data-year-start'));
+                     const annualIncrease = parseInt(counter.getAttribute('data-annual-increase'));
+                     
+                     // Calculate years passed
+                     const yearsPassed = this.currentYear - yearStart;
+                     
+                     // Calculate current value
+                     let currentValue;
+                     if (counter.parentElement.querySelector('i.fa-business-time')) {
+                         // Years of business - just add years passed
+                         currentValue = yearsPassed;
+                     } else {
+                         // Other metrics - apply annual percentage increase
+                         currentValue = this.calculateCompoundGrowth(base, annualIncrease, yearsPassed);
+                     }
+                     
+                     // Update data attributes
+                     counter.setAttribute('data-current', Math.round(currentValue));
+                     counter.setAttribute('data-annual-increase', annualIncrease);
+                     
+                     // Store current value for display
+                     const counterValue = counter.querySelector('.counter-value');
+                     counterValue.setAttribute('data-display', Math.round(currentValue).toLocaleString());
+                     
+                     // Update percentage display
+                     this.updatePercentageDisplay(counter, base, currentValue);
+                 });
+                 
+                 this.initialized = true;
+             }
+         
+             calculateCompoundGrowth(base, annualPercent, years) {
+                 // Compound growth formula: final = base * (1 + rate)^years
+                 const rate = annualPercent / 100;
+                 return base * Math.pow((1 + rate), years);
+             }
+         
+             updatePercentageDisplay(counter, base, current) {
+                 const percentageElement = counter.querySelector('.percentage');
+                 const increase = ((current - base) / base) * 100;
+                 
+                 if (percentageElement) {
+                     percentageElement.textContent = `+${increase.toFixed(1)}%`;
+                     percentageElement.title = `${increase.toFixed(1)}% total increase since start`;
+                 }
+             }
+         
+             simulateAnnualUpdate() {
+                 // This would be called annually or could be connected to real-time data
+                 this.counters.forEach(counter => {
+                     if (!counter.classList.contains('animated')) return;
+                     
+                     const current = parseInt(counter.getAttribute('data-current'));
+                     const annualIncrease = parseInt(counter.getAttribute('data-annual-increase'));
+                     
+                     // For years counter, just add 1
+                     if (counter.parentElement.querySelector('i.fa-business-time')) {
+                         const newValue = current + 1;
+                         counter.setAttribute('data-current', newValue);
+                         this.animateCounterUpdate(counter, current, newValue);
+                     } else {
+                         // For other counters, add percentage
+                         const increase = current * (annualIncrease / 100);
+                         const newValue = current + increase;
+                         counter.setAttribute('data-current', Math.round(newValue));
+                         this.animateCounterUpdate(counter, current, newValue);
+                     }
+                 });
+             }
+         
+             animateCounterUpdate(counter, oldValue, newValue) {
+                 const counterValue = counter.querySelector('.counter-value');
+                 const percentageElement = counter.querySelector('.percentage');
+                 
+                 // Animate the counter
+                 this.animateNumber(counterValue, oldValue, newValue, 1500);
+                 
+                 // Update percentage
+                 const base = parseInt(counter.getAttribute('data-base'));
+                 this.updatePercentageDisplay(counter, base, newValue);
+             }
+         
+             animateNumber(element, start, end, duration) {
+                 const startTime = Date.now();
+                 const endTime = startTime + duration;
+                 
+                 const animate = () => {
+                     const now = Date.now();
+                     const progress = Math.min((now - startTime) / duration, 1);
+                     
+                     // Easing function for smooth animation
+                     const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+                     const current = start + (end - start) * easeOutQuart;
+                     
+                     // Format with commas
+                     element.textContent = Math.round(current).toLocaleString();
+                     
+                     if (now < endTime) {
+                         requestAnimationFrame(animate);
+                     } else {
+                         element.textContent = Math.round(end).toLocaleString();
+                     }
+                 };
+                 
+                 requestAnimationFrame(animate);
+             }
+         }
+         
+         // Animated counter function for initial load
+         function animateCounter(element, target) {
+             const counter = element.querySelector('.counter-value');
+             const speed = 50;
+             const increment = Math.ceil(target / 100);
+             let current = 0;
+             
+             const timer = setInterval(() => {
+                 current += increment;
+                 if (current >= target) {
+                     current = target;
+                     clearInterval(timer);
+                 }
+                 
+                 counter.textContent = Math.round(current).toLocaleString();
+             }, speed);
+         }
+         
+         // Scroll animation detection
+         function isElementInViewport(el) {
+             const rect = el.getBoundingClientRect();
+             return (
+                 rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+                 rect.bottom >= 0
+             );
+         }
+         
+         // Animate counters when in viewport
+         function checkCounters() {
+             const counters = document.querySelectorAll('.counter');
+             counters.forEach(counter => {
+                 if (isElementInViewport(counter) && !counter.classList.contains('animated')) {
+                     counter.classList.add('animated');
+                     const target = parseInt(counter.getAttribute('data-current') || counter.getAttribute('data-base'));
+                     animateCounter(counter, target);
+                     
+                     // Animate progress bar
+                     const progressBar = counter.closest('.stats-container').querySelector('.year-progress-fill');
+                     if (progressBar) {
+                         progressBar.style.width = '100%';
+                     }
+                 }
+             });
+         }
+         
+         // Scroll animation for section
+         function checkScroll() {
+             const section = document.querySelector('.scrolling-text');
+             if (isElementInViewport(section)) {
+                 section.classList.add('visible');
+             }
+         }
+         
+         // Initialize on load
+         document.addEventListener('DOMContentLoaded', function() {
+             // Initialize business stats
+             const businessStats = new BusinessStats();
+             businessStats.initialize();
+             
+             // Set current year in years counter
+             const yearCounter = document.querySelector('.counter[data-year-start="2009"]');
+             const yearStart = parseInt(yearCounter.getAttribute('data-year-start'));
+             const yearsPassed = new Date().getFullYear() - yearStart;
+             const yearsValue = yearCounter.querySelector('.counter-value');
+             yearsValue.setAttribute('data-display', yearsPassed.toString());
+             
+             // Set initial display values
+             businessStats.counters.forEach(counter => {
+                 const displayValue = counter.querySelector('.counter-value').getAttribute('data-display') || 
+                                    counter.getAttribute('data-base');
+                 counter.querySelector('.counter-value').textContent = displayValue;
+             });
+             
+             checkScroll();
+             checkCounters();
+             
+             // Simulate annual update (for demo purposes - in real app, this would be based on real data)
+             // Uncomment to simulate annual growth
+             /*
+             setTimeout(() => {
+                 businessStats.simulateAnnualUpdate();
+             }, 8000);
+             */
+             
+             // Store stats in global for potential updates
+             window.businessStats = businessStats;
+         });
+         
+         // Check on scroll
+         window.addEventListener('scroll', function() {
+             checkScroll();
+             checkCounters();
+         });
+         
+         // Optional: Add loading animation delay
+         setTimeout(() => {
+             const section = document.querySelector('.scrolling-text');
+             if (isElementInViewport(section)) {
+                 section.classList.add('visible');
+             }
+         }, 300);
+         
+         
+         
+         
+      </script>
+      <style>
+         /* Keep your original CSS */
+         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+         /* New enhanced footer styles that override the old ones */
+         .info_section {
+         color: white;
+         padding: 40px 0;
+         }
+         .info_section .container {
+         max-width: 1200px;
+         margin: 0 auto;
+         padding: 0 20px;
+         }
+         .info_section .row {
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+         gap: 30px;
+         }
+         .info_section .col-md-3 {
+         padding: 10px;
+         }
+         /* Enhanced Locations Section */
+         .info_section h3 {
+         font-size: 1.4rem;
+         margin-bottom: 25px;
+         padding-bottom: 10px;
+         border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+         position: relative;
+         display: flex;
+         align-items: center;
+         gap: 10px;
+         }
+         .location-info {
+         display: flex;
+         flex-direction: column;
+         gap: 12px;
+         }
+         .info_section .dropdown {
+         position: relative;
+         margin-bottom: 8px;
+         }
+         .info_section .dropbtn {
+         width: 100%;
+         padding: 12px 15px;
+         background: rgba(255, 255, 255, 0.1);
+         border: none;
+         border-radius: 8px;
+         color: white;
+         font-size: 0.95rem;
+         text-align: left;
+         cursor: pointer;
+         transition: all 0.3s ease;
+         display: flex;
+         align-items: center;
+         gap: 10px;
+         }
+         .info_section .dropbtn:hover {
+         background: rgba(255, 255, 255, 0.253);
+         transform: translateY(-2px);
+         }
+         .info_section .dropbtn .country-icon {
+         width: 18px;
+         height: 18px;
+         filter: brightness(0) invert(1);
+         }
+         .info_section .dropdown-content {
+         max-height: 0;
+         overflow: hidden;
+         border-radius: 8px;
+         margin-top: 5px;
+         transition: max-height 0.4s ease;
+         position: absolute;
+         width: 100%;
+         z-index: 1000;
+         }
+         .info_section .dropdown-content.show {
+         max-height: 300px;
+         overflow-y: auto;
+         }
+         .info_section .dropdown-content ul {
+         list-style: none;
+         padding: 15px;
+         margin: 0;
+         }
+         .info_section .dropdown-content li {
+         margin-bottom: 10px;
+         }
+         .info_section .dropdown-content li:last-child {
+         margin-bottom: 0;
+         }
+         .info_section .dropdown-content a {
+         display: flex;
+         align-items: center;
+         gap: 10px;
+         color: #e0e0e0;
+         text-decoration: none;
+         padding: 8px 10px;
+         border-radius: 5px;
+         transition: all 0.2s ease;
+         }
+         .info_section .dropdown-content a:hover {
+         background: rgba(255, 255, 255, 0.336);
+         color: white;
+         padding-left: 15px;
+         }
+         .info_section .dropdown-icon {
+         width: 14px;
+         height: 14px;
+         filter: brightness(0) invert(1);
+         }
+         /* Enhanced Contact Information */
+         .info_section .info_contact > div {
+         display: flex;
+         align-items: center;
+         gap: 15px;
+         margin: 20px 0;
+         padding: 10px;
+         border-radius: 8px;
+         transition: all 0.3s ease;
+         }
+         .col-md-8 > .info_contact > div:hover, .social_box a:hover{
+         background: rgba(255, 255, 255, 0.336);
+         color: white;
+         padding-left: 15px;
+         }
+         .info_section .img-box {
+         width: 40px;
+         height: 40px;
+         background: rgba(255, 255, 255, 0.1);
+         border-radius: 50%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         flex-shrink: 0;
+         }
+         .info_section .img-box img {
+         width: 24px;
+         height: 24px;
+         object-fit: contain;
+         }
+         .info_section .info_contact a {
+         color: white;
+         text-decoration: none;
+         font-size: 0.95rem;
+         transition: color 0.2s ease;
+         }
+         .info_section .info_contact p {
+         margin: 0;
+         }
+         /* Enhanced Social Media */
+         .info_section .d-flex.flex-column.align-items-center.text-center {
+         display: flex;
+         flex-direction: column;
+         align-items: flex-start;
+         }
+         .social_box {
+         display: flex;
+         gap: 15px;
+         margin-top: 10px;
+         }
+         .social_box a {
+         width: 45px;
+         height: 45px;
+         background: rgba(255, 255, 255, 0.1);
+         border-radius: 50%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         transition: all 0.3s ease;
+         }
+         .social_box img {
+         width: 24px;
+         height: 24px;
+         object-fit: contain;
+         filter: brightness(0) invert(1);
+         }
+         /* Responsive Design */
+         @media (max-width: 992px) {
+         .info_section .row {
+         grid-template-columns: repeat(2, 1fr);
+         gap: 25px;
+         }
+         }
+         @media (max-width: 768px) {
+         .info_section .row {
+         grid-template-columns: 1fr;
+         padding: 30px 25px;
+         }
+         .info_section .d-flex.flex-column.align-items-center.text-center {
+         align-items: flex-start;
+         }
+         .social_box {
+         justify-content: flex-start;
+         }
+         .info_form {
+         max-width: 400px;
+         }
+         }
+         @media (max-width: 480px) {
+         .info_section .row {
+         padding: 25px 20px;
+         }
+         .info_section .dropbtn {
+         padding: 10px 12px;
+         font-size: 0.9rem;
+         }
+         .info_section .info_contact > div {
+         gap: 12px;
+         }
+         }
+      /* --- A_A Digital Works Console Core --- */
+.aa-portfolio-wrapper {
+  width: 90%;
+  padding: 2vw; /* Responsive padding */
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-// Close WhatsApp box when clicking outside
-document.addEventListener('click', function(event) {
-    var whatsappBox = document.getElementById('whatsappBox');
-    var whatsappFloat = document.querySelector('.whatsapp-float');
-    
-    if (whatsappBox.style.display === 'block' && 
-        !whatsappBox.contains(event.target) && 
-        !whatsappFloat.contains(event.target)) {
-        whatsappBox.style.display = 'none';
-    }
-});
+.main-terminal {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #0a0a0c;
+  border: 1px solid #1f1f22;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.9);
+}
 
-// Initialize Owl Carousel for Google Reviews
-$(document).ready(function(){
-    $('.testimonial-carousel').owlCarousel({
-        loop: true,
-        margin: 30,
-        nav: true,
-        navText: ['<i class="fas fa-angle-left" aria-hidden="true"></i>', '<i class="fas fa-angle-right" aria-hidden="true"></i>'],
-        dots: false,
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:2
-            },
-            1000:{
-                items:2
-            }
-        }
+.header-bar {
+  background: #141416;
+  padding: 18px 25px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #1f1f22;
+}
+
+.dots-group { display: flex; gap: 10px; margin-right: 25px; }
+.dot-c { width: 12px; height: 12px; border-radius: 50%; }
+.r { background: #ff5f56; } .y { background: #ffbd2e; } .g { background: #27c93f; }
+.system-path { font-family: 'Courier New', monospace; color: #555; font-size: 13px; letter-spacing: 2px; }
+
+/* THE SCROLL ZONE */
+.scroll-zone {
+  height: 120vh; /* Perfect height for desktop visibility */
+  overflow: hidden;
+  position: relative;
+  background: #050505;
+  cursor: crosshair; /* Tech vibe cursor */
+}
+
+.infinite-track {
+  display: flex;
+  flex-direction: column;
+  /* Time adjusted for more content: 50 seconds for a smooth crawl */
+  animation: scrollMain 50s linear infinite;
+}
+
+/* COMPLETE STOP ON HOVER */
+.scroll-zone:hover .infinite-track {
+  animation-play-state: paused !important;
+}
+
+.work-card {
+  padding: 40px;
+  border-bottom: 1px solid #111;
+  transition: background 0.3s ease;
+}
+
+.img-frame {
+  position: relative;
+  width: 100%;
+  height: 105vh;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+  border: 1px solid #222;
+}
+
+.img-frame img {
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(1) grayscale(0.5); /* Dim when moving for clarity */
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hover State: Pure Clarity */
+.work-card:hover img {
+  filter: brightness(1) grayscale(0);
+  transform: scale(1.03);
+}
+
+.work-details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 60px;
+  background: linear-gradient(to top, rgba(0,0,0,0.95) 20%, transparent);
+  width: 100%;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  pointer-events: none; /* Allows clicking the link underneath */
+}
+
+.tag-dev { color: #2773c9; font-family: 'Courier New', monospace; font-size: 14px; font-weight: bold; letter-spacing: 1px; }
+.work-details h2 { font-size: 42px; margin: 15px 0; font-weight: 800; letter-spacing: -1px; }
+.work-details p { font-size: 18px; color: #999; margin-bottom: 30px; max-width: 600px; line-height: 1.6; }
+
+.live-link {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Courier New', monospace;
+  border: 1px solid #277bc9;
+  padding: 12px 28px;
+  transition: 0.3s;
+  pointer-events: auto; /* Makes the button clickable */
+  background: rgba(39, 115, 201, 0.05);
+}
+
+.live-link:hover {
+  background: #2780c9;
+  color: #000;
+  box-shadow: 0 0 20px rgba(39, 123, 201, 0.4);
+}
+
+@keyframes scrollMain {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .scroll-zone { height: 70vh; }
+  .img-frame { height: 45vh; }
+  .work-details { padding: 30px; }
+  .live-link {font-size: 15px;
+
+font-family: none;
+    padding: none}
+  .live-link:hover {font-size: 20px;}
+  
+  .work-details h2 { font-size: 15px; }
+  .work-details p { font-size: 10px; }
+}
+      </style>
+
+      <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const track = document.getElementById('projectTrack');
+        // This line doubles your project list instantly to allow a seamless loop
+        const content = track.innerHTML;
+        track.innerHTML = content + content;
     });
-});
 </script>
-
    </body>
 </html>
