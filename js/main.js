@@ -137,14 +137,6 @@ document.addEventListener("DOMContentLoaded", function() {
   };
 });
 
-// for css
-document.addEventListener("DOMContentLoaded", function() {
-  var link = document.createElement('link');
-  link.rel = 'stylesheet';
-  link.href = 'css/non-critical.css';
-  document.head.appendChild(link);
-});
-
 // Toggle dropdown on click for small screens
 document.addEventListener('DOMContentLoaded', function() {
 var dropdowns = document.querySelectorAll('.dropdown');
