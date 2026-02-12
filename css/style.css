@@ -924,7 +924,7 @@ For scrolling
 .hero_area {
   height: 100vh;
   background-color: #ffffff;
-  background-image: url("data:image/webp;base64,..."); /* Base64 encoded low-res image */
+  background-image: url("/images/background.webp"); /* Base64 encoded low-res image */
   background-size: cover;
   background-position: center;
   transition: background-image 0.5s ease-in-out;
@@ -949,6 +949,7 @@ For scrolling
 }
 
 .header_section .container-fluid {
+  display: contents;
   padding-right: 25px;
   padding-left: 25px;
 }
@@ -1027,6 +1028,7 @@ a:focus {
   -ms-flex-align: center;
   align-items: center;
   font-family: "Open Sans", sans-serif;
+  margin: 10px;
 }
 
 .navbar-brand span {
