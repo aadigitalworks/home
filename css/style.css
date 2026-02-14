@@ -2292,6 +2292,7 @@ label {
    cursor: pointer;
    color: #555;
 }
+
 /*OurWeb*/
 .ourweb {
   margin: 6%;
@@ -2328,3 +2329,8 @@ label {
     font-family: 'Noto Sans Arabic', sans-serif;
 }
 /*end lag*/
+
+[dir="rtl"] #changingText {
+    font-family: 'Cairo', 'Almarai', sans-serif;
+    font-weight: 700;
+}
