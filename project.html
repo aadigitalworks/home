@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="projectTitle">Project Details - AA DigitalWorks</title>
+    <meta name="description" id="projectDescription" content="Project details including Web Design, SEO, and Google Ads.">
+
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="AA DigitalWorks Project">
+    <meta property="og:description" content="Check out this project by AA DigitalWorks.">
+    <meta property="og:image" id="projectImage" content="">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8fafc;
+        }
+
+        /* Arabic RTL styles */
+        body.rtl {
+            font-family: 'Tajawal', 'Poppins', sans-serif;
+            direction: rtl;
+            text-align: right;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        body.rtl .logo {
+            font-family: 'Tajawal', 'Montserrat', sans-serif;
+        }
+
+        .logo i {
+            color: #4dabf7;
+        }
+
+        .project-title {
+            font-size: 2.5rem;
+            margin: 10px 0 15px;
+            font-weight: 700;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            padding: 8px 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+
+        main {
+            padding: 60px 0;
+        }
+
+        .project-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        @media (max-width: 992px) {
+            .project-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .project-image-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            height: 400px;
+            background-color: #f1f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-image-container:hover {
+            transform: translateY(-5px);
+        }
+
+        #projectMainImage {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-image-container:hover #projectMainImage {
+            transform: scale(1.03);
+        }
+
+        .project-details {
+            padding: 10px;
+        }
+
+        .project-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #4a5568;
+        }
+
+        .project-features h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #1e3c72;
+            font-weight: 600;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        @media (max-width: 576px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+        }
+
+        body.rtl .feature-item {
+            gap: 12px;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-item i {
+            color: #2a5298;
+            font-size: 1.2rem;
+            width: 30px;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 30px;
+            transition: color 0.3s ease;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px 0;
+        }
+
+        .back-button:hover {
+            color: #2a5298;
+        }
+
+        body.rtl .back-button i {
+            transform: rotate(180deg);
+        }
+
+        footer {
+            background: #1e293b;
+            color: #cbd5e1;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        body.rtl .footer-logo {
+            font-family: 'Tajawal', 'Montserrat', sans-serif;
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            margin-top: 20px;
+        }
+
+        .not-found {
+            text-align: center;
+            padding: 80px 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .not-found-icon {
+            font-size: 4rem;
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        .not-found h2 {
+            font-size: 2rem;
+            color: #1e293b;
+            margin-bottom: 15px;
+        }
+
+        .not-found p {
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        .not-found-link {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #2a5298;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .not-found-link:hover {
+            background: #1e3c72;
+            transform: translateY(-2px);
+        }
+
+        .loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #e2e8f0;
+            border-top: 5px solid #2a5298;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-code"></i>
+                AA DigitalWorks
+            </div>
+            <h1 id="projectHeading" class="project-title">Project Name</h1>
+            <div id="projectTags" class="project-tags">
+                <!-- Tags will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <button onclick="goBack()" class="back-button">
+                <i class="fas fa-arrow-left"></i> <span id="backBtnText">Back</span>
+            </button>
+
+            <div class="project-content">
+                <div class="project-image-container">
+                    <img id="projectMainImage" src="" alt="Project Image">
+                </div>
+
+                <div class="project-details">
+                    <p id="projectText" class="project-description">Project description goes here...</p>
+
+                    <div class="project-features">
+                        <h3 id="highlightsTitle">Project Highlights</h3>
+                        <div id="featuresGrid" class="features-grid">
+                            <!-- Features will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">AA DigitalWorks</div>
+                <p id="footerTagline" class="footer-text">Creating exceptional digital experiences through innovative web design, development, and marketing solutions.</p>
+                <p>&copy; <span id="year"></span> <span id="footerRights">All Rights Reserved AA DigitalWorks</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" id="projectSchema">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "Project Name",
+      "description": "Project description goes here...",
+      "url": "https://www.aadigitalworks.com/",
+      "image": "https://www.aadigitalworks.com/images/placeholder.png",
+      "about": "Web Design, UI, SEO, Google Ads"
+    }
+    </script>
+
+    <script>
+    // ================================================
+    // 🌐 COMPLETE BILINGUAL PROJECT DATA
+    // ================================================
+    const projectData = {
+        "SlaneySide Website": {
+            title: { en: "SlaneySide Website", ar: "موقع سلانيسايد" },
+            description: { 
+                en: "E-commerce marketplace website built for performance, SEO, and Google Ads integration. Fully responsive with advanced filtering, secure payment, and custom admin dashboard.",
+                ar: "سوق إلكتروني مبني للأداء العالي، تحسين محركات البحث وتكامل إعلانات جوجل. متجاوب بالكامل مع فلترة متقدمة، دفع آمن ولوحة تحكم مخصصة."
+            },
+            image: "images/Slaneysideonline.png",
+            tags: { 
+                en: ["Web Design & UI", "SEO", "Google Ads", "E-commerce"],
+                ar: ["تصميم واجهات", "تحسين محركات البحث", "إعلانات جوجل", "تجارة إلكترونية"]
+            },
+            link: "https://www.aadigitalworks.com/"
+        },
+        "SlaneySide Local Store Website": {
+            title: { en: "SlaneySide Local Store Website", ar: "متجر سلانيسايد المحلي" },
+            description: { 
+                en: "Local store and online E-commerce marketplace, SEO optimized for local search, fully responsive and mobile-friendly.",
+                ar: "متجر محلي وسوق إلكتروني، محسّن لتحسين محركات البحث المحلي، متجاوب ومتوافق مع الجوال."
+            },
+            image: "images/slaneyside.png",
+            tags: { 
+                en: ["Web Design & UI", "SEO", "Local SEO", "E-commerce"],
+                ar: ["تصميم واجهات", "تحسين محركات البحث", "سيدو محلي", "تجارة إلكترونية"]
+            },
+            link: "https://www.aadigitalworks.com/"
+        },
+        "ObrienGardening Website": {
+            title: { en: "ObrienGardening Website", ar: "موقع أوبراين للحدائق" },
+            description: { 
+                en: "Premium website for gardening services with quote requests, service listings, and optimized structure for SEO and client visibility.",
+                ar: "موقع متميز لخدمات البستنة مع طلب عروض أسعار، قوائم خدمات وهيكل محسّن لسيدو وظهور العملاء."
+            },
+            image: "images/obriengardening.png",
+            tags: { 
+                en: ["Web Design & UI", "SEO", "Business Website"],
+                ar: ["تصميم واجهات", "تحسين محركات البحث", "موقع أعمال"]
+            },
+            link: "https://www.aadigitalworks.com/"
+        },
+        "Luxury Nails Portfolio": {
+            title: { en: "Luxury Nails Portfolio", ar: "بورتفوليو لوكسوري نيلز" },
+            description: { 
+                en: "Premium booking platform and gallery for aesthetic services, SEO optimized, showcasing nail art portfolios and client reviews.",
+                ar: "منصة حجز فاخرة وصالة عرض للخدمات الجمالية، محسّنة لسيدو، تعرض أعمال فن الأظافر وتقييمات العملاء."
+            },
+            image: "images/nails.png",
+            tags: { 
+                en: ["Web Design & UI", "SEO", "Portfolio", "Booking System"],
+                ar: ["تصميم واجهات", "تحسين محركات البحث", "بورتفوليو", "نظام حجز"]
+            },
+            link: "https://www.aadigitalworks.com/"
+        },
+        "Spirit  Distillery Hub": {
+            title: { en: "Spirit Distillery Hub", ar: "مركز سبيريت للتقطير" },
+            description: { 
+                en: "High-performance digital platform with age verification, product filtering, and elegant UI for distillery products.",
+                ar: "منصة رقمية عالية الأداء مع التحقق من العمر، تصفية المنتجات وواجهة أنيقة لمنتجات التقطير."
+            },
+            image: "images/group.png",
+            tags: { 
+                en: ["Data Table System", "Web Design", "UI", "Business Platform"],
+                ar: ["نظام جداول بيانات", "تصميم ويب", "واجهات", "منصة أعمال"]
+            },
+            link: "https://www.aadigitalworks.com/"
+        },
+        "Electrical Services Hub": {
+            title: { en: "Electrical Services Hub", ar: "مركز الخدمات الكهربائية" },
+            description: { 
+                en: "Website optimized for rapid local lead generation and search dominance for electrical services, integrated with Local SEO strategies.",
+                ar: "موقع محسّن لتوليد عملاء محليين بسرعة والهيمنة على البحث لخدمات الكهرباء، مدمج مع استراتيجيات سيدو المحلي."
+            },
+            image: "images/eletcreper.png",
+            tags: { 
+                en: ["Local SEO Engine", "Web Design & UI", "Lead Generation"],
+                ar: ["محرك سيدو محلي", "تصميم واجهات", "توليد عملاء"]
+            },
+            link: "https://www.aadigitalworks.com/"
+        },
+        "Google SEO Electrical Services": {
+            title: { en: "Google SEO Electrical Services", ar: "خدمات كهرباء سيدو جوجل" },
+            description: { 
+                en: "Website engineered for strong local search ranking, fast lead generation, and optimized for Google SEO for electrical businesses.",
+                ar: "موقع مصمم لترتيب متقدم في البحث المحلي، توليد سريع للعملاء، محسّن لسيدو جوجل لشركات الكهرباء."
+            },
+            image: "images/googleseo.png",
+            tags: { 
+                en: ["Local SEO Engine", "SEO", "Lead Generation"],
+                ar: ["محرك سيدو محلي", "تحسين محركات البحث", "توليد عملاء"]
+            },
+            link: "https://www.aadigitalworks.com/"
+        },
+        "City of Electronics": {
+            title: { en: "City of Electronics", ar: "مدينة الإلكترونيات" },
+            description: { 
+                en: "Large-scale electronics e-commerce platform with Google Shopping Ads integration and automated product catalog management.",
+                ar: "منصة تجارة إلكترونية واسعة النطاق للإلكترونيات مع تكامل إعلانات جوجل للتسوق وإدارة كتالوج منتجات آلي."
+            },
+            image: "images/Cityofelectronics.png",
+            tags: { 
+                en: ["E-Commerce", "Google Ads", "Web Design", "SEO"],
+                ar: ["تجارة إلكترونية", "إعلانات جوجل", "تصميم ويب", "تحسين محركات البحث"]
+            },
+            link: "https://www.aadigitalworks.com/"
+        },
+        "Enterprise Admin Dashboard": {
+            title: { en: "Enterprise Admin Dashboard", ar: "لوحة تحكم إدارة المؤسسات" },
+            description: { 
+                en: "Full-stack web app for managing client KPIs, ad campaigns, and analytics with real-time updates and custom reporting.",
+                ar: "تطبيق ويب كامل لإدارة مؤشرات الأداء للعملاء، حملات إعلانية وتحليلات مع تحديثات فورية وتقارير مخصصة."
+            },
+            image: "images/webapps.jpg",
+            tags: { 
+                en: ["Custom Web App", "Dashboard", "Full-Stack Development"],
+                ar: ["تطبيق ويب مخصص", "لوحة تحكم", "تطوير كامل"]
+            },
+            link: "https://www.aadigitalworks.com/"
+        },
+        "Enterprise Admin Dashboard 2": {
+            title: { en: "Enterprise Admin Dashboard", ar: "لوحة تحكم المشاريع" },
+            description: { 
+                en: "Full-stack backend system for client management, KPI tracking, and ad performance monitoring for enterprise businesses.",
+                ar: "نظام خلفي متكامل لإدارة العملاء، تتبع مؤشرات الأداء ومراقبة أداء الإعلانات للشركات الكبرى."
+            },
+            image: "images/webapp.jpg",
+            tags: { 
+                en: ["Custom Web App", "Dashboard", "Business Analytics"],
+                ar: ["تطبيق ويب مخصص", "لوحة تحكم", "تحليلات أعمال"]
+            },
+            link: "https://www.aadigitalworks.com/"
+        },
+        "Church Website": {
+            title: { en: "Church Website", ar: "موقع الكنيسة" },
+            description: { 
+                en: "Custom web application for church and community management, including event tracking, donation management, and announcements.",
+                ar: "تطبيق ويب مخصص لإدارة الكنيسة والمجتمع، يشمل تتبع الفعاليات، إدارة التبرعات والإعلانات."
+            },
+            image: "images/church.png",
+            tags: { 
+                en: ["Custom Web App", "Community Platform", "Management System"],
+                ar: ["تطبيق ويب مخصص", "منصة مجتمعية", "نظام إداري"]
+            },
+            link: "https://www.aadigitalworks.com/"
+        },
+        "Cloud-Based TV Menu": {
+            title: { en: "Cloud-Based TV Menu", ar: "قائمة تلفزيون سحابية" },
+            description: { 
+                en: "Real-time digital menu platform for hospitality businesses, allowing instant updates, dynamic content, and smooth UX.",
+                ar: "منصة قوائم رقمية فورية لقطاع الضيافة، تتيح تحديثات لحظية، محتوى ديناميكي وتجربة مستخدم سلسة."
+            },
+            image: "images/tv-menu.png",
+            tags: { 
+                en: ["Digital Signage", "Cloud-Based System", "Web App"],
+                ar: ["لافتات رقمية", "نظام سحابي", "تطبيق ويب"]
+            },
+            link: "https://www.aadigitalworks.com/"
+        }
+    };
+
+    // ================================================
+    // 🌍 UI TRANSLATIONS
+    // ================================================
+    const uiText = {
+        back: { en: "Back", ar: "رجوع" },
+        highlights: { en: "Project Highlights", ar: "أبرز ملامح المشروع" },
+        footerTagline: { 
+            en: "Creating exceptional digital experiences through innovative web design, development, and marketing solutions.",
+            ar: "نصنع تجارب رقمية استثنائية عبر تصميم وتطوير وحلول تسويقية مبتكرة."
+        },
+        footerRights: { en: "All Rights Reserved AA DigitalWorks", ar: "جميع الحقوق محفوظة - إيه إيه ديجيتال ووركس" },
+        loading: { en: "Loading project details...", ar: "جاري تحميل المشروع..." },
+        projectNotFound: { en: "Project Not Found", ar: "المشروع غير موجود" },
+        notFoundMsg: { 
+            en: "The project you're looking for doesn't exist or has been moved.",
+            ar: "المشروع الذي تبحث عنه غير موجود أو تم نقله."
+        }
+    };
+
+    // ================================================
+    // ✨ FEATURE ITEMS (translatable)
+    // ================================================
+    const featureItems = {
+        en: [
+            { icon: "fa-paint-brush", text: "Modern Web Design" },
+            { icon: "fa-search", text: "SEO Optimized" },
+            { icon: "fa-mobile-alt", text: "Responsive Layout" },
+            { icon: "fa-bolt", text: "Fast Performance" },
+            { icon: "fa-shopping-cart", text: "E-commerce Ready" },
+            { icon: "fa-chart-line", text: "Analytics Integration" }
+        ],
+        ar: [
+            { icon: "fa-paint-brush", text: "تصميم ويب حديث" },
+            { icon: "fa-search", text: "محسّن لمحركات البحث" },
+            { icon: "fa-mobile-alt", text: "مظهر متجاوب" },
+            { icon: "fa-bolt", text: "أداء سريع" },
+            { icon: "fa-shopping-cart", text: "جاهز للتجارة" },
+            { icon: "fa-chart-line", text: "تكامل تحليلات" }
+        ]
+    };
+
+    // ================================================
+    // 🔍 DETECT LANGUAGE FROM URL PARAMETER
+    // ================================================
+    function detectLanguage() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const langParam = urlParams.get('lang');
+        const referrer = document.referrer || '';
+        
+        // 1️⃣ الأولوية القصوى: باراميتر ?lang= في الرابط
+        if (langParam === 'ar') {
+            return 'ar';
+        } else if (langParam === 'en') {
+            return 'en';
+        }
+        
+        // 2️⃣ التحقق من referrer إذا لم يوجد باراميتر
+        if (referrer.includes('/ar') || 
+            referrer.includes('/ar/')||
+            referrer.includes('ar.') ||
+            referrer.includes('_ar') ||
+            referrer.includes('.sa') || 
+            referrer.includes('.ae') || 
+            referrer.includes('.eg')) {
+            return 'ar';
+        }
+        
+        // 3️⃣ القيمة الافتراضية: الإنجليزية
+        return 'en';
+    }
+
+    // ================================================
+    // 🎨 RENDER PAGE WITH SELECTED LANGUAGE
+    // ================================================
+    let currentLang = 'en';
+
+    function renderPage(lang) {
+        currentLang = lang;
+        const projectName = new URLSearchParams(window.location.search).get('name');
+        const project = projectData[projectName];
+
+        // تحديث اتجاه الصفحة والخط
+        const body = document.body;
+        if (lang === 'ar') {
+            body.classList.add('rtl');
+            document.documentElement.lang = 'ar';
+            document.documentElement.dir = 'rtl';
+        } else {
+            body.classList.remove('rtl');
+            document.documentElement.lang = 'en';
+            document.documentElement.dir = 'ltr';
+        }
+
+        // تحديث النصوص الثابتة
+        document.getElementById('backBtnText').textContent = uiText.back[lang];
+        document.getElementById('highlightsTitle').textContent = uiText.highlights[lang];
+        document.getElementById('footerTagline').textContent = uiText.footerTagline[lang];
+        document.getElementById('footerRights').textContent = uiText.footerRights[lang];
+
+        // تحديث ميزات المشروع
+        const featuresGrid = document.getElementById('featuresGrid');
+        featuresGrid.innerHTML = '';
+        const features = featureItems[lang] || featureItems.en;
+        features.forEach(feature => {
+            const featureDiv = document.createElement('div');
+            featureDiv.className = 'feature-item';
+            featureDiv.innerHTML = `<i class="fas ${feature.icon}"></i><span>${feature.text}</span>`;
+            featuresGrid.appendChild(featureDiv);
+        });
+
+        // إذا كان المشروع موجوداً، قم بتحديث بياناته
+        if (project) {
+            // العنوان
+            document.getElementById('projectHeading').textContent = project.title[lang];
+            document.title = `${project.title[lang]} - AA DigitalWorks ${lang === 'ar' ? 'مشروع' : 'Project'}`;
+            document.getElementById('projectTitle').textContent = `${project.title[lang]} - AA DigitalWorks`;
+            
+            // الوصف
+            document.getElementById('projectText').textContent = project.description[lang];
+            document.getElementById('projectDescription').setAttribute('content', project.description[lang]);
+            
+            // Open Graph
+            document.querySelector('meta[property="og:title"]').setAttribute('content', project.title[lang]);
+            document.querySelector('meta[property="og:description"]').setAttribute('content', project.description[lang]);
+            document.querySelector('meta[property="og:image"]').setAttribute('content', project.image);
+            
+            // الصورة
+            document.getElementById('projectMainImage').src = project.image;
+            document.getElementById('projectMainImage').alt = project.title[lang];
+            
+            // التاجات
+            const tagsContainer = document.getElementById('projectTags');
+            tagsContainer.innerHTML = '';
+            (project.tags[lang] || project.tags.en).forEach(tag => {
+                const tagSpan = document.createElement('span');
+                tagSpan.className = 'tag';
+                tagSpan.textContent = tag;
+                tagsContainer.appendChild(tagSpan);
+            });
+
+            // JSON-LD (نحتفظ بالإنجليزية للمحركات)
+            const schema = {
+                "@context": "https://schema.org",
+                "@type": "CreativeWork",
+                "name": project.title.en,
+                "description": project.description.en,
+                "url": project.link,
+                "image": project.image,
+                "about": project.tags.en.join(", "),
+                "creator": {
+                    "@type": "Organization",
+                    "name": "AA DigitalWorks"
+                }
+            };
+            document.getElementById('projectSchema').textContent = JSON.stringify(schema, null, 2);
+        }
+    }
+
+  // Add this to your initialization
+document.addEventListener('DOMContentLoaded', function() {
+    // Store the referring page when first loaded
+    const referrer = document.referrer;
+    if (referrer && referrer.includes(window.location.hostname)) {
+        sessionStorage.setItem('previousPage', referrer);
+    }
+    
+    // Rest of your existing initialization code...
+});
+
+// ================================================
+// ↩️ BACK NAVIGATION - WITH SESSION STORAGE
+// ================================================
+function goBack() {
+    // First try to get stored previous page
+    const storedPrevious = sessionStorage.getItem('previousPage');
+    
+    if (storedPrevious) {
+        window.location.href = storedPrevious;
+        sessionStorage.removeItem('previousPage'); // Clear after use
+    }
+    // Then try referrer
+    else if (document.referrer && document.referrer.includes(window.location.hostname)) {
+        window.location.href = document.referrer;
+    }
+    // Then browser history
+    else if (window.history.length > 1) {
+        window.history.back();
+    }
+    // Finally, fallback based on language
+    else {
+        const urlParams = new URLSearchParams(window.location.search);
+        const langParam = urlParams.get('lang');
+        
+        if (langParam === 'ar' || currentLang === 'ar') {
+            window.location.href = '/ar';
+        } else {
+            window.location.href = '/';
+        }
+    }
+}
+
+// Also update the back button click handler to use this function
+// Make sure the button in HTML has onclick="goBack()"
+
+    // ================================================
+    // 🚀 INITIALIZATION
+    // ================================================
+    document.addEventListener('DOMContentLoaded', function() {
+        // تحديد اللغة من URL parameter أو referrer
+        const detectedLang = detectLanguage();
+        
+        // عرض حالة التحميل باللغة المناسبة
+        const loadingMsg = uiText.loading[detectedLang];
+        document.getElementById('projectHeading').innerHTML = `<div class="loading"><div class="loading-spinner"></div><p>${loadingMsg}</p></div>`;
+
+        // تأخير بسيط لتحسين تجربة المستخدم
+        setTimeout(() => {
+            const projectName = new URLSearchParams(window.location.search).get('name');
+            
+            if (projectName && projectData[projectName]) {
+                // عرض الصفحة باللغة المناسبة
+                renderPage(detectedLang);
+            } else {
+                // مشروع غير موجود
+                const lang = detectedLang;
+                document.querySelector('main').innerHTML = `
+                    <div class="not-found">
+                        <div class="not-found-icon">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <h2>${uiText.projectNotFound[lang]}</h2>
+                        <p>${uiText.notFoundMsg[lang]}</p>
+                        <button onclick="goBack()" class="not-found-link">
+                            <i class="fas fa-arrow-left"></i> ${uiText.back[lang]}
+                        </button>
+                    </div>
+                `;
+                document.querySelector('header').style.display = 'none';
+            }
+        }, 500);
+
+        // تحديث سنة حقوق النشر
+        document.getElementById("year").textContent = new Date().getFullYear();
+    });
+
+    // جعل الدوال متاحة عالمياً
+    window.goBack = goBack;
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+# _config.yml
+
+# Site Settings
+title: "AA DigitalWorks"
+description: "Expert SEO, Google Ads, and website development services in the UAE and Saudi Arabia."
+baseurl: ""
+url: "https://www.aadigitalworks.com"
+
+# Build Settings
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+paginate: 5
+paginate_path: /blog/page:num/
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "AA DigitalWorks Team"
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - admin.html
