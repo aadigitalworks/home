@@ -1358,14 +1358,14 @@ a:focus {
 /* Change from a light gray to a much darker gray/black */
 .metric-tag, 
 .aa-results-showroom span {
-    color: #2d3436; /* Dark Charcoal */
+    color: #2d3436 !important; /* Dark Charcoal */
     /* OR if it's a specific brand color, use a darker version */
 }
 
 /* For the Red Pill (Status) */
 .status-pill.red {
-    background-color: #c0392b; /* A deeper red */
-    color: #ffffff; /* Pure white text */
+    background-color: #c0392b !important; /* A deeper red */
+    color: #ffffff !important; /* Pure white text */
 }
 
 .google-box {
