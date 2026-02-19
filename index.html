@@ -163,67 +163,69 @@
 
 <body>
    <main id="main-content">
-   <div class="hero_area" id="hero-area">
-      <!-- header section strats -->
-      <header class="header_section" role="banner">
-         <div class="container-fluid">
-            <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
-               <a class="navbar-brand" href="\">
-                  <span>
-                     AA DigitalWorks
-                  </span>
-               </a>
+      <div class="hero_area" id="hero-area">
+         <!-- header section strats -->
+         <header class="header_section" role="banner">
+            <div class="container-fluid">
+               <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
+                  <a class="navbar-brand" href="\">
+                     <span>
+                        AA DigitalWorks
+                     </span>
+                  </a>
 
-               <!-- Add this after your navbar brand -->
-               <a href="/ar" class="language-switcher" rel="alternate" hreflang="ar">
-                  <i class="fas fa-globe"></i> العربية
-               </a>
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
-                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                           <a class="nav-link" href="#aboutus"> About </a>
-                        </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="#wedo"> What we do </a>
-                        </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="#Form">Contact us</a>
-                        </li>
-                     </ul>
+                  <!-- Add this after your navbar brand -->
+                  <a href="/ar" class="language-switcher" rel="alternate" hreflang="ar">
+                     <i class="fas fa-globe"></i> العربية
+                  </a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse"
+                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                     aria-label="Toggle navigation">
+                     <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                     <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+                        <ul class="navbar-nav">
+                           <li class="nav-item">
+                              <a class="nav-link" href="#aboutus"> About </a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="#wedo"> What we do </a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="#Form">Contact us</a>
+                           </li>
+                        </ul>
+                     </div>
                   </div>
-               </div>
-            </nav>
-         </div>
-      </header>
-      <!-- end header section -->
-      <!-- slider section -->
-      <section class="slider_section position-relative">
-         <div class="container">
-            <div class="carousel-inner">
-               <div class="carousel-item active">
-                  <div class="row">
-                     <div class="col">
-                        <div class="detail-box">
-                           <div>
-                              <h1 class="welcome">
-                                 Google Ads | SEO | Websites
-                              </h1>
-                              <h2 class="Company-name">
-                                 AA DigitalWorks
-                              </h2>
-                              <!--<h3 class="Company-name">Agency</h3>-->
-                              <!-- HTML with a placeholder for the changing text and cursor -->
-                              <h3><span class="typed" id="changingText"></span><span class="typed-cursor"
-                                    aria-hidden="true">|</span></h3>
-                              <div class="">
-                                 <a href="quote">
-                                    Get A Quote
-                                 </a>
+               </nav>
+            </div>
+         </header>
+         <!-- end header section -->
+         <!-- slider section -->
+         <section class="slider_section position-relative">
+            <div class="container">
+               <div class="carousel-inner">
+                  <div class="carousel-item active">
+                     <div class="row">
+                        <div class="col">
+                           <div class="detail-box">
+                              <div>
+                                 <h1 class="welcome">
+                                    Google Ads | SEO | Websites
+                                 </h1>
+                                 <h2 class="Company-name">
+                                    AA DigitalWorks
+                                 </h2>
+                                 <!--<h3 class="Company-name">Agency</h3>-->
+                                 <!-- HTML with a placeholder for the changing text and cursor -->
+                                 <h3><span class="typed" id="changingText"></span><span class="typed-cursor"
+                                       aria-hidden="true">|</span></h3>
+                                 <div class="">
+                                    <a href="quote">
+                                       Get A Quote
+                                    </a>
+                                 </div>
                               </div>
                            </div>
                         </div>
@@ -231,418 +233,422 @@
                   </div>
                </div>
             </div>
+         </section>
+         <!-- end slider section -->
+      </div>
+      <section id="wedo" class="do_section layout_padding scrolling-text">
+         <div class="container">
+            <div class="heading_container">
+               <h2>Our Services</h2>
+               <p>
+                  At <strong>AA DigitalWorks</strong>, we deliver full-stack digital solutions — from SEO and Google Ads
+                  to
+                  modern web design, apps, and branding.
+                  Each service is designed to grow your business through smart strategy and technology.
+               </p>
+            </div>
+
+            <div class="do_container">
+
+               <!-- SEO -->
+               <div class="box arrow-start arrow_bg" onclick="openService('seo')">
+                  <div class="img-box"><i class="fas fa-search-dollar"></i></div>
+                  <div class="detail-box">
+                     <h3>Search Engine Optimization (SEO)</h3>
+                     <p>Rank higher on Google with expert on-page, technical, and local SEO strategies.</p>
+                  </div>
+               </div>
+
+               <!-- Google Ads -->
+               <div class="box arrow-middle arrow_bg" onclick="openService('googleads')">
+                  <div class="img-box"><i class="fab fa-google"></i></div>
+                  <div class="detail-box">
+                     <h3>Google Ads & PPC Campaigns</h3>
+                     <p>Drive conversions with high-performing, data-driven ad campaigns.</p>
+                  </div>
+               </div>
+
+               <!-- Web Design -->
+               <div class="box arrow-middle arrow_bg" onclick="openService('webdesign')">
+                  <div class="img-box"><i class="fas fa-laptop-code"></i></div>
+                  <div class="detail-box">
+                     <h3>Web Design & UI/UX</h3>
+                     <p>Responsive websites that blend aesthetics with powerful functionality.</p>
+                  </div>
+               </div>
+
+               <!-- Web Development -->
+               <div class="box arrow-middle arrow_bg" onclick="openService('webdev')">
+                  <div class="img-box"><i class="fas fa-code"></i></div>
+                  <div class="detail-box">
+                     <h3>Web Development</h3>
+                     <p>Secure, scalable websites built with modern frameworks and best practices.</p>
+                  </div>
+               </div>
+
+               <!-- Web Applications -->
+               <div class="box arrow-middle arrow_bg" onclick="openService('webapps')">
+                  <div class="img-box"><i class="fas fa-network-wired"></i></div>
+                  <div class="detail-box">
+                     <h3>Custom Web Applications</h3>
+                     <p>Build smart dashboards and systems to automate and optimize operations.</p>
+                  </div>
+               </div>
+
+               <!-- E-Commerce -->
+               <div class="box arrow-middle arrow_bg" onclick="openService('ecommerce')">
+                  <div class="img-box"><i class="fas fa-shopping-cart"></i></div>
+                  <div class="detail-box">
+                     <h3>E-Commerce Solutions</h3>
+                     <p>Launch and manage your online store with powerful e-commerce tools.</p>
+                  </div>
+               </div>
+
+               <!-- Digital Menus -->
+               <div class="box arrow-middle arrow_bg" onclick="openService('digitalmenus')">
+                  <div class="img-box"><i class="fas fa-utensils"></i></div>
+                  <div class="detail-box">
+                     <h3>Digital Menus</h3>
+                     <p>Interactive digital menus designed for cafes and restaurants.</p>
+                  </div>
+               </div>
+
+               <!-- QR Menus -->
+               <div class="box arrow-middle arrow_bg" onclick="openService('qrmenus')">
+                  <div class="img-box"><i class="fas fa-qrcode"></i></div>
+                  <div class="detail-box">
+                     <h3>QR Code Menus</h3>
+                     <p>Modern, contactless QR menus that customers can access instantly.</p>
+                  </div>
+               </div>
+
+               <!-- Digital Signage -->
+               <div class="box arrow-end arrow_bg" onclick="openService('digitalsignage')">
+                  <div class="img-box"><i class="fas fa-tv"></i></div>
+                  <div class="detail-box">
+                     <h3>Digital Signage</h3>
+                     <p>Cloud-based TV systems for menus, promotions, and real-time updates.</p>
+                  </div>
+               </div>
+
+               <!-- Branding -->
+               <div class="box arrow-middle arrow_bg" onclick="openService('branding')">
+                  <div class="img-box"><i class="fas fa-paint-brush"></i></div>
+                  <div class="detail-box">
+                     <h3>Branding & Visual Identity</h3>
+                     <p>Logo design, brand identity, and creative storytelling for your business.</p>
+                  </div>
+               </div>
+
+               <!-- Analytics -->
+               <div class="box arrow-middle arrow_bg" onclick="openService('analytics')">
+                  <div class="img-box"><i class="fas fa-chart-line"></i></div>
+                  <div class="detail-box">
+                     <h3>Analytics & Performance Tracking</h3>
+                     <p>Measure your growth with advanced data insights and tracking tools.</p>
+                  </div>
+               </div>
+
+            </div>
          </div>
       </section>
-      <!-- end slider section -->
-   </div>
-   <section id="wedo" class="do_section layout_padding scrolling-text">
-      <div class="container">
-         <div class="heading_container">
-            <h2>Our Services</h2>
-            <p>
-               At <strong>AA DigitalWorks</strong>, we deliver full-stack digital solutions — from SEO and Google Ads to
-               modern web design, apps, and branding.
-               Each service is designed to grow your business through smart strategy and technology.
+
+      <!-- Modal Popup -->
+      <div id="serviceModal" class="modal">
+         <div class="modal-content">
+            <span class="close" onclick="closeService()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalText"></p>
+         </div>
+      </div>
+      <!-- end do section -->
+
+      <!-- who section -->
+      <section class="who_section scrolling-text">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-5">
+                  <div class="img-box">
+                     <img src="../images/who-img.jpg" sizes="(max-width: 600px) 400px, 800px"
+                        alt="About AA DigitalWorks - Web Design and SEO Agency" loading="lazy">
+                  </div>
+               </div>
+
+               <div class="col-md-7" id="aboutus">
+                  <div class="detail-box">
+                     <div class="heading_container">
+                        <br><br><br>
+                        <h2>About Us</h2>
+                     </div>
+
+                     <!-- Short intro for first view -->
+                     <p id="introText">
+                        At <strong>AA DigitalWorks</strong>, we’re passionate about crafting digital experiences that
+                        help
+                        businesses grow and stand out online.
+                     </p>
+
+                     <!-- Full detailed text -->
+                     <div id="fullText" style="display: none;">
+                        <p>
+                           <strong>AA DigitalWorks</strong> is a professional digital agency specializing in <em>web
+                              design,
+                              web development, SEO, Google Ads, and digital menu systems</em>.
+                           We combine creativity with technology to deliver results that truly make an impact.
+                        </p>
+
+                        <p>
+                           Our mission is to help businesses in <strong>Ireland, Canada, USA, Iraq, UAE, and KSA
+                           </strong>
+                           build
+                           a strong and lasting online presence.
+                           Whether you need a stunning website, a powerful SEO strategy, or a complete digital
+                           transformation,
+                           we tailor every project to fit your goals and audience.
+                        </p>
+
+                        <p>
+                           We believe that success comes from collaboration and understanding.
+                           That’s why we work closely with each client, ensuring that every design, campaign, and
+                           solution
+                           aligns perfectly with their vision and business objectives.
+                        </p>
+
+                        <p>
+                           With a focus on quality, innovation, and measurable results, <strong>AA DigitalWorks</strong>
+                           is
+                           your trusted partner for digital growth.
+                           We proudly support both Arabic and English content, helping brands connect effectively with
+                           diverse
+                           audiences across multiple regions.
+                        </p>
+
+                        <p>
+                           Let’s turn your digital ideas into reality — with strategy, creativity, and precision that
+                           elevate
+                           your brand to new heights.
+                        </p>
+                     </div>
+
+                     <div id="readMoreContainer">
+                        <a href="#" id="readMoreLink" title="Click to read more about AA DigitalWorks">Read More</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- end who section -->
+      <!--work section-->
+
+      <section id="aa-portfolio" class="aa-portfolio-wrapper">
+         <div class="ourweb">
+            <h2 class="section-title">Our Web Design, SEO & Digital Projects</h2>
+            <p class="section-intro">
+               Explore AA DigitalWorks’ latest projects — from E-commerce websites and SEO campaigns to
+               custom dashboards and digital signage solutions across Dubai, UAE, and beyond.
             </p>
          </div>
+         <div class="main-terminal">
 
-         <div class="do_container">
+            <div class="header-bar">
 
-            <!-- SEO -->
-            <div class="box arrow-start arrow_bg" onclick="openService('seo')">
-               <div class="img-box"><i class="fas fa-search-dollar"></i></div>
-               <div class="detail-box">
-                  <h3>Search Engine Optimization (SEO)</h3>
-                  <p>Rank higher on Google with expert on-page, technical, and local SEO strategies.</p>
+               <div class="dots-group">
+
+                  <span class="dot-c r"></span><span class="dot-c y"></span><span class="dot-c g"></span>
                </div>
+               <div class="system-path">AA DigitalWorks - Live Project Stream</div>
             </div>
 
-            <!-- Google Ads -->
-            <div class="box arrow-middle arrow_bg" onclick="openService('googleads')">
-               <div class="img-box"><i class="fab fa-google"></i></div>
-               <div class="detail-box">
-                  <h3>Google Ads & PPC Campaigns</h3>
-                  <p>Drive conversions with high-performing, data-driven ad campaigns.</p>
-               </div>
-            </div>
+            <div class="scroll-zone">
+               <div class="infinite-track" id="projectTrack" itemscope itemtype="https://schema.org/ItemList">
 
-            <!-- Web Design -->
-            <div class="box arrow-middle arrow_bg" onclick="openService('webdesign')">
-               <div class="img-box"><i class="fas fa-laptop-code"></i></div>
-               <div class="detail-box">
-                  <h3>Web Design & UI/UX</h3>
-                  <p>Responsive websites that blend aesthetics with powerful functionality.</p>
-               </div>
-            </div>
-
-            <!-- Web Development -->
-            <div class="box arrow-middle arrow_bg" onclick="openService('webdev')">
-               <div class="img-box"><i class="fas fa-code"></i></div>
-               <div class="detail-box">
-                  <h3>Web Development</h3>
-                  <p>Secure, scalable websites built with modern frameworks and best practices.</p>
-               </div>
-            </div>
-
-            <!-- Web Applications -->
-            <div class="box arrow-middle arrow_bg" onclick="openService('webapps')">
-               <div class="img-box"><i class="fas fa-network-wired"></i></div>
-               <div class="detail-box">
-                  <h3>Custom Web Applications</h3>
-                  <p>Build smart dashboards and systems to automate and optimize operations.</p>
-               </div>
-            </div>
-
-            <!-- E-Commerce -->
-            <div class="box arrow-middle arrow_bg" onclick="openService('ecommerce')">
-               <div class="img-box"><i class="fas fa-shopping-cart"></i></div>
-               <div class="detail-box">
-                  <h3>E-Commerce Solutions</h3>
-                  <p>Launch and manage your online store with powerful e-commerce tools.</p>
-               </div>
-            </div>
-
-            <!-- Digital Menus -->
-            <div class="box arrow-middle arrow_bg" onclick="openService('digitalmenus')">
-               <div class="img-box"><i class="fas fa-utensils"></i></div>
-               <div class="detail-box">
-                  <h3>Digital Menus</h3>
-                  <p>Interactive digital menus designed for cafes and restaurants.</p>
-               </div>
-            </div>
-
-            <!-- QR Menus -->
-            <div class="box arrow-middle arrow_bg" onclick="openService('qrmenus')">
-               <div class="img-box"><i class="fas fa-qrcode"></i></div>
-               <div class="detail-box">
-                  <h3>QR Code Menus</h3>
-                  <p>Modern, contactless QR menus that customers can access instantly.</p>
-               </div>
-            </div>
-
-            <!-- Digital Signage -->
-            <div class="box arrow-end arrow_bg" onclick="openService('digitalsignage')">
-               <div class="img-box"><i class="fas fa-tv"></i></div>
-               <div class="detail-box">
-                  <h3>Digital Signage</h3>
-                  <p>Cloud-based TV systems for menus, promotions, and real-time updates.</p>
-               </div>
-            </div>
-
-            <!-- Branding -->
-            <div class="box arrow-middle arrow_bg" onclick="openService('branding')">
-               <div class="img-box"><i class="fas fa-paint-brush"></i></div>
-               <div class="detail-box">
-                  <h3>Branding & Visual Identity</h3>
-                  <p>Logo design, brand identity, and creative storytelling for your business.</p>
-               </div>
-            </div>
-
-            <!-- Analytics -->
-            <div class="box arrow-middle arrow_bg" onclick="openService('analytics')">
-               <div class="img-box"><i class="fas fa-chart-line"></i></div>
-               <div class="detail-box">
-                  <h3>Analytics & Performance Tracking</h3>
-                  <p>Measure your growth with advanced data insights and tracking tools.</p>
-               </div>
-            </div>
-
-         </div>
-      </div>
-   </section>
-
-   <!-- Modal Popup -->
-   <div id="serviceModal" class="modal">
-      <div class="modal-content">
-         <span class="close" onclick="closeService()">&times;</span>
-         <h2 id="modalTitle"></h2>
-         <p id="modalText"></p>
-      </div>
-   </div>
-   <!-- end do section -->
-
-   <!-- who section -->
-   <section class="who_section scrolling-text">
-      <div class="container">
-         <div class="row">
-            <div class="col-md-5">
-               <div class="img-box">
-                  <img src="../images/who-img.jpg" sizes="(max-width: 600px) 400px, 800px"
-                     alt="About AA DigitalWorks - Web Design and SEO Agency" loading="lazy">
-               </div>
-            </div>
-
-            <div class="col-md-7" id="aboutus">
-               <div class="detail-box">
-                  <div class="heading_container">
-                     <br><br><br>
-                     <h2>About Us</h2>
-                  </div>
-
-                  <!-- Short intro for first view -->
-                  <p id="introText">
-                     At <strong>AA DigitalWorks</strong>, we’re passionate about crafting digital experiences that help
-                     businesses grow and stand out online.
-                  </p>
-
-                  <!-- Full detailed text -->
-                  <div id="fullText" style="display: none;">
-                     <p>
-                        <strong>AA DigitalWorks</strong> is a professional digital agency specializing in <em>web
-                           design,
-                           web development, SEO, Google Ads, and digital menu systems</em>.
-                        We combine creativity with technology to deliver results that truly make an impact.
-                     </p>
-
-                     <p>
-                        Our mission is to help businesses in <strong>Ireland, Canada, USA, Iraq, UAE, and KSA </strong>
-                        build
-                        a strong and lasting online presence.
-                        Whether you need a stunning website, a powerful SEO strategy, or a complete digital
-                        transformation,
-                        we tailor every project to fit your goals and audience.
-                     </p>
-
-                     <p>
-                        We believe that success comes from collaboration and understanding.
-                        That’s why we work closely with each client, ensuring that every design, campaign, and solution
-                        aligns perfectly with their vision and business objectives.
-                     </p>
-
-                     <p>
-                        With a focus on quality, innovation, and measurable results, <strong>AA DigitalWorks</strong> is
-                        your trusted partner for digital growth.
-                        We proudly support both Arabic and English content, helping brands connect effectively with
-                        diverse
-                        audiences across multiple regions.
-                     </p>
-
-                     <p>
-                        Let’s turn your digital ideas into reality — with strategy, creativity, and precision that
-                        elevate
-                        your brand to new heights.
-                     </p>
-                  </div>
-
-                  <div id="readMoreContainer">
-                     <a href="#" id="readMoreLink" title="Click to read more about AA DigitalWorks">Read More</a>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </section>
-
-   <!-- end who section -->
-   <!--work section-->
-
-   <section id="aa-portfolio" class="aa-portfolio-wrapper">
-      <div class="ourweb">
-         <h2 class="section-title">Our Web Design, SEO & Digital Projects</h2>
-         <p class="section-intro">
-            Explore AA DigitalWorks’ latest projects — from E-commerce websites and SEO campaigns to
-            custom dashboards and digital signage solutions across Dubai, UAE, and beyond.
-         </p>
-      </div>
-      <div class="main-terminal">
-
-         <div class="header-bar">
-
-            <div class="dots-group">
-
-               <span class="dot-c r"></span><span class="dot-c y"></span><span class="dot-c g"></span>
-            </div>
-            <div class="system-path">AA DigitalWorks - Live Project Stream</div>
-         </div>
-
-         <div class="scroll-zone">
-            <div class="infinite-track" id="projectTrack" itemscope itemtype="https://schema.org/ItemList">
-
-               <!-- 1 -->
-               <article class="work-card" itemprop="itemListElement" itemscope
-                  itemtype="https://schema.org/CreativeWork">
-                  <div class="img-frame">
-                     <img src="images/Slaneysideonline.png"
-                        alt="SlaneySide E-Commerce Website Design & SEO Optimization by AA DigitalWorks" loading="lazy"
-                        itemprop="image">
-                     <div class="work-details">
-                        <span class="tag-dev" itemprop="about">WEB DESIGN & UI - SEO and Google Ads</span>
-                        <h3 itemprop="headline">SlaneySide Website</h3>
-                        <p itemprop="description">A custom E-commerce marketplace website built for performance, SEO
-                           visibility, and ad conversion tracking.</p>
-                        <a href="project?name=SlaneySide Website" target="_blank" rel="noopener" class="live-link"
-                           itemprop="url">View Live Project _</a>
+                  <!-- 1 -->
+                  <article class="work-card" itemprop="itemListElement" itemscope
+                     itemtype="https://schema.org/CreativeWork">
+                     <div class="img-frame">
+                        <img src="images/Slaneysideonline.png"
+                           alt="SlaneySide E-Commerce Website Design & SEO Optimization by AA DigitalWorks"
+                           loading="lazy" itemprop="image">
+                        <div class="work-details">
+                           <span class="tag-dev" itemprop="about">WEB DESIGN & UI - SEO and Google Ads</span>
+                           <h3 itemprop="headline">SlaneySide Website</h3>
+                           <p itemprop="description">A custom E-commerce marketplace website built for performance, SEO
+                              visibility, and ad conversion tracking.</p>
+                           <a href="project?name=SlaneySide Website" target="_blank" rel="noopener" class="live-link"
+                              itemprop="url">View Live Project _</a>
+                        </div>
                      </div>
-                  </div>
-               </article>
+                  </article>
 
-               <!-- 2 -->
-               <article class="work-card" itemprop="itemListElement" itemscope
-                  itemtype="https://schema.org/CreativeWork">
-                  <div class="img-frame">
-                     <img src="images/slaneyside.png"
-                        alt="Local Store Website with SEO for SlaneySide by AA DigitalWorks" loading="lazy"
-                        itemprop="image">
-                     <div class="work-details">
-                        <span class="tag-dev" itemprop="about">WEB DESIGN & UI - SEO</span>
-                        <h3 itemprop="headline">SlaneySide Local Store Website</h3>
-                        <p itemprop="description">A localized E-commerce marketplace designed for SEO and smooth
-                           customer experience across desktop and mobile.</p>
-                        <a href="project?name=SlaneySide Local Store Website" target="_blank" rel="noopener"
-                           class="live-link" itemprop="url">View Live Project _</a>
+                  <!-- 2 -->
+                  <article class="work-card" itemprop="itemListElement" itemscope
+                     itemtype="https://schema.org/CreativeWork">
+                     <div class="img-frame">
+                        <img src="images/slaneyside.png"
+                           alt="Local Store Website with SEO for SlaneySide by AA DigitalWorks" loading="lazy"
+                           itemprop="image">
+                        <div class="work-details">
+                           <span class="tag-dev" itemprop="about">WEB DESIGN & UI - SEO</span>
+                           <h3 itemprop="headline">SlaneySide Local Store Website</h3>
+                           <p itemprop="description">A localized E-commerce marketplace designed for SEO and smooth
+                              customer experience across desktop and mobile.</p>
+                           <a href="project?name=SlaneySide Local Store Website" target="_blank" rel="noopener"
+                              class="live-link" itemprop="url">View Live Project _</a>
+                        </div>
                      </div>
-                  </div>
-               </article>
+                  </article>
 
-               <!-- 3 -->
-               <article class="work-card" itemprop="itemListElement" itemscope
-                  itemtype="https://schema.org/CreativeWork">
-                  <div class="img-frame">
-                     <img src="images/obriengardening.png"
-                        alt="Gardening Business Website Design with Quote System by AA DigitalWorks" loading="lazy"
-                        itemprop="image">
-                     <div class="work-details">
-                        <span class="tag-dev" itemprop="about">WEB DESIGN & UI</span>
-                        <h3 itemprop="headline">ObrienGardening Website</h3>
-                        <p itemprop="description">A premium website offering quote requests, service listings, and
-                           optimized structure for business visibility.</p>
-                        <a href="project?name=ObrienGardening Website" target="_blank" rel="noopener" class="live-link"
-                           itemprop="url">View Live Project _</a>
+                  <!-- 3 -->
+                  <article class="work-card" itemprop="itemListElement" itemscope
+                     itemtype="https://schema.org/CreativeWork">
+                     <div class="img-frame">
+                        <img src="images/obriengardening.png"
+                           alt="Gardening Business Website Design with Quote System by AA DigitalWorks" loading="lazy"
+                           itemprop="image">
+                        <div class="work-details">
+                           <span class="tag-dev" itemprop="about">WEB DESIGN & UI</span>
+                           <h3 itemprop="headline">ObrienGardening Website</h3>
+                           <p itemprop="description">A premium website offering quote requests, service listings, and
+                              optimized structure for business visibility.</p>
+                           <a href="project?name=ObrienGardening Website" target="_blank" rel="noopener"
+                              class="live-link" itemprop="url">View Live Project _</a>
+                        </div>
                      </div>
-                  </div>
-               </article>
+                  </article>
 
-               <!-- 4 -->
-               <article class="work-card" itemprop="itemListElement" itemscope
-                  itemtype="https://schema.org/CreativeWork">
-                  <div class="img-frame">
-                     <img src="images/nails.png" alt="Luxury Nails Booking Platform and Gallery by AA DigitalWorks"
-                        loading="lazy" itemprop="image">
-                     <div class="work-details">
-                        <span class="tag-dev" itemprop="about">WEB DESIGN & UI</span>
-                        <h3 itemprop="headline">Luxury Nails Portfolio</h3>
-                        <p itemprop="description">A modern booking platform and image gallery for premium beauty and
-                           aesthetic services.</p>
-                        <a href="project?name=Luxury Nails Portfolio" target="_blank" rel="noopener" class="live-link"
-                           itemprop="url">View Live Project _</a>
+                  <!-- 4 -->
+                  <article class="work-card" itemprop="itemListElement" itemscope
+                     itemtype="https://schema.org/CreativeWork">
+                     <div class="img-frame">
+                        <img src="images/nails.png" alt="Luxury Nails Booking Platform and Gallery by AA DigitalWorks"
+                           loading="lazy" itemprop="image">
+                        <div class="work-details">
+                           <span class="tag-dev" itemprop="about">WEB DESIGN & UI</span>
+                           <h3 itemprop="headline">Luxury Nails Portfolio</h3>
+                           <p itemprop="description">A modern booking platform and image gallery for premium beauty and
+                              aesthetic services.</p>
+                           <a href="project?name=Luxury Nails Portfolio" target="_blank" rel="noopener"
+                              class="live-link" itemprop="url">View Live Project _</a>
+                        </div>
                      </div>
-                  </div>
-               </article>
+                  </article>
 
-               <!-- 5 -->
-               <article class="work-card" itemprop="itemListElement" itemscope
-                  itemtype="https://schema.org/CreativeWork">
-                  <div class="img-frame">
-                     <img src="images/group.png" alt="Distillery Data Table System by AA DigitalWorks" loading="lazy"
-                        itemprop="image">
-                     <div class="work-details">
-                        <span class="tag-dev" itemprop="about">Data Table System</span>
-                        <h3 itemprop="headline">Spirit & Distillery Hub</h3>
-                        <p itemprop="description">A high-performance digital platform featuring product filtering,
-                           age verification, and elegant UI.</p>
-                        <a href="project?name=Spirit  Distillery Hub" target="_blank" rel="noopener" class="live-link"
-                           itemprop="url">View Live Project _</a>
+                  <!-- 5 -->
+                  <article class="work-card" itemprop="itemListElement" itemscope
+                     itemtype="https://schema.org/CreativeWork">
+                     <div class="img-frame">
+                        <img src="images/group.png" alt="Distillery Data Table System by AA DigitalWorks" loading="lazy"
+                           itemprop="image">
+                        <div class="work-details">
+                           <span class="tag-dev" itemprop="about">Data Table System</span>
+                           <h3 itemprop="headline">Spirit & Distillery Hub</h3>
+                           <p itemprop="description">A high-performance digital platform featuring product filtering,
+                              age verification, and elegant UI.</p>
+                           <a href="project?name=Spirit  Distillery Hub" target="_blank" rel="noopener"
+                              class="live-link" itemprop="url">View Live Project _</a>
+                        </div>
                      </div>
-                  </div>
-               </article>
+                  </article>
 
-               <!-- 6 -->
-               <article class="work-card" itemprop="itemListElement" itemscope
-                  itemtype="https://schema.org/CreativeWork">
-                  <div class="img-frame">
-                     <img src="images/eletcreper.png"
-                        alt="Electrical Services Website with Local SEO Optimization by AA DigitalWorks" loading="lazy"
-                        itemprop="image">
-                     <div class="work-details">
-                        <span class="tag-dev" itemprop="about">LOCAL SEO ENGINE</span>
-                        <h3 itemprop="headline">Electrical Services Hub</h3>
-                        <p itemprop="description">Optimized for rapid local lead generation and dominance in search
-                           results for electrical services.</p>
-                        <a href="project?name=Electrical Services Hub" target="_blank" rel="noopener" class="live-link"
-                           itemprop="url">View Live Project _</a>
+                  <!-- 6 -->
+                  <article class="work-card" itemprop="itemListElement" itemscope
+                     itemtype="https://schema.org/CreativeWork">
+                     <div class="img-frame">
+                        <img src="images/eletcreper.png"
+                           alt="Electrical Services Website with Local SEO Optimization by AA DigitalWorks"
+                           loading="lazy" itemprop="image">
+                        <div class="work-details">
+                           <span class="tag-dev" itemprop="about">LOCAL SEO ENGINE</span>
+                           <h3 itemprop="headline">Electrical Services Hub</h3>
+                           <p itemprop="description">Optimized for rapid local lead generation and dominance in search
+                              results for electrical services.</p>
+                           <a href="project?name=Electrical Services Hub" target="_blank" rel="noopener"
+                              class="live-link" itemprop="url">View Live Project _</a>
+                        </div>
                      </div>
-                  </div>
-               </article>
+                  </article>
 
-               <!-- 7 -->
-               <article class="work-card" itemprop="itemListElement" itemscope
-                  itemtype="https://schema.org/CreativeWork">
-                  <div class="img-frame">
-                     <img src="images/Cityofelectronics.png"
-                        alt="City of Electronics E-commerce & Google Ads Integration by AA DigitalWorks" loading="lazy"
-                        itemprop="image">
-                     <div class="work-details">
-                        <span class="tag-dev" itemprop="about">E-COMMERCE & ADS</span>
-                        <h3 itemprop="headline">City of Electronics</h3>
-                        <p itemprop="description">Large-scale electronics store with Google Shopping Ads and
-                           automated catalog synchronization.</p>
-                        <a href="project?name=City of Electronics" target="_blank" rel="noopener" class="live-link"
-                           itemprop="url">View Live Project _</a>
+                  <!-- 7 -->
+                  <article class="work-card" itemprop="itemListElement" itemscope
+                     itemtype="https://schema.org/CreativeWork">
+                     <div class="img-frame">
+                        <img src="images/Cityofelectronics.png"
+                           alt="City of Electronics E-commerce & Google Ads Integration by AA DigitalWorks"
+                           loading="lazy" itemprop="image">
+                        <div class="work-details">
+                           <span class="tag-dev" itemprop="about">E-COMMERCE & ADS</span>
+                           <h3 itemprop="headline">City of Electronics</h3>
+                           <p itemprop="description">Large-scale electronics store with Google Shopping Ads and
+                              automated catalog synchronization.</p>
+                           <a href="project?name=City of Electronics" target="_blank" rel="noopener" class="live-link"
+                              itemprop="url">View Live Project _</a>
+                        </div>
                      </div>
-                  </div>
-               </article>
+                  </article>
 
-               <!-- 8 -->
-               <article class="work-card" itemprop="itemListElement" itemscope
-                  itemtype="https://schema.org/CreativeWork">
-                  <div class="img-frame">
-                     <img src="images/webapps.jpg" alt="Enterprise Admin Dashboard Web App by AA DigitalWorks"
-                        loading="lazy" itemprop="image">
-                     <div class="work-details">
-                        <span class="tag-dev" itemprop="about">CUSTOM WEB APP</span>
-                        <h3 itemprop="headline">Enterprise Admin Dashboard</h3>
-                        <p itemprop="description">A full-stack web app built to track KPIs, manage clients, and
-                           monitor ad performance in real-time.</p>
-                        <a href="project?name=Enterprise Admin Dashboard" target="_blank" rel="noopener"
-                           class="live-link" itemprop="url">View Live Project _</a>
+                  <!-- 8 -->
+                  <article class="work-card" itemprop="itemListElement" itemscope
+                     itemtype="https://schema.org/CreativeWork">
+                     <div class="img-frame">
+                        <img src="images/webapps.jpg" alt="Enterprise Admin Dashboard Web App by AA DigitalWorks"
+                           loading="lazy" itemprop="image">
+                        <div class="work-details">
+                           <span class="tag-dev" itemprop="about">CUSTOM WEB APP</span>
+                           <h3 itemprop="headline">Enterprise Admin Dashboard</h3>
+                           <p itemprop="description">A full-stack web app built to track KPIs, manage clients, and
+                              monitor ad performance in real-time.</p>
+                           <a href="project?name=Enterprise Admin Dashboard" target="_blank" rel="noopener"
+                              class="live-link" itemprop="url">View Live Project _</a>
+                        </div>
                      </div>
-                  </div>
-               </article>
+                  </article>
 
-               <!-- 9 -->
-               <article class="work-card" itemprop="itemListElement" itemscope
-                  itemtype="https://schema.org/CreativeWork">
-                  <div class="img-frame">
-                     <img src="images/church.png" alt="Arabic Church in Ireland website design by AA DigitalWorks"
-                        loading="lazy" itemprop="image">
-                     <div class="work-details">
-                        <span class="tag-dev" itemprop="about">CUSTOM WEB APP – Arabic Church in Ireland</span>
-                        <h3 itemprop="headline">Arabic Church Website (Arabic Language)</h3>
-                        <p itemprop="description">
-                           A full Arabic-language website developed for the Arabic Church in Ireland. This platform
-                           enables church administrators to manage events, donations, and community announcements in
-                           real time.
-                           Designed and optimized by <strong>AA DigitalWorks</strong> to deliver high performance,
-                           accessibility, and SEO tailored for Arabic-speaking audiences.
-                        </p>
-                        <a href="project.html?name=Church Website" target="_blank" rel="noopener" class="live-link"
-                           itemprop="url">View Live Project _</a>
+                  <!-- 9 -->
+                  <article class="work-card" itemprop="itemListElement" itemscope
+                     itemtype="https://schema.org/CreativeWork">
+                     <div class="img-frame">
+                        <img src="images/church.png" alt="Arabic Church in Ireland website design by AA DigitalWorks"
+                           loading="lazy" itemprop="image">
+                        <div class="work-details">
+                           <span class="tag-dev" itemprop="about">CUSTOM WEB APP – Arabic Church in Ireland</span>
+                           <h3 itemprop="headline">Arabic Church Website (Arabic Language)</h3>
+                           <p itemprop="description">
+                              A full Arabic-language website developed for the Arabic Church in Ireland. This platform
+                              enables church administrators to manage events, donations, and community announcements in
+                              real time.
+                              Designed and optimized by <strong>AA DigitalWorks</strong> to deliver high performance,
+                              accessibility, and SEO tailored for Arabic-speaking audiences.
+                           </p>
+                           <a href="project.html?name=Church Website" target="_blank" rel="noopener" class="live-link"
+                              itemprop="url">View Live Project _</a>
+                        </div>
                      </div>
-                  </div>
-               </article>
+                  </article>
 
-               <!-- 10 -->
-               <article class="work-card" itemprop="itemListElement" itemscope
-                  itemtype="https://schema.org/CreativeWork">
-                  <div class="img-frame">
-                     <img src="images/tv-menu.png" alt="Digital TV Menu System by AA DigitalWorks" loading="lazy"
-                        itemprop="image">
-                     <div class="work-details">
-                        <span class="tag-dev" itemprop="about">DIGITAL SIGNAGE</span>
-                        <h3 itemprop="headline">Cloud-Based TV Menu</h3>
-                        <p itemprop="description">Dynamic digital signage system enabling real-time content updates
-                           for hospitality environments.</p>
-                        <a href="project?name=Cloud-Based TV Menu" target="_blank" rel="noopener" class="live-link"
-                           itemprop="url">View Live Project _</a>
+                  <!-- 10 -->
+                  <article class="work-card" itemprop="itemListElement" itemscope
+                     itemtype="https://schema.org/CreativeWork">
+                     <div class="img-frame">
+                        <img src="images/tv-menu.png" alt="Digital TV Menu System by AA DigitalWorks" loading="lazy"
+                           itemprop="image">
+                        <div class="work-details">
+                           <span class="tag-dev" itemprop="about">DIGITAL SIGNAGE</span>
+                           <h3 itemprop="headline">Cloud-Based TV Menu</h3>
+                           <p itemprop="description">Dynamic digital signage system enabling real-time content updates
+                              for hospitality environments.</p>
+                           <a href="project?name=Cloud-Based TV Menu" target="_blank" rel="noopener" class="live-link"
+                              itemprop="url">View Live Project _</a>
+                        </div>
                      </div>
-                  </div>
-               </article>
+                  </article>
 
+               </div>
             </div>
          </div>
-      </div>
-   </section>
-</main>
+      </section>
+   </main>
    <section class="aa-results-showroom">
       <div class="showroom-header">
          <span class="tech-label">ANALYSIS // VERIFIED_RESULTS_2025</span>
@@ -1480,14 +1486,19 @@
                <h3><i class="fas fa-share-alt"></i> Our Social Media</h3>
                <div>
                   <div class="social_box">
-                     <a href="https://www.facebook.com/AADigitalWorks" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-facebook-f"></i>
+                     <a href="https://www.facebook.com/AADigitalWorks" target="_blank" rel="noopener noreferrer"
+                        aria-label="Follow us on Facebook">
+                        <i class="fab fa-facebook"></i>
                      </a>
-                     <a href="https://www.tiktok.com/@aadigitalworks" target="_blank" rel="noopener noreferrer">
+
+                     <a href="https://www.tiktok.com/@aadigitalworks" target="_blank" rel="noopener noreferrer"
+                        aria-label="Follow us on TikTok">
                         <i class="fab fa-tiktok"></i>
                      </a>
-                     <a href="https://www.youtube.com/@AADigitalWorks" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-youtube"></i>
+
+                     <a href="https://www.instagram.com/aadigitalworks" target="_blank" rel="noopener noreferrer"
+                        aria-label="Follow us on Instagram">
+                        <i class="fab fa-instagram"></i>
                      </a>
                   </div>
                </div>
