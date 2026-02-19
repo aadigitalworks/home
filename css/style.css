@@ -1350,6 +1350,12 @@ a:focus {
 }
 
 /*for  review*/
+.country-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain; /* This prevents squashing */
+    object-position: center;
+}
 /* Google Small Box Layout */
 
 .google-box {
