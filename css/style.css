@@ -1350,6 +1350,30 @@ a:focus {
 }
 
 /*for  review*/
+
+/* 1. Fix the Metric Tags (PAID TRAFFIC, ORGANIC SEARCH, etc.) */
+.aa-results-showroom .metric-tag {
+    color: #2c3e50 !important; /* Dark Navy Blue */
+    font-weight: 700;
+}
+
+/* 2. Fix the general spans (CLICKS, CONV. RATE, etc.) */
+.aa-results-showroom span {
+    color: #333333 !important; /* Deep Charcoal */
+}
+
+/* 3. Fix the "BEFORE: STAGNANT" Red Pill */
+.status-pill.red {
+    background-color: #b91c1c !important; /* Deeper, accessible Red */
+    color: #ffffff !important;           /* Ensure text is pure white */
+}
+
+/* 4. Fix the Google Reviews "Based on 3,568 reviews" text */
+/* This targets the 'text-muted' class inside that light gray section */
+.py-5.text-muted, 
+.py-5 [style*="font-size: 0.95rem"] {
+    color: #4b5563 !important; /* Darker Slate Gray */
+}
 .country-icon {
     width: 18px;
     height: 18px;
