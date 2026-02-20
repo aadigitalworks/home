@@ -1350,13 +1350,28 @@ a:focus {
 }
 
 /*for  review*/
-/* FORCE contrast for the Results Showroom section */
-.aa-results-showroom span, 
-.aa-results-showroom .metric-tag,
-.aa-results-showroom .status-pill {
-    color: #212529 !important; /* This is a very dark charcoal, almost black */
-    background-color: transparent; /* Ensures no background conflict */
-}
+/* Target the section specifically to ensure background/foreground contrast */
+  .aa-results-showroom {
+    background-color: #000000 !important; /* Forces a solid black background */
+  }
+
+  /* Force all text inside to be Pure White for maximum contrast */
+  .aa-results-showroom .tech-label,
+  .aa-results-showroom .metric-tag,
+  .aa-results-showroom span,
+  .aa-results-showroom h2,
+  .aa-results-showroom p {
+    color: #FFFFFF !important; 
+    opacity: 1 !important; /* Ensures no transparency is lowering contrast */
+  }
+
+  /* If you prefer a Light Background, use this instead: */
+  /*
+  .aa-results-showroom { background-color: #FFFFFF !important; }
+  .aa-results-showroom span, .aa-results-showroom .metric-tag, .aa-results-showroom .tech-label {
+    color: #1a1a1a !important;
+  }
+  */
 
 /* Specific fix for the "BEFORE: STAGNANT" red pill */
 .status-pill.red {
