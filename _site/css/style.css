@@ -1916,6 +1916,26 @@ label {
   }
 }
 @media (max-width: 768px) {
+
+  
+.status-pill.red ,.status-pill.green {
+
+  padding: 0px !important;
+  font-weight: bold;
+}
+
+
+    .status-pill {
+  position: absolute;
+  padding: 1px 12px;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 4px;
+  z-index: 2;
+  left: 0px !important;
+  top: 0px !important;
+  right: 0px !important;
+}
   .info_section .row {
     grid-template-columns: 1fr;
     padding: 30px 25px;
