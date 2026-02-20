@@ -1350,7 +1350,31 @@ a:focus {
 }
 
 /*for  review*/
+/* FORCE contrast for the Results Showroom section */
+.aa-results-showroom span, 
+.aa-results-showroom .metric-tag,
+.aa-results-showroom .status-pill {
+    color: #212529 !important; /* This is a very dark charcoal, almost black */
+    background-color: transparent; /* Ensures no background conflict */
+}
 
+/* Specific fix for the "BEFORE: STAGNANT" red pill */
+.status-pill.red {
+    background-color: #c82333 !important; /* Deeper red */
+    color: #ffffff !important;           /* Pure white text */
+    padding: 2px 8px;
+    font-weight: bold;
+}
+
+.status-pill.green{       /* Pure white text */
+    padding: 2px 8px;
+    font-weight: bold;
+}
+
+/* Fix for the Google Review text (Based on 3,568 reviews) */
+.text-muted {
+    color: #495057 !important; /* Much darker than standard Bootstrap muted */
+}
 /* 1. Fix the Metric Tags (PAID TRAFFIC, ORGANIC SEARCH, etc.) */
 .aa-results-showroom .metric-tag {
     color: #2c3e50 !important; /* Dark Navy Blue */
@@ -1360,12 +1384,6 @@ a:focus {
 /* 2. Fix the general spans (CLICKS, CONV. RATE, etc.) */
 .aa-results-showroom span {
     color: #333333 !important; /* Deep Charcoal */
-}
-
-/* 3. Fix the "BEFORE: STAGNANT" Red Pill */
-.status-pill.red {
-    background-color: #b91c1c !important; /* Deeper, accessible Red */
-    color: #ffffff !important;           /* Ensure text is pure white */
 }
 
 /* 4. Fix the Google Reviews "Based on 3,568 reviews" text */
