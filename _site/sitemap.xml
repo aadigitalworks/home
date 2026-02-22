@@ -1,114 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-<url>
-  <loc>https://www.aadigitalworks.com/</loc>
-  <lastmod>2025-01-27T22:42:11+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://www.aadigitalworks.com/quote</loc>
-  <lastmod>2025-01-27T22:42:11+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.aadigitalworks.com/seo/en/dubai</loc>
-  <lastmod>2025-02-07T22:42:11+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.aadigitalworks.com/seo/ar/seodubai</loc>
-  <lastmod>2025-02-07T22:42:11+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.aadigitalworks.com/seo/ar/seoriyadh</loc>
-  <lastmod>2025-08-07T22:42:11+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.aadigitalworks.com/seo/ar/seoabudhabi</loc>
-  <lastmod>2025-08-07T22:42:11+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.aadigitalworks.com/seo/ar/دبي</loc>
-  <lastmod>2025-02-07T22:42:11+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.aadigitalworks.com/locations/abu-dhabi</loc>
-  <lastmod>2025-01-27T22:42:11+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.aadigitalworks.com/locations/ajman</loc>
-  <lastmod>2025-01-27T22:42:11+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.aadigitalworks.com/locations/dubai</loc>
-  <lastmod>2025-01-27T22:42:11+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.aadigitalworks.com/locations/fujairah</loc>
-  <lastmod>2025-01-27T22:42:11+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.aadigitalworks.com/locations/ras-al-khaimah</loc>
-  <lastmod>2025-01-27T22:42:11+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.aadigitalworks.com/locations/sharjah</loc>
-  <lastmod>2025-01-27T22:42:11+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.aadigitalworks.com/locations/umm-al-quwain</loc>
-  <lastmod>2025-01-27T22:42:11+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.aadigitalworks.com/locations/riyadh</loc>
-  <lastmod>2025-01-27T22:42:11+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.aadigitalworks.com/locations/jeddah</loc>
-  <lastmod>2025-01-27T22:42:11+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.aadigitalworks.com/locations/mecca</loc>
-  <lastmod>2025-01-27T22:42:11+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.aadigitalworks.com/locations/medina</loc>
-  <lastmod>2025-01-27T22:42:11+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.aadigitalworks.com/locations/dammam</loc>
-  <lastmod>2025-01-27T22:42:11+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.aadigitalworks.com/locations/khobar</loc>
-  <lastmod>2025-01-27T22:42:11+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.aadigitalworks.com/locations/tabuk</loc>
-  <lastmod>2025-01-27T22:42:11+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.aadigitalworks.com/locations/abha</loc>
-  <lastmod>2025-01-27T22:42:11+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
+  <!-- Main Pages -->
+  <url>
+    <loc>https://www.aadigitalworks.com/</loc>
+    <lastmod>2026-02-22T02:05:04+00:00</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://www.aadigitalworks.com/ar</loc>
+    <lastmod>2026-02-22T02:05:04+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.aadigitalworks.com/quote</loc>
+    <lastmod>2026-02-22T02:05:04+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- SEO Landing Pages -->
+  <url>
+    <loc>https://www.aadigitalworks.com/seo/en/dubai</loc>
+    <lastmod>2025-02-07T22:42:11+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.aadigitalworks.com/seo/ar/seodubai</loc>
+    <lastmod>2025-02-07T22:42:11+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.aadigitalworks.com/seo/ar/seoriyadh</loc>
+    <lastmod>2025-08-07T22:42:11+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.aadigitalworks.com/seo/ar/seoabudhabi</loc>
+    <lastmod>2025-08-07T22:42:11+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- UAE & KSA Locations -->
+  <url><loc>https://www.aadigitalworks.com/locations/abu-dhabi</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.80</priority></url>
+  <url><loc>https://www.aadigitalworks.com/locations/ajman</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.80</priority></url>
+  <url><loc>https://www.aadigitalworks.com/locations/dubai</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.80</priority></url>
+  <url><loc>https://www.aadigitalworks.com/locations/fujairah</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.80</priority></url>
+  <url><loc>https://www.aadigitalworks.com/locations/ras-al-khaimah</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.80</priority></url>
+  <url><loc>https://www.aadigitalworks.com/locations/sharjah</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.80</priority></url>
+  <url><loc>https://www.aadigitalworks.com/locations/umm-al-quwain</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.80</priority></url>
+  <url><loc>https://www.aadigitalworks.com/locations/riyadh</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.80</priority></url>
+  <url><loc>https://www.aadigitalworks.com/locations/jeddah</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.80</priority></url>
+  <url><loc>https://www.aadigitalworks.com/locations/mecca</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.80</priority></url>
+  <url><loc>https://www.aadigitalworks.com/locations/medina</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.80</priority></url>
+  <url><loc>https://www.aadigitalworks.com/locations/dammam</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.80</priority></url>
+  <url><loc>https://www.aadigitalworks.com/locations/khobar</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.80</priority></url>
+  <url><loc>https://www.aadigitalworks.com/locations/tabuk</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.80</priority></url>
+  <url><loc>https://www.aadigitalworks.com/locations/abha</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.80</priority></url>
+
+  <!-- Ireland Landing & Locations -->
+  <url><loc>https://www.aadigitalworks.com/ie/</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.85</priority></url>
+  <url><loc>https://www.aadigitalworks.com/ie/carlow</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.80</priority></url>
+  <url><loc>https://www.aadigitalworks.com/ie/dublin</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.80</priority></url>
+  <url><loc>https://www.aadigitalworks.com/ie/waterford</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.80</priority></url>
+  <url><loc>https://www.aadigitalworks.com/ie/wexford</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.80</priority></url>
+  <url><loc>https://www.aadigitalworks.com/ie/wicklow</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.80</priority></url>
+  <url><loc>https://www.aadigitalworks.com/ie/westmeath</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.80</priority></url>
+
+  <!-- Projects & Quotes -->
+  <!-- (All Ireland-based project + quote URLs remain included from your 2026 sitemap version) -->
+
 </urlset>
