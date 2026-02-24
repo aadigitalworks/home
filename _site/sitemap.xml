@@ -67,17 +67,4 @@
 <url><loc>https://www.aadigitalworks.com/quote?location=wicklow</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.64</priority></url>
 <url><loc>https://www.aadigitalworks.com/quote?location=westmeath</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.64</priority></url>
 
-<!-- Each city includes full project set (10 per city) -->
-<!-- Pattern: SlaneySide Website + Local Store + others -->
-<url><loc>https://www.aadigitalworks.com/project?name=SlaneySide+Website+Westmeath</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.64</priority></url>
-<url><loc>https://www.aadigitalworks.com/project?name=SlaneySide+Local+Store+Westmeath</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.64</priority></url>
-<url><loc>https://www.aadigitalworks.com/project?name=ObrienGardening+Westmeath</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.64</priority></url>
-<url><loc>https://www.aadigitalworks.com/project?name=Luxury+Nails+Westmeath</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.64</priority></url>
-<url><loc>https://www.aadigitalworks.com/project?name=Spirit+Distillery+Hub+Westmeath</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.64</priority></url>
-<url><loc>https://www.aadigitalworks.com/project?name=Electrical+Services+Hub+Westmeath</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.64</priority></url>
-<url><loc>https://www.aadigitalworks.com/project?name=City+of+Electronics+Westmeath</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.64</priority></url>
-<url><loc>https://www.aadigitalworks.com/project?name=Enterprise+Admin+Dashboard+Westmeath</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.64</priority></url>
-<url><loc>https://www.aadigitalworks.com/project.html?name=Church+Website+Westmeath</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.64</priority></url>
-<url><loc>https://www.aadigitalworks.com/project?name=Cloud-Based+TV+Menu+Westmeath</loc><lastmod>2026-02-22T02:05:04+00:00</lastmod><priority>0.64</priority></url>
-
 </urlset>
