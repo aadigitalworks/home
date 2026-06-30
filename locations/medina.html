@@ -45,6 +45,7 @@
   </script>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js" defer></script>
 
   <!-- Owl Carousel -->
@@ -600,6 +601,42 @@
          </div>
       </section>
       <!-- end target section -->
+        <!-- Floating WhatsApp Icon -->
+   <div class="whatsapp-float" onclick="toggleWhatsAppBox()">
+      <svg class="icon" viewBox="0 0 448 512">
+         <path fill="currentColor"
+            d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+      </svg>
+   </div>
+   <!-- WhatsApp Chat Box -->
+   <div class="whatsapp-box" id="whatsappBox">
+      <div class="whatsapp-header">
+         <span class="whatsapp-close" onclick="toggleWhatsAppBox()">×</span>
+         <div class="whatsapp-description">
+            <h3>Welcome!</h3>
+            <p>Welcome to AA DigitalWorks — Your trusted digital marketing agency.</p>
+            <p class="small-text">Click below to contact us on WhatsApp</p>
+         </div>
+      </div>
+      <div class="whatsapp-body">
+         <a href="https://wa.me/353899888746?text=Hi!%20I%27m%20interested%20in%20your%20digital%20marketing%20services%20from%20AA%20DigitalWorks."
+            target="_blank" class="whatsapp-account">
+            <div class="whatsapp-avatar">
+               <svg class="icon" viewBox="0 0 448 512" width="32" height="32">
+                  <path fill="currentColor"
+                     d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+               </svg>
+            </div>
+            <div class="whatsapp-info">
+               <span class="whatsapp-label">Customer Support</span>
+               <span class="whatsapp-name">AA DigitalWorks</span>
+            </div>
+         </a>
+      </div>
+      <div class="whatsapp-footer">
+         <p class="small-text">Click to chat directly on WhatsApp</p>
+      </div>
+   </div>
           <!-- contact section -->
       <section class="contact_section layout_padding scrolling-text2">
          <div class="container">
@@ -640,116 +677,292 @@
          </div>
       </section>
       <!-- end contact section -->
-      <section class="info_section scrolling-text">
-         <div class="container">
-             <div class="row">
-                 <div class="col-md-3">
-                     <div class="info_contact">
-                         <h3>Locations</h3>
-                         <!-- Location Section -->
-                         <div class="location-info">
-                             <!-- Dropdown for UAE -->
-                             <div class="dropdown">
-                                 <button class="dropbtn">
-                                     <img src="../images/location-white.png" class="country-icon" alt="Location Icon">
-                                     United Arab Emirates
-                                 </button>
-                                 <div class="dropdown-content">
-                                     <ul>
-                                         <li><img src="../images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="abu-dhabi">Abu Dhabi</a></li>
-                                         <li><img src="../images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="ajman">Ajman</a></li>
-                                         <li><img src="../images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="dubai">Dubai</a></li>
-                                         <li><img src="../images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="fujairah">Fujairah</a></li>
-                                         <li><img src="../images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="ras-al-khaimah">Ras Al Khaimah</a></li>
-                                         <li><img src="../images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="sharjah">Sharjah</a></li>
-                                         <li><img src="../images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="umm-al-quwain">Umm Al Quwain</a></li>
-                                     </ul>
-                                 </div>
-                             </div>
-     
-                             <!-- Dropdown for Saudi Arabia -->
-                             <div class="dropdown">
-                                 <button class="dropbtn">
-                                     <img src="../images/location-white.png" class="country-icon" alt="Location Icon">
-                                     Saudi Arabia
-                                 </button>
-                                 <div class="dropdown-content">
-                                     <ul>
-                                         <li><img src="../images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="riyadh">Riyadh</a></li>
-                                         <li><img src="../images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="jeddah">Jeddah</a></li>
-                                         <li><img src="../images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="mecca">Mecca</a></li>
-                                         <li><img src="../images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="medina">Medina</a></li>
-                                         <li><img src="../images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="dammam">Dammam</a></li>
-                                         <li><img src="../images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="khobar">Khobar</a></li>
-                                         <li><img src="../images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="tabuk">Tabuk</a></li>
-                                         <li><img src="../images/location-white.png" class="dropdown-icon" alt="Location Icon"><a href="abha">Abha</a></li>
-                                         <!-- Add more cities as needed -->
-                                     </ul>
-                                 </div>
-                             </div>
-                         </div>
+      <section class="info_section scrolling-text" style="opacity: 1; transform: translateX(0%) translateY(0%);">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-10">
+               <div class="info_contact">
+                  <h3><i class="fas fa-map-marker-alt"></i> Locations</h3>
+
+                  <div class="location-info">
+                     <!-- Ireland Dropdown -->
+                     <!--  <div class="dropdown" onclick="toggleDropdown(this)">
+                        <button class="dropbtn">
+                           <i class="fas fa-chevron-down"></i>
+                           <img src="images/location-white.png" class="country-icon" alt="Location Icon" loading="lazy">
+                           Ireland
+                        </button>
+                       <div class="dropdown-content">
+                         <ul>
+                              <li><i class="fas fa-city"></i><a href="ie/carlow">Carlow</a></li>
+                               <li><i class="fas fa-city"></i><a href="ie/cavan">Cavan</a></li>
+                              <li><i class="fas fa-city"></i><a href="ie/clare">Clare</a></li>
+                              <li><i class="fas fa-city"></i><a href="ie/cork">Cork</a></li>
+                              <li><i class="fas fa-city"></i><a href="ie/donegal">Donegal</a></li>
+                              <li><i class="fas fa-city"></i><a href="ie/dublin">Dublin</a></li>
+                              <li><i class="fas fa-city"></i><a href="ie/galway">Galway</a></li>
+                              <li><i class="fas fa-city"></i><a href="ie/kerry">Kerry</a></li>
+                              <li><i class="fas fa-city"></i><a href="ie/kildare">Kildare</a></li>
+                              <li><i class="fas fa-city"></i><a href="ie/kilkenny">Kilkenny</a></li>
+                              <li><i class="fas fa-city"></i><a href="ie/laois">Laois</a></li>
+                              <li><i class="fas fa-city"></i><a href="ie/leitrim">Leitrim</a></li>
+                              <li><i class="fas fa-city"></i><a href="ie/limerick">Limerick</a></li>
+                              <li><i class="fas fa-city"></i><a href="ie/longford">Longford</a></li>
+                              <li><i class="fas fa-city"></i><a href="ie/louth">Louth</a></li>
+                              <li><i class="fas fa-city"></i><a href="ie/mayo">Mayo</a></li>
+                              <li><i class="fas fa-city"></i><a href="ie/meath">Meath</a></li>
+                              <li><i class="fas fa-city"></i><a href="ie/monaghan">Monaghan</a></li>
+                              <li><i class="fas fa-city"></i><a href="ie/offaly">Offaly</a></li>
+                              <li><i class="fas fa-city"></i><a href="ie/roscommon">Roscommon</a></li>
+                              <li><i class="fas fa-city"></i><a href="ie/sligo">Sligo</a></li>
+                              <li><i class="fas fa-city"></i><a href="ie/tipperary">Tipperary</a></li>
+                              <li><i class="fas fa-city"></i><a href="ie/waterford">Waterford</a></li>
+                              <li><i class="fas fa-city"></i><a href="ie/westmeath">Westmeath</a></li>
+                              <li><i class="fas fa-city"></i><a href="ie/wexford">Wexford</a></li>
+                              <li><i class="fas fa-city"></i><a href="ie/wicklow">Wicklow</a></li>
+                           </ul>
+                        </div>
+                     </div>-->
+
+                     <!-- UAE Dropdown -->
+                     <div class="dropdown" onclick="toggleDropdown(this)">
+                        <button class="dropbtn">
+                           <i class="fas fa-chevron-down"></i>
+                           <img src="../images/location-white.png" class="country-icon" alt="Location Icon" loading="lazy">
+                           United Arab Emirates
+                        </button>
+                        <div class="dropdown-content">
+                           <ul>
+                              <li><i class="fas fa-city"></i><a href="../locations/abu-dhabi">Abu Dhabi</a></li>
+                              <li><i class="fas fa-city"></i><a href="../locations/ajman">Ajman</a></li>
+                              <li><i class="fas fa-city"></i><a href="../locations/dubai">Dubai</a></li>
+                              <li><i class="fas fa-city"></i><a href="../locations/fujairah">Fujairah</a></li>
+                              <li><i class="fas fa-city"></i><a href="../locations/ras-al-khaimah">Ras Al Khaimah</a></li>
+                              <li><i class="fas fa-city"></i><a href="../locations/sharjah">Sharjah</a></li>
+                              <li><i class="fas fa-city"></i><a href="../locations/umm-al-quwain">Umm Al Quwain</a></li>
+                           </ul>
+                        </div>
                      </div>
-                 </div>
-                 <div class="col-md-3">
-                  <div class="info_contact">
-                      <h3>Contact Information</h3>
-                      <div>
-                       
-                           <div class="img-box">
-                               <img src="../images/WhatsApp-Logo.wine.png" style="width: 50px;" alt="WhatsApp icon" loading="lazy">
-                           </div>
-                           <a href="https://wa.me/+353899888746" target="_blank" rel="noopener noreferrer" title="WhatsApp">
-                               <p>WhatsApp</p>
-                           </a>
-                  
-                      </div>
-                      <div>
-                          <div class="img-box">
-                              <img src="../images/envelope-white.png" style="width: 18px;" alt="envelop icon" loading="lazy">
-                          </div>
-                          <a href="mailto:info@aadigitalworks.com" title="Email address">
-                              <p>info@aadigitalworks.com</p>
-                          </a>
-                      </div>
+
+                     <!-- Saudi Arabia Dropdown -->
+                     <div class="dropdown" onclick="toggleDropdown(this)">
+                        <button class="dropbtn">
+                           <i class="fas fa-chevron-down"></i>
+                           <img src="../images/location-white.png" class="country-icon" alt="Location Icon" loading="lazy">
+                           Saudi Arabia
+                        </button>
+                        <div class="dropdown-content">
+                           <ul>
+                              <li><i class="fas fa-city"></i><a href="../locations/riyadh">Riyadh</a></li>
+                              <li><i class="fas fa-city"></i><a href="../locations/jeddah">Jeddah</a></li>
+                              <li><i class="fas fa-city"></i><a href="../locations/mecca">Mecca</a></li>
+                              <li><i class="fas fa-city"></i><a href="../locations/medina">Medina</a></li>
+                              <li><i class="fas fa-city"></i><a href="../locations/dammam">Dammam</a></li>
+                              <li><i class="fas fa-city"></i><a href="../locations/khobar">Khobar</a></li>
+                              <li><i class="fas fa-city"></i><a href="../locations/tabuk">Tabuk</a></li>
+                              <li><i class="fas fa-city"></i><a href="../locations/abha">Abha</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <!-- Iraq Dropdown -->
+                     <!-- <div class="dropdown" onclick="toggleDropdown(this)">
+                        <button class="dropbtn">
+                           <i class="fas fa-chevron-down"></i>
+                           <img src="images/location-white.png" class="country-icon" alt="Location Icon" loading="lazy">
+                           Iraq
+                        </button>
+                        <div class="dropdown-content">
+                           <ul>
+                              <li><i class="fas fa-city"></i><a href="locations/baghdad">Baghdad</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/basra">Basra</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/mosul">Mosul (Nineveh)</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/erbil">Erbil</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/sulaymaniyah">Sulaymaniyah</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/dohuk">Dohuk</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/kirkuk">Kirkuk</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/karbala">Karbala</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/najaf">Najaf</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/babil">Babil</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/baghdad-alrusafa">Baghdad Al-Rusafa</a>
+                              </li>
+                              <li><i class="fas fa-city"></i><a href="locations/baghdad-alsadr">Baghdad Al-Sadr</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/muthanna">Muthanna</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/qadisiya">Al-Qadisiyah</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/ninawa">Nineveh</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/salah-ad-din">Salah ad-Din</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/diwaniya">Al-Diwaniya</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/maysan">Maysan</a></li>
+                           </ul>
+                        </div>
+                     </div> -->
+
+                     <!-- USA Dropdown -->
+                     <!-- <div class="dropdown" onclick="toggleDropdown(this)">
+                        <button class="dropbtn">
+                           <i class="fas fa-chevron-down"></i>
+                           <img src="images/location-white.png" class="country-icon" alt="Location Icon" loading="lazy">
+                           USA
+                        </button>
+                        <div class="dropdown-content">
+                           <ul>
+                              
+                              <li><i class="fas fa-city"></i><a href="locations/new-york">New York, NY</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/boston">Boston, MA</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/washington-dc">Washington, DC</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/miami">Miami, FL</a></li>
+
+                           
+                              <li><i class="fas fa-city"></i><a href="locations/chicago">Chicago, IL</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/detroit">Detroit, MI</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/minneapolis">Minneapolis, MN</a></li>
+
+                            
+                              <li><i class="fas fa-city"></i><a href="locations/houston">Houston, TX</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/dallas">Dallas, TX</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/atlanta">Atlanta, GA</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/orlando">Orlando, FL</a></li>
+
+                            
+                              <li><i class="fas fa-city"></i><a href="locations/los-angeles">Los Angeles, CA</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/san-francisco">San Francisco, CA</a>
+                              </li>
+                              <li><i class="fas fa-city"></i><a href="locations/seattle">Seattle, WA</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/las-vegas">Las Vegas, NV</a></li>
+
+                              <li><i class="fas fa-city"></i><a href="locations/phoenix">Phoenix, AZ</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/denver">Denver, CO</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/portland">Portland, OR</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/philadelphia">Philadelphia, PA</a></li>
+                           </ul>
+                        </div>
+                     </div> -->
+
+                     <!-- Canada Dropdown -->
+                     <!-- <div class="dropdown" onclick="toggleDropdown(this)">
+                        <button class="dropbtn">
+                           <i class="fas fa-chevron-down"></i>
+                           <img src="images/location-white.png" class="country-icon" alt="Location Icon" loading="lazy">
+                           Canada
+                        </button>
+                        <div class="dropdown-content">
+                           <ul>
+                            
+                              <li><i class="fas fa-city"></i><a href="locations/toronto">Toronto</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/ottawa">Ottawa</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/mississauga">Mississauga</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/brampton">Brampton</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/hamilton">Hamilton</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/london">London</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/markham">Markham</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/vaughan">Vaughan</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/kitchener">Kitchener</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/waterloo">Waterloo</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/cambridge">Cambridge</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/windsor">Windsor</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/brantford">Brantford</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/peterborough">Peterborough</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/niagara-falls">Niagara Falls</a></li>
+
+                           
+                              <li><i class="fas fa-city"></i><a href="locations/montreal">Montreal, QC</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/quebec-city">Quebec City, QC</a></li>
+
+                              <li><i class="fas fa-city"></i><a href="locations/vancouver">Vancouver, BC</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/whistler">Whistler, BC</a></li>
+
+                              <li><i class="fas fa-city"></i><a href="locations/calgary">Calgary, AB</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/edmonton">Edmonton, AB</a></li>
+
+                              <li><i class="fas fa-city"></i><a href="locations/winnipeg">Winnipeg, MB</a></li>
+
+                              <li><i class="fas fa-city"></i><a href="locations/regina">Regina, SK</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/saskatoon">Saskatoon, SK</a></li>
+
+                              <li><i class="fas fa-city"></i><a href="locations/halifax">Halifax, NS</a></li>
+
+                              <li><i class="fas fa-city"></i><a href="locations/fredericton">Fredericton, NB</a></li>
+
+                              <li><i class="fas fa-city"></i><a href="locations/st-johns">St. John's, NL</a></li>
+
+                              <li><i class="fas fa-city"></i><a href="locations/charlottetown">Charlottetown, PE</a>
+                              </li>
+
+
+                              <li><i class="fas fa-city"></i><a href="locations/yellowknife">Yellowknife, NT</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/iqaluit">Iqaluit, NU</a></li>
+                              <li><i class="fas fa-city"></i><a href="locations/whitehorse">Whitehorse, YT</a></li>
+                           </ul>
+                        </div>
+                     </div> -->
+
                   </div>
-              </div>
-                 <div class="col-md-3 d-flex flex-column align-items-center text-center">
-                     <h3>Our Social Media</h3>
+               </div>
+            </div>
+            <div class="col-md-8">
+               <div class="info_contact">
+                  <h3><i class="fas fa-address-book"></i> Contact Information</h3>
+                  <div>
+                     <div class="img-box">
+                        <i class="fab fa-whatsapp"></i>
+                     </div>
+                     <a href="https://wa.me/+353899888746" target="_blank" rel="noopener noreferrer" title="WhatsApp">
+                        <p>WhatsApp</p>
+                     </a>
+                  </div>
+                  <div>
+                     <div class="img-box">
+                        <i class="fas fa-envelope"></i>
+                     </div>
+                     <a href="mailto:info@aadigitalworks.com" title="Email address">
+                        <p>info@aadigitalworks.com</p>
+                     </a>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-8 d-flex flex-column align-items-center text-center">
+               <h3><i class="fas fa-share-alt"></i> Our Social Media</h3>
+               <div>
+                  <div class="social_box">
+                     <a href="https://www.facebook.com/AADigitalWorks" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">
+                        <i class="fab fa-facebook"></i>
+                     </a>
+
+                     <a href="https://www.tiktok.com/@aadigitalworks" target="_blank" rel="noopener noreferrer" aria-label="Follow us on TikTok">
+                        <i class="fab fa-tiktok"></i>
+                     </a>
+
+                     <a href="https://www.instagram.com/aadigitalworks" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
+                        <i class="fab fa-instagram"></i>
+                     </a>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-10">
+               <div class="info_form">
+                  <h3><i class="fas fa-newspaper"></i> Newsletter</h3>
+                  <form id="newsletter-form" onsubmit="return submitForm(event)">
                      <div>
-                         <div class="social_box">
-                             <a href="https://www.facebook.com/AADigitalWorks">
-                                 <img src="../images/fb.png" style="width: 30px;" alt="Facebook Icon" loading="lazy">
-                             </a>
-                             <a href="https://www.tiktok.com/@aadigitalworks" target="_blank" rel="noopener noreferrer">
-                                 <img src="../images/R.png" style="width: 40px;" alt="TikTok Icon" loading="lazy">
-                             </a>
-                             <a href="https://www.youtube.com/@AADigitalWorks">
-                                 <img src="../images/youtube.png" style="width: 30px;" alt="Youtube Icon" loading="lazy">
-                             </a>
-                         </div>
+                        <label for="newsletter-email">Stay updated with our latest news:</label>
+                        <input type="email" id="newsletter-email" placeholder="youremail@example.com" required="">
                      </div>
-                 </div>
-     
-                 <div class="col-md-3">
-                     <div class="info_form">
-                         <h3>Newsletter</h3>
-                         <form id="newsletter-form" onsubmit="return submitForm(event)">
-                           <div>
-                               <label for="newsletter-email">Enter your email:</label>
-                               <input type="email" id="newsletter-email" placeholder="example@domain.com" required>
-                           </div>
-                           <button type="submit">Subscribe</button>
-                       </form>
-                         <div id="newsletter-response" style="display: none;"></div>
-                     </div>
-                 </div>
-             </div>
+                     <button type="submit">Subscribe</button>
+                  </form>
+                  <div id="newsletter-response" style="display: none;"></div>
+               </div>
+            </div>
          </div>
-     </section>                  
+      </div>
+   </section>                 
       <section class="container-fluid footer_section">
-         <h2 style="display: none;">Footer</h2>
-         <p>&copy; 2025 All Rights Reserved AA DigitalWorks</p>
-      </section>
+      <p>&copy; <span id="year"></span> All Rights Reserved AA DigitalWorks</p>
+   </section>
+   <script type="text/javascript">
+      (function (c, l, a, r, i, t, y) {
+         c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+         t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/ng6tsk5m93";
+         y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "ng6tsk5m93");
+   </script>
  <!-- Google Tag Manager (gtag.js) -->
 <script src="https://www.googletagmanager.com/gtag/js?id=G-M74XDBHG7P" defer></script>
 
