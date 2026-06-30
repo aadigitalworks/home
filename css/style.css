@@ -1271,6 +1271,7 @@ a:focus {
 
 .client_section {
   padding-bottom: 150px;
+  display: none;
 }
 
 .client_section .heading_container {
