@@ -44,6 +44,172 @@
         margin-top: 50px;
     }
 
+ /* تنسيق قسم الهيرو */
+.hero-section {
+  background-color: #0f1424; /* لون الخلفية الداكن */
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0;
+  color: #ffffff;
+}
+
+/* حاوية الصورة */
+.hero-image-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.hero-person-img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  object-fit: contain;
+  /* إضافة إضاءة ناعمة خفيفة خلف الصورة لتبرزها */
+  filter: drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.5));
+}
+
+/* الشارات العائمة */
+.floating-badge {
+  position: absolute;
+  z-index: 5;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 8px 18px;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.floating-badge.top-right {
+  top: 15%;
+  right: 5%;
+}
+
+.floating-badge.bottom-left {
+  bottom: 10%;
+  left: 0%;
+}
+
+/* كارت التعريف المصغر */
+.designer-card {
+  position: absolute;
+  bottom: 25%;
+  right: 5%;
+  z-index: 5;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 10px 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.designer-card .avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.designer-card strong {
+  display: block;
+  font-size: 0.85rem;
+  color: #fff;
+}
+
+.designer-card span {
+  display: block;
+  font-size: 0.75rem;
+  color: #a0aec0;
+}
+
+
+.preview-mockup-wrapper {
+  position: relative;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* إطار المتصفح */
+.browser-mockup {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  width: 100%;
+  max-width: 480px;
+}
+
+.browser-header {
+  background: #f1f5f9;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.browser-header .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.browser-header .dot.red { background: #ef4444; }
+.browser-header .dot.yellow { background: #f59e0b; }
+.browser-header .dot.green { background: #10b981; }
+
+.browser-header .address-bar {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 2px 12px;
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-left: 10px;
+  border: 1px solid #cbd5e1;
+  width: 60%;
+}
+
+.browser-body img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* الشارات العائمة الفاتحة */
+.preview-mockup-wrapper .floating-badge {
+  position: absolute;
+  z-index: 5;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.preview-mockup-wrapper .floating-badge.top-right {
+  top: 0;
+  right: -10px;
+}
+
+.preview-mockup-wrapper .floating-badge.bottom-left {
+  bottom: 0;
+  left: -10px;
+}
     /* --- HEADER --- */
     .top-header { background: #1a1a2e; color: #fff; padding: 12px 0; border-bottom: 3px solid #d44a2e; }
     .top-header .brand { font-weight: 700; font-size: 1.6rem; }
@@ -73,7 +239,7 @@
       .top-header .row { flex-direction: column; align-items: center; }
       .top-header .brand { margin-bottom: 4px; }
       .top-header .header-contact { justify-content: center; flex-wrap: wrap; gap: 6px; }
-      .top-header .header-contact a { font-size: 0.75rem; }
+      .top-header .header-contact a { font-size: 1.2rem; }
       .top-header .header-contact .btn-quote { font-size: 0.75rem; padding: 5px 14px; }
       .top-header .header-nav { flex-wrap: wrap; justify-content: center; gap: 8px 16px; margin-top: 6px; }
       .top-header .header-nav a { font-size: 0.8rem; }
@@ -297,7 +463,7 @@
       .hero-section .floating-badge.bottom-left { bottom: 2%; left: 2%; }
     }
 
-    /* --- FREE PREVIEW --- */
+    /* --- FREE PREVIEW (enhanced) --- */
     .free-preview-section { 
       background: linear-gradient(180deg, #f8f4f2 0%, #ffffff 100%); 
       border-top: 4px solid #d44a2e; 
@@ -420,99 +586,127 @@
     .free-preview-section .cta-group .btn i {
       margin-right: 8px;
     }
+
+    /* ===== ENHANCED IMAGE FRAME – makes the preview img look premium ===== */
     .free-preview-section .preview-image-wrapper {
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100%;
-      padding: 20px;
+      padding: 10px;
       position: relative;
       min-height: 280px;
     }
+
+    /* main elegant frame around the image */
+    .image-frame {
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+      border-radius: 28px;
+      background: #ffffff;
+      padding: 14px;
+      box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(212, 74, 46, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .image-frame:hover {
+      transform: scale(1.01);
+      box-shadow: 0 32px 55px -12px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(212, 74, 46, 0.2);
+    }
+
+    .image-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 18px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      background: #fefefe; /* while loading */
+    }
+
+    /* refined floating badges inside the frame */
     .free-preview-section .preview-image-wrapper .floating-badge {
       position: absolute;
-      background: #fff;
-      border-radius: 14px;
-      padding: 10px 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      border: 1px solid #f0e8e5;
+      background: #ffffff;
+      border-radius: 60px;
+      padding: 8px 18px;
+      box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.02);
+      border: 1px solid #f0e9e6;
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-weight: 600;
-      font-size: 0.8rem;
-      color: #1a1a2e;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 0.78rem;
+      color: #1f2937;
       animation: float 3s ease-in-out infinite;
-      z-index: 2;
+      z-index: 5;
       white-space: nowrap;
+      backdrop-filter: blur(4px);
+      letter-spacing: 0.2px;
     }
     .free-preview-section .preview-image-wrapper .floating-badge i {
       color: #d44a2e;
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
     .free-preview-section .preview-image-wrapper .floating-badge.top-right {
-      top: 10%;
-      right: 5%;
+      top: -8px;
+      right: -8px;
       animation-delay: 0.5s;
     }
     .free-preview-section .preview-image-wrapper .floating-badge.bottom-left {
-      bottom: 15%;
-      left: 5%;
+      bottom: -8px;
+      left: -8px;
       animation-delay: 1.5s;
     }
     .free-preview-section .preview-image-wrapper .floating-badge .check-green {
       color: #22c55e;
     }
-    .free-preview-section .preview-image-wrapper img {
-      max-width: 100%;
-      max-height: 340px;
-      filter: drop-shadow(0 15px 40px rgba(212,74,46,0.08));
-      position: relative;
-      z-index: 1;
-    }
 
     @media (max-width: 1200px) {
-      .free-preview-section .preview-image-wrapper .floating-badge { font-size: 0.75rem; padding: 8px 16px; }
-      .free-preview-section .preview-image-wrapper .floating-badge i { font-size: 0.9rem; }
+      .free-preview-section .preview-image-wrapper .floating-badge { font-size: 0.72rem; padding: 7px 16px; }
+      .free-preview-section .preview-image-wrapper .floating-badge i { font-size: 0.85rem; }
+      .image-frame { padding: 12px; border-radius: 24px; }
     }
     @media (max-width: 992px) {
-      .free-preview-section .preview-image-wrapper .floating-badge { font-size: 0.7rem; padding: 7px 14px; }
+      .free-preview-section .preview-image-wrapper .floating-badge { font-size: 0.68rem; padding: 6px 14px; }
       .free-preview-section .preview-image-wrapper .floating-badge i { font-size: 0.8rem; }
-      .free-preview-section .preview-image-wrapper .floating-badge.top-right { top: 5%; right: 2%; }
-      .free-preview-section .preview-image-wrapper .floating-badge.bottom-left { bottom: 10%; left: 2%; }
+      .free-preview-section .preview-image-wrapper .floating-badge.top-right { top: -6px; right: -6px; }
+      .free-preview-section .preview-image-wrapper .floating-badge.bottom-left { bottom: -6px; left: -6px; }
+      .image-frame { padding: 10px; border-radius: 22px; }
     }
     @media (max-width: 768px) {
       .free-preview-section .preview-card { padding: 30px 24px; }
       .free-preview-section .preview-title { font-size: 1.8rem; }
       .free-preview-section .benefits-grid { grid-template-columns: 1fr; }
       .free-preview-section .cta-group .btn { min-width: 100%; flex: 1 1 auto; font-size: 0.9rem; padding: 12px 20px; }
-      .free-preview-section .preview-image-wrapper { min-height: 200px; margin-top: 20px; }
-      .free-preview-section .preview-image-wrapper img { max-height: 200px; }
+      .free-preview-section .preview-image-wrapper { min-height: 200px; margin-top: 20px; padding: 0; }
+      .image-frame { padding: 8px; border-radius: 20px; }
+      .image-frame img { border-radius: 14px; }
       .free-preview-section .preview-image-wrapper .floating-badge { 
         font-size: 0.6rem; 
-        padding: 6px 12px;
-        gap: 6px;
-        border-radius: 10px;
+        padding: 5px 12px;
+        gap: 5px;
+        border-radius: 40px;
       }
       .free-preview-section .preview-image-wrapper .floating-badge i { font-size: 0.7rem; }
-      .free-preview-section .preview-image-wrapper .floating-badge.top-right { top: 5%; right: 2%; }
-      .free-preview-section .preview-image-wrapper .floating-badge.bottom-left { bottom: 8%; left: 2%; }
+      .free-preview-section .preview-image-wrapper .floating-badge.top-right { top: -4px; right: -4px; }
+      .free-preview-section .preview-image-wrapper .floating-badge.bottom-left { bottom: -4px; left: -4px; }
     }
     @media (max-width: 576px) {
       .free-preview-section .cta-group { flex-direction: column; align-items: stretch; }
       .free-preview-section .cta-group .btn { text-align: center; }
       .free-preview-section .preview-title { font-size: 1.5rem; }
       .free-preview-section .preview-image-wrapper { min-height: 160px; }
-      .free-preview-section .preview-image-wrapper img { max-height: 160px; }
+      .image-frame { padding: 6px; border-radius: 18px; }
+      .image-frame img { border-radius: 12px; }
       .free-preview-section .preview-image-wrapper .floating-badge { 
         font-size: 0.5rem; 
         padding: 4px 10px;
         gap: 4px;
-        border-radius: 8px;
+        border-radius: 30px;
       }
       .free-preview-section .preview-image-wrapper .floating-badge i { font-size: 0.6rem; }
-      .free-preview-section .preview-image-wrapper .floating-badge.top-right { top: 0; right: 0; }
-      .free-preview-section .preview-image-wrapper .floating-badge.bottom-left { bottom: 2%; left: 2%; }
+      .free-preview-section .preview-image-wrapper .floating-badge.top-right { top: -3px; right: -3px; }
+      .free-preview-section .preview-image-wrapper .floating-badge.bottom-left { bottom: -3px; left: -3px; }
     }
 
     /* --- PORTFOLIO - all cards same size on small screens --- */
@@ -745,41 +939,58 @@
 </header>
 
 <main>
-  <!-- ===== HERO ===== -->
-  <section class="hero-section" id="hero">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-7 hero-content">
-          <div class="eyebrow">
-            <span class="dot"></span>
-            WEB DESIGN WEXFORD
-          </div>
-          <h1>Professional Web Design <br><span class="highlight">&amp; Development</span> for Wexford Businesses</h1>
-          <p class="lead-text">Fast, modern and SEO-ready websites designed for businesses across Wexford. From startups to established companies, we build digital experiences that drive growth.</p>
-          <div class="price-tag">
-            <i class="fas fa-tag"></i> WEBSITES FROM €200 <small>+ free preview</small>
-          </div>
-          <div class="cta-group">
-            <a href="#contact" class="btn btn-primary"><i class="fas fa-eye"></i> GET YOUR FREE PREVIEW</a>
-            <a href="#pricing" class="btn btn-outline-primary"><i class="fas fa-arrow-right"></i> VIEW PACKAGES</a>
-          </div>
+<!-- ===== HERO SECTION ===== -->
+<section class="hero-section" id="hero">
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <!-- النصوص على اليسار -->
+      <div class="col-lg-6 hero-content">
+        <div class="eyebrow">
+          <span class="dot"></span> WEB DESIGN WEXFORD
         </div>
-        <div class="col-lg-5">
-          <div class="hero-image-wrapper">
-            <div class="floating-badge top-right">
-              <i class="fas fa-rocket"></i>
-              <span>Fast &amp; Modern</span>
-            </div>
-            <div class="floating-badge bottom-left">
-              <i class="fas fa-mobile-alt"></i>
-              <span>Mobile First</span>
-            </div>
-            <img src="/images/hero-web-design.svg" alt="Web Design Wexford" loading="lazy">
-          </div>
+        <h1>Professional Web Design <br><span class="highlight">&amp; Development</span> for Wexford Businesses</h1>
+        <p class="lead-text">Fast, modern and SEO-ready websites designed for businesses across Wexford. From startups to established companies, we build digital experiences that drive growth.</p>
+        
+        <div class="price-tag">
+          <i class="fas fa-tag"></i> WEBSITES FROM €200 <small>+ free preview</small>
+        </div>
+        
+        <div class="cta-group">
+          <a href="#contact" class="btn btn-primary"><i class="fas fa-eye"></i> GET YOUR FREE PREVIEW</a>
+          <a href="#pricing" class="btn btn-outline-primary"><i class="fas fa-arrow-right"></i> VIEW PACKAGES</a>
         </div>
       </div>
+
+      <!-- الصورة والعناصر العائمة على اليمين -->
+      <div class="col-lg-6 hero-image-col">
+        <div class="hero-image-wrapper blend-mode">
+          
+          <!-- الشارات العائمة -->
+          <div class="floating-badge top-right">
+            <i class="fas fa-rocket"></i> Fast &amp; Modern
+          </div>
+          
+          <div class="floating-badge bottom-left">
+            <i class="fas fa-mobile-alt"></i> Mobile First
+          </div>
+
+          <!--<div class="designer-card">
+            <img src="/images/albert2.webp" alt="Albert" class="avatar">
+            <div>
+              <strong>Albeer - Lead Designer</strong>
+              <span>Job Designer</span>
+            </div>
+          </div>-->
+
+          
+          <img src="/images/albert2.webp" alt="Albeer .A - CEO" class="hero-person-img">
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- ===== ABOUT US ===== -->
   <section id="about" class="py-5">
@@ -925,7 +1136,7 @@
     </div>
   </section>
 
-  <!-- ===== FREE WEBSITE PREVIEW ===== -->
+  <!-- ===== FREE WEBSITE PREVIEW (enhanced image frame) ===== -->
   <section class="free-preview-section" id="preview">
     <div class="container">
       <div class="row align-items-center">
@@ -961,16 +1172,21 @@
           </div>
         </div>
         <div class="col-lg-6">
+          <!-- enhanced image area with elegant frame -->
           <div class="preview-image-wrapper">
-            <div class="floating-badge top-right">
-              <i class="fas fa-desktop"></i>
-              <span>Live Preview</span>
+            <div class="image-frame">
+              <!-- floating badges -->
+              <div class="floating-badge top-right">
+                <i class="fas fa-desktop"></i>
+                <span>Live Preview</span>
+              </div>
+              <div class="floating-badge bottom-left">
+                <i class="fas fa-check-circle check-green"></i>
+                <span>100% Free</span>
+              </div>
+              <!-- the image itself -->
+              <img src="/images/free-prview.webp" alt="Free Website Preview" loading="lazy">
             </div>
-            <div class="floating-badge bottom-left">
-              <i class="fas fa-check-circle check-green"></i>
-              <span>100% Free</span>
-            </div>
-            <img src="/images/free-preview.svg" alt="Free Website Preview" loading="lazy">
           </div>
         </div>
       </div>
@@ -1128,7 +1344,7 @@
     <div class="container text-center">
       <h2>Ready for Your New Website?</h2>
       <p class="lead">Get your free website preview today – no payment required.</p>
-      <a href="#contact" class="btn btn-primary btn-lg">GET YOUR FREE WEBSITE PREVIEW</a>
+      <a href="#contact" class="btn btn-primary btn-lg">GET FREE WEBSITE PREVIEW</a>
     </div>
   </section>
 
