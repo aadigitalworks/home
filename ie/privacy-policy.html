@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Privacy Policy for AA DigitalWorks — Ireland's premier digital agency. Learn how we collect, use, and protect your personal data under GDPR and the Irish Data Protection Act 2018.">
+  <meta name="robots" content="index, follow">
+  <title>Privacy Policy | AA DigitalWorks Ireland</title>
+  <!-- Google Fonts for a modern, professional look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    /* ---------- RESET & GLOBAL ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: #f7f9fc;
+      color: #1a1f36;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      padding: 0 24px 100px; /* extra bottom padding so content isn't hidden behind the fixed button */
+    }
+
+    /* ---------- CONTAINER ---------- */
+    .legal-wrapper {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 40px 0 20px;
+    }
+
+    /* ---------- FIXED BOTTOM BACK BUTTON (full-width on mobile, centered pill on desktop) ---------- */
+    .back-button-fixed {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 999;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: #1a1f36;
+      color: #ffffff;
+      border: none;
+      border-radius: 60px;
+      padding: 16px 36px;
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: inherit;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 8px 30px rgba(26, 31, 54, 0.3), 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: all 0.25s cubic-bezier(0.2, 0, 0, 1);
+      white-space: nowrap;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .back-button-fixed:hover {
+      background: #0b1222;
+      box-shadow: 0 12px 40px rgba(26, 31, 54, 0.4), 0 6px 16px rgba(0, 0, 0, 0.15);
+      transform: translateX(-50%) translateY(-3px);
+    }
+
+    .back-button-fixed:active {
+      transform: translateX(-50%) translateY(-1px);
+      box-shadow: 0 6px 20px rgba(26, 31, 54, 0.3);
+    }
+
+    .back-button-fixed svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      transition: transform 0.25s ease;
+    }
+
+    .back-button-fixed:hover svg {
+      transform: translateX(-4px);
+    }
+
+    /* ---------- CARD (elevated, clean, professional) ---------- */
+    .legal-card {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 56px 64px;
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.06), 0 4px 18px rgba(0, 0, 0, 0.02);
+      border: 1px solid #edf2f9;
+      transition: box-shadow 0.25s ease;
+    }
+
+    .legal-card:hover {
+      box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.08), 0 6px 20px rgba(0, 0, 0, 0.02);
+    }
+
+    /* ---------- HEADINGS (clear hierarchy) ---------- */
+    .legal-card h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: #0a1222;
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+
+    .legal-card h1 + p strong {
+      font-weight: 600;
+      color: #5b6c85;
+      font-size: 0.9rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .legal-card h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #0a1222;
+      margin-top: 44px;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #eef4ff;
+      letter-spacing: -0.015em;
+    }
+
+    .legal-card h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #1a1f36;
+      margin-top: 30px;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    /* ---------- TEXT & LISTS ---------- */
+    .legal-card p {
+      font-size: 1.02rem;
+      color: #2e3a4e;
+      margin-bottom: 18px;
+    }
+
+    .legal-card ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 24px;
+    }
+
+    .legal-card ul li {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 14px;
+      font-size: 1.02rem;
+      color: #2e3a4e;
+    }
+
+    .legal-card ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 8px;
+      height: 8px;
+      background: #3b82f6;
+      border-radius: 50%;
+      opacity: 0.9;
+      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+    }
+
+    .legal-card ul li strong {
+      color: #0a1222;
+      font-weight: 600;
+    }
+
+    /* ---------- LINKS (elegant hover) ---------- */
+    .legal-card a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1.5px solid transparent;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .legal-card a:hover {
+      color: #1d4ed8;
+      border-bottom-color: #1d4ed8;
+    }
+
+    /* ---------- FOOTNOTE / SIGNATURE ---------- */
+    .legal-card em {
+      display: block;
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid #edf2f9;
+      font-style: normal;
+      font-size: 0.95rem;
+      color: #5b6c85;
+      line-height: 1.65;
+      letter-spacing: 0.01em;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      body {
+        padding: 0 16px 110px;
+      }
+
+      .legal-wrapper {
+        padding: 28px 0 20px;
+      }
+
+      .legal-card {
+        padding: 36px 28px;
+        border-radius: 22px;
+      }
+
+      .legal-card h1 {
+        font-size: 1.85rem;
+      }
+
+      .legal-card h2 {
+        font-size: 1.3rem;
+        margin-top: 36px;
+      }
+
+      .legal-card h3 {
+        font-size: 1.05rem;
+      }
+
+      .back-button-fixed {
+        bottom: 20px;
+        padding: 15px 30px;
+        font-size: 0.95rem;
+        width: calc(100% - 32px);
+        max-width: 400px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 0 12px 100px;
+      }
+
+      .legal-card {
+        padding: 28px 18px;
+        border-radius: 18px;
+      }
+
+      .legal-card h1 {
+        font-size: 1.6rem;
+      }
+
+      .legal-card h2 {
+        font-size: 1.2rem;
+        margin-top: 32px;
+      }
+
+      .legal-card ul li {
+        font-size: 0.96rem;
+        padding-left: 26px;
+        margin-bottom: 12px;
+      }
+
+      .legal-card p {
+        font-size: 0.96rem;
+      }
+
+      .legal-card ul li::before {
+        top: 8px;
+        width: 7px;
+        height: 7px;
+      }
+
+      .back-button-fixed {
+        bottom: 16px;
+        padding: 14px 24px;
+        font-size: 0.9rem;
+        gap: 10px;
+        border-radius: 50px;
+      }
+
+      .back-button-fixed svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    /* ---------- SCROLL BEHAVIOR ---------- */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* ---------- FOCUS STYLES (accessibility) ---------- */
+    .back-button-fixed:focus-visible {
+      outline: 3px solid #3b82f6;
+      outline-offset: 4px;
+    }
+
+    a:focus-visible {
+      outline: 3px solid #3b82f6;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="legal-wrapper">
+
+    <!-- ========================================================= -->
+    <!--  PRIVACY POLICY                                           -->
+    <!-- ========================================================= -->
+    <div class="legal-card" id="privacy-policy">
+      <h1>Privacy Policy</h1>
+      <p><strong>Last Updated:</strong> 10 September 2026</p>
+
+      <p>At <strong>AA DigitalWorks</strong> — Ireland's premier digital agency — we are committed to protecting the privacy and security of your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website <a href="https://www.aadigitalworks.com/ie/">https://www.aadigitalworks.com/ie/</a> or engage our full-stack digital solutions.</p>
+      <p>We are the Data Controller for the purposes of the General Data Protection Regulation (GDPR) and the Irish Data Protection Act 2018. Our registered business name is <strong>AA DigitalWorks (Registered Business Name No. 781625)</strong>, and our registered location is <strong>County Wexford, Ireland</strong>.</p>
+
+      <h2>1. Data We Collect</h2>
+      <p>As part of delivering SEO, Google Ads, Web Design, Web Development, Custom Web Applications, E-Commerce, Digital Menus, QR Menus, Digital Signage, Branding, and Analytics services to Irish businesses, we may collect and process the following categories of personal data:</p>
+      <ul>
+        <li><strong>Contact Details:</strong> Name, email address, phone number, WhatsApp number, and postal address.</li>
+        <li><strong>Billing Information:</strong> Payment details, VAT number, and billing address.</li>
+        <li><strong>Technical Data:</strong> IP address, browser type and version, time zone setting, browser plug-in types, operating system, and platform.</li>
+        <li><strong>Usage Data:</strong> Information about how you use our website, products, and services.</li>
+        <li><strong>Marketing and Communications Data:</strong> Your preferences in receiving marketing from us and your communication preferences.</li>
+      </ul>
+
+      <h2>2. Legal Basis for Processing</h2>
+      <p>We will only process your personal data where we have a lawful basis to do so. The lawful bases we rely on are:</p>
+      <ul>
+        <li><strong>Consent:</strong> You have given clear consent for us to process your personal data for a specific purpose (e.g., signing up for our newsletter).</li>
+        <li><strong>Contract Performance:</strong> The processing is necessary for a contract we have with you, or because you have asked us to take specific steps before entering into a contract (e.g., providing web design or SEO services).</li>
+        <li><strong>Legal Obligation:</strong> The processing is necessary for us to comply with the law (e.g., retaining invoices for tax purposes).</li>
+        <li><strong>Legitimate Interests:</strong> The processing is necessary for our legitimate interests or the legitimate interests of a third party, provided your interests and fundamental rights do not override those interests (e.g., improving our services, ensuring network security).</li>
+      </ul>
+
+      <h2>3. Analytics and Tools</h2>
+      <p>We use third-party tools to analyse website traffic and user behaviour — because data-driven success is at the heart of what we do. These tools may collect data such as your IP address, browser information, and browsing patterns. The tools we use include:</p>
+      <ul>
+        <li><strong>Google Analytics 4 (GA4):</strong> For tracking website traffic and user engagement.</li>
+        <li><strong>Google Search Console:</strong> For monitoring our site's performance in Google Search results.</li>
+        <li><strong>Heatmap/Behaviour Analytics (e.g., Hotjar, Microsoft Clarity):</strong> To understand how users interact with our website pages.</li>
+      </ul>
+
+      <h2>4. Data Retention</h2>
+      <p>We will only retain your personal data for as long as necessary to fulfil the purposes we collected it for, including for the purposes of satisfying any legal, accounting, or reporting requirements. Typically, we retain client project data for a period of 6 years after the completion of a project to comply with Irish tax and contract law.</p>
+
+      <h2>5. International Data Transfers</h2>
+      <p>Some of our third-party service providers (such as Google) are based outside the European Economic Area (EEA), so their processing of your personal data will involve a transfer of data outside the EEA.</p>
+      <p>Whenever we transfer your personal data out of the EEA, we ensure a similar degree of protection is afforded to it by ensuring at least one of the following safeguards is implemented:</p>
+      <ul>
+        <li>We will only transfer your personal data to countries that have been deemed to provide an adequate level of protection for personal data by the European Commission.</li>
+        <li>Where we use certain service providers, we may use specific contracts approved by the European Commission which give personal data the same protection it has in Europe. These are known as <strong>EU Standard Contractual Clauses (SCCs)</strong>.</li>
+      </ul>
+
+      <h2>6. Your Legal Rights</h2>
+      <p>Under the GDPR, you have the following rights:</p>
+      <ul>
+        <li><strong>Right to Access:</strong> You have the right to request a copy of the personal data we hold about you.</li>
+        <li><strong>Right to Rectification:</strong> You have the right to request that we correct any information you believe is inaccurate or complete information you believe is incomplete.</li>
+        <li><strong>Right to Erasure ("Right to be Forgotten"):</strong> You have the right to request that we erase your personal data, under certain conditions.</li>
+        <li><strong>Right to Restrict Processing:</strong> You have the right to request that we restrict the processing of your personal data, under certain conditions.</li>
+        <li><strong>Right to Data Portability:</strong> You have the right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions.</li>
+        <li><strong>Right to Object:</strong> You have the right to object to our processing of your personal data, under certain conditions.</li>
+      </ul>
+      <p>If you wish to exercise any of these rights, please contact us at the details provided below.</p>
+
+      <h2>7. Right to Lodge a Complaint</h2>
+      <p>You have the right to lodge a complaint at any time with the <strong>Data Protection Commission (DPC)</strong>, the Irish supervisory authority for data protection issues. We would, however, appreciate the chance to deal with your concerns before you approach the DPC, so please contact us in the first instance.</p>
+      <p>The DPC can be contacted at <a href="https://www.dataprotection.ie" target="_blank" rel="noopener">www.dataprotection.ie</a>.</p>
+
+      <h2>8. Contact Us</h2>
+      <p>If you have any questions about this Privacy Policy — or about how we help businesses across Wexford, Dublin, Carlow, Waterford, Westmeath, Wicklow, Cork, Galway, and beyond — please contact us:</p>
+      <ul>
+        <li>By email: <a href="mailto:info@aadigitalworks.com">info@aadigitalworks.com</a></li>
+        <li>By WhatsApp: via the contact button on our website</li>
+        <li>By mail: AA DigitalWorks, County Wexford, Ireland</li>
+      </ul>
+      <em>AA DigitalWorks — Ireland's digital marketing agency.</em>
+    </div>
+
+  </div>
+
+  <!-- ========================================================= -->
+  <!--  FIXED BOTTOM BACK BUTTON — always visible, easy to use   -->
+  <!-- ========================================================= -->
+  <a href="javascript:history.back()" class="back-button-fixed" id="backButton" aria-label="Go back to the previous page">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+    </svg>
+    Back
+  </a>
+
+  <script>
+    // ---------------------------------------------------------------
+    // SMART BACK BUTTON
+    // Returns the user to the exact section they were viewing on the
+    // previous page (e.g., /#services or /#about).
+    //
+    // How it works:
+    // 1. If the browser has history AND a referrer from the same site,
+    //    it uses history.back() — which restores the exact scroll position.
+    // 2. If there is no history (e.g., direct link), it falls back to
+    //    the homepage.
+    // ---------------------------------------------------------------
+    document.addEventListener('DOMContentLoaded', function () {
+      const backBtn = document.getElementById('backButton');
+
+      backBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const referrer = document.referrer;
+        const isSameOrigin = referrer && referrer.indexOf(window.location.origin) === 0;
+
+        if (window.history.length > 1 && isSameOrigin) {
+          // Go back — the browser restores the exact scroll position
+          // and any hash the user was viewing.
+          window.history.back();
+        } else if (window.history.length > 1) {
+          // No same-origin referrer but history exists — go back anyway.
+          window.history.back();
+        } else {
+          // No history at all — fall back to the homepage.
+          window.location.href = 'https://www.aadigitalworks.com/ie/';
+        }
+      });
+
+      // Add a subtle shadow change on scroll to make the button feel
+      // more integrated with the page.
+      let lastScrollY = 0;
+      const button = document.querySelector('.back-button-fixed');
+      
+      window.addEventListener('scroll', function () {
+        const currentScrollY = window.scrollY;
+        
+        if (currentScrollY > 50) {
+          button.style.boxShadow = '0 12px 40px rgba(26, 31, 54, 0.4), 0 6px 16px rgba(0, 0, 0, 0.15)';
+        } else {
+          button.style.boxShadow = '0 8px 30px rgba(26, 31, 54, 0.3), 0 4px 12px rgba(0, 0, 0, 0.1)';
+        }
+        
+        lastScrollY = currentScrollY;
+      }, { passive: true });
+    });
+
+    // ---------------------------------------------------------------
+    // HIGHLIGHT THE ACTIVE SECTION IF A HASH IS PRESENT
+    // e.g., /privacy-policy#section-6
+    // ---------------------------------------------------------------
+    (function highlightActiveSection() {
+      const hash = window.location.hash;
+      if (!hash) return;
+
+      const target = document.querySelector(hash);
+      if (target) {
+        // Add a subtle, professional highlight (soft blue glow + background)
+        target.style.transition = 'box-shadow 0.5s ease, background-color 0.3s ease, padding 0.3s ease, margin 0.3s ease';
+        target.style.boxShadow = '0 0 0 3px rgba(59, 130, 246, 0.2), 0 20px 40px -12px rgba(0, 0, 0, 0.06)';
+        target.style.backgroundColor = 'rgba(59, 130, 246, 0.02)';
+        target.style.borderRadius = '12px';
+        target.style.padding = '8px 16px';
+        target.style.marginLeft = '-16px';
+        target.style.marginRight = '-16px';
+
+        // Remove the highlight after 2.5 seconds for a clean finish
+        setTimeout(() => {
+          target.style.boxShadow = 'none';
+          target.style.backgroundColor = 'transparent';
+          target.style.padding = '0';
+          target.style.marginLeft = '0';
+          target.style.marginRight = '0';
+        }, 2500);
+      }
+    })();
+  </script>
+
+</body>
+</html>

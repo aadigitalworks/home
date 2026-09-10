@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cookie Policy for AA DigitalWorks — Ireland's premier digital agency. Learn about the cookies we use, why we use them, and how to manage your preferences under the ePrivacy Directive and GDPR.">
+  <meta name="robots" content="index, follow">
+  <title>Cookie Policy | AA DigitalWorks Ireland</title>
+  <!-- Google Fonts for a modern, professional look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    /* ---------- RESET & GLOBAL ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: #f7f9fc;
+      color: #1a1f36;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      padding: 0 24px 100px; /* extra bottom padding so content isn't hidden behind the fixed button */
+    }
+
+    /* ---------- CONTAINER ---------- */
+    .legal-wrapper {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 40px 0 20px;
+    }
+
+    /* ---------- FIXED BOTTOM BACK BUTTON (full-width on mobile, centered pill on desktop) ---------- */
+    .back-button-fixed {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 999;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: #1a1f36;
+      color: #ffffff;
+      border: none;
+      border-radius: 60px;
+      padding: 16px 36px;
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: inherit;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 8px 30px rgba(26, 31, 54, 0.3), 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: all 0.25s cubic-bezier(0.2, 0, 0, 1);
+      white-space: nowrap;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .back-button-fixed:hover {
+      background: #0b1222;
+      box-shadow: 0 12px 40px rgba(26, 31, 54, 0.4), 0 6px 16px rgba(0, 0, 0, 0.15);
+      transform: translateX(-50%) translateY(-3px);
+    }
+
+    .back-button-fixed:active {
+      transform: translateX(-50%) translateY(-1px);
+      box-shadow: 0 6px 20px rgba(26, 31, 54, 0.3);
+    }
+
+    .back-button-fixed svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      transition: transform 0.25s ease;
+    }
+
+    .back-button-fixed:hover svg {
+      transform: translateX(-4px);
+    }
+
+    /* ---------- CARD (elevated, clean, professional) ---------- */
+    .legal-card {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 56px 64px;
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.06), 0 4px 18px rgba(0, 0, 0, 0.02);
+      border: 1px solid #edf2f9;
+      transition: box-shadow 0.25s ease;
+    }
+
+    .legal-card:hover {
+      box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.08), 0 6px 20px rgba(0, 0, 0, 0.02);
+    }
+
+    /* ---------- HEADINGS (clear hierarchy) ---------- */
+    .legal-card h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: #0a1222;
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+
+    .legal-card h1 + p strong {
+      font-weight: 600;
+      color: #5b6c85;
+      font-size: 0.9rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .legal-card h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #0a1222;
+      margin-top: 44px;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #eef4ff;
+      letter-spacing: -0.015em;
+    }
+
+    .legal-card h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #1a1f36;
+      margin-top: 30px;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    /* ---------- TEXT & LISTS ---------- */
+    .legal-card p {
+      font-size: 1.02rem;
+      color: #2e3a4e;
+      margin-bottom: 18px;
+    }
+
+    .legal-card ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 24px;
+    }
+
+    .legal-card ul li {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 14px;
+      font-size: 1.02rem;
+      color: #2e3a4e;
+    }
+
+    .legal-card ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 8px;
+      height: 8px;
+      background: #3b82f6;
+      border-radius: 50%;
+      opacity: 0.9;
+      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+    }
+
+    .legal-card ul li strong {
+      color: #0a1222;
+      font-weight: 600;
+    }
+
+    /* ---------- LINKS (elegant hover) ---------- */
+    .legal-card a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1.5px solid transparent;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .legal-card a:hover {
+      color: #1d4ed8;
+      border-bottom-color: #1d4ed8;
+    }
+
+    /* ---------- FOOTNOTE / SIGNATURE ---------- */
+    .legal-card em {
+      display: block;
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid #edf2f9;
+      font-style: normal;
+      font-size: 0.95rem;
+      color: #5b6c85;
+      line-height: 1.65;
+      letter-spacing: 0.01em;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      body {
+        padding: 0 16px 110px;
+      }
+
+      .legal-wrapper {
+        padding: 28px 0 20px;
+      }
+
+      .legal-card {
+        padding: 36px 28px;
+        border-radius: 22px;
+      }
+
+      .legal-card h1 {
+        font-size: 1.85rem;
+      }
+
+      .legal-card h2 {
+        font-size: 1.3rem;
+        margin-top: 36px;
+      }
+
+      .legal-card h3 {
+        font-size: 1.05rem;
+      }
+
+      .back-button-fixed {
+        bottom: 20px;
+        padding: 15px 30px;
+        font-size: 0.95rem;
+        width: calc(100% - 32px);
+        max-width: 400px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 0 12px 100px;
+      }
+
+      .legal-card {
+        padding: 28px 18px;
+        border-radius: 18px;
+      }
+
+      .legal-card h1 {
+        font-size: 1.6rem;
+      }
+
+      .legal-card h2 {
+        font-size: 1.2rem;
+        margin-top: 32px;
+      }
+
+      .legal-card ul li {
+        font-size: 0.96rem;
+        padding-left: 26px;
+        margin-bottom: 12px;
+      }
+
+      .legal-card p {
+        font-size: 0.96rem;
+      }
+
+      .legal-card ul li::before {
+        top: 8px;
+        width: 7px;
+        height: 7px;
+      }
+
+      .back-button-fixed {
+        bottom: 16px;
+        padding: 14px 24px;
+        font-size: 0.9rem;
+        gap: 10px;
+        border-radius: 50px;
+      }
+
+      .back-button-fixed svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    /* ---------- SCROLL BEHAVIOR ---------- */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* ---------- FOCUS STYLES (accessibility) ---------- */
+    .back-button-fixed:focus-visible {
+      outline: 3px solid #3b82f6;
+      outline-offset: 4px;
+    }
+
+    a:focus-visible {
+      outline: 3px solid #3b82f6;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="legal-wrapper">
+
+    <!-- ========================================================= -->
+    <!--  COOKIE POLICY                                            -->
+    <!-- ========================================================= -->
+    <div class="legal-card" id="cookie-policy">
+      <h1>Cookie Policy</h1>
+      <p><strong>Last Updated:</strong> 10 September 2026</p>
+
+      <p>This Cookie Policy explains how <strong>AA DigitalWorks</strong> — Ireland's premier digital agency — uses cookies and similar technologies to recognize you when you visit our website at <a href="https://www.aadigitalworks.com/ie/">https://www.aadigitalworks.com/ie/</a>. It explains what these technologies are and why we use them, as well as your rights to control our use of them.</p>
+
+      <h2>1. What are Cookies?</h2>
+      <p>Cookies are small data files that are placed on your computer or mobile device when you visit a website. Cookies are widely used by website owners in order to make their websites work, or to work more efficiently, as well as to provide reporting information — helping us deliver the data-driven success metrics our Irish clients rely on.</p>
+
+      <h2>2. Types of Cookies We Use</h2>
+      <p>We use the following categories of cookies on our website:</p>
+
+      <h3>a. Strictly Necessary Cookies</h3>
+      <p>These cookies are essential for you to browse the website and use its features, such as accessing secure areas of the site. We do not require your consent to use these cookies as they are necessary for the operation of the website.</p>
+
+      <h3>b. Analytical/Performance Cookies</h3>
+      <p>These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. They help us to know which pages are the most and least popular and see how visitors move around the site. We use <strong>Google Analytics 4 (GA4)</strong> for this purpose — the same analytics discipline we apply to our clients' SEO and Google Ads campaigns across Ireland.</p>
+
+      <h3>c. Functionality &amp; Behaviour Cookies</h3>
+      <p>These cookies enable the website to provide enhanced functionality and personalisation. They may be set by us or by third-party providers whose services we have added to our pages. We use tools like <strong>Hotjar</strong> or <strong>Microsoft Clarity</strong> to understand user behaviour (e.g., clicks, mouse movements, scrolls) and improve user experience.</p>
+
+      <h2>3. Third-Party Cookies</h2>
+      <p>In addition to our own cookies, we may also use various third-party cookies to report usage statistics of the website and deliver advertisements on and through the website. The third parties we use include:</p>
+      <ul>
+        <li>Google (Analytics, Search Console, Google Ads)</li>
+        <li>Hotjar / Microsoft Clarity</li>
+      </ul>
+
+      <h2>4. Managing Your Cookie Preferences</h2>
+      <p>You have the right to decide whether to accept or reject non-essential cookies. You can exercise your cookie preferences by adjusting your browser settings or by using the cookie consent banner on our website.</p>
+      <p>You can set or amend your web browser controls to accept or refuse cookies. If you choose to reject cookies, you may still use our website though your access to some functionality and areas of our website may be restricted. The means by which you can refuse cookies through your web browser controls vary from browser to browser, and you should visit your browser's help menu for more information.</p>
+      <p>To withdraw consent for non-essential cookies, you can also clear the cookies stored on your device via your browser settings.</p>
+
+      <h2>5. Changes to This Cookie Policy</h2>
+      <p>We may update this Cookie Policy from time to time in order to reflect, for example, changes to the cookies we use or for other operational, legal, or regulatory reasons. Please therefore re-visit this Cookie Policy regularly to stay informed about our use of cookies and related technologies.</p>
+
+      <h2>6. Contact Us</h2>
+      <p>If you have any questions about our use of cookies or other technologies — or about how we help Irish businesses grow online — please contact us:</p>
+      <ul>
+        <li>By email: <a href="mailto:info@aadigitalworks.com">info@aadigitalworks.com</a></li>
+        <li>By WhatsApp: via the contact button on our website</li>
+        <li>By mail: AA DigitalWorks, County Wexford, Ireland</li>
+      </ul>
+      <em>AA DigitalWorks — Ireland's digital marketing agency</em>
+    </div>
+
+  </div>
+
+  <!-- ========================================================= -->
+  <!--  FIXED BOTTOM BACK BUTTON — always visible, easy to use   -->
+  <!-- ========================================================= -->
+  <a href="javascript:history.back()" class="back-button-fixed" id="backButton" aria-label="Go back to the previous page">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+    </svg>
+    Back
+  </a>
+
+  <script>
+    // ---------------------------------------------------------------
+    // SMART BACK BUTTON
+    // Returns the user to the exact section they were viewing on the
+    // previous page (e.g., /#services or /#about).
+    //
+    // How it works:
+    // 1. If the browser has history AND a referrer from the same site,
+    //    it uses history.back() — which restores the exact scroll position.
+    // 2. If there is no history (e.g., direct link), it falls back to
+    //    the homepage.
+    // ---------------------------------------------------------------
+    document.addEventListener('DOMContentLoaded', function () {
+      const backBtn = document.getElementById('backButton');
+
+      backBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const referrer = document.referrer;
+        const isSameOrigin = referrer && referrer.indexOf(window.location.origin) === 0;
+
+        if (window.history.length > 1 && isSameOrigin) {
+          // Go back — the browser restores the exact scroll position
+          // and any hash the user was viewing.
+          window.history.back();
+        } else if (window.history.length > 1) {
+          // No same-origin referrer but history exists — go back anyway.
+          window.history.back();
+        } else {
+          // No history at all — fall back to the homepage.
+          window.location.href = 'https://www.aadigitalworks.com/ie/';
+        }
+      });
+
+      // Add a subtle shadow change on scroll to make the button feel
+      // more integrated with the page.
+      let lastScrollY = 0;
+      const button = document.querySelector('.back-button-fixed');
+      
+      window.addEventListener('scroll', function () {
+        const currentScrollY = window.scrollY;
+        
+        if (currentScrollY > 50) {
+          button.style.boxShadow = '0 12px 40px rgba(26, 31, 54, 0.4), 0 6px 16px rgba(0, 0, 0, 0.15)';
+        } else {
+          button.style.boxShadow = '0 8px 30px rgba(26, 31, 54, 0.3), 0 4px 12px rgba(0, 0, 0, 0.1)';
+        }
+        
+        lastScrollY = currentScrollY;
+      }, { passive: true });
+    });
+
+    // ---------------------------------------------------------------
+    // HIGHLIGHT THE ACTIVE SECTION IF A HASH IS PRESENT
+    // e.g., /cookie-policy#section-4
+    // ---------------------------------------------------------------
+    (function highlightActiveSection() {
+      const hash = window.location.hash;
+      if (!hash) return;
+
+      const target = document.querySelector(hash);
+      if (target) {
+        // Add a subtle, professional highlight (soft blue glow + background)
+        target.style.transition = 'box-shadow 0.5s ease, background-color 0.3s ease, padding 0.3s ease, margin 0.3s ease';
+        target.style.boxShadow = '0 0 0 3px rgba(59, 130, 246, 0.2), 0 20px 40px -12px rgba(0, 0, 0, 0.06)';
+        target.style.backgroundColor = 'rgba(59, 130, 246, 0.02)';
+        target.style.borderRadius = '12px';
+        target.style.padding = '8px 16px';
+        target.style.marginLeft = '-16px';
+        target.style.marginRight = '-16px';
+
+        // Remove the highlight after 2.5 seconds for a clean finish
+        setTimeout(() => {
+          target.style.boxShadow = 'none';
+          target.style.backgroundColor = 'transparent';
+          target.style.padding = '0';
+          target.style.marginLeft = '0';
+          target.style.marginRight = '0';
+        }, 2500);
+      }
+    })();
+  </script>
+
+</body>
+</html>
