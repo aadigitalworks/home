@@ -20,6 +20,14 @@ body {
   display: block; /* Show when class is added */
 }
 
+
+.service-link,
+.service-link:hover,
+.service-link:focus,
+.service-link:visited {
+    color: inherit;
+    text-decoration: none;
+}
 /*font update*/
 
 /*chat*/
